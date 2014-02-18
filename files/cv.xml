@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<!--
+			<item>
+				<title>Titre</title>
+				<period start="2005/01/01" end="2005/01/31" />
+				<period start="2005/02/01" end="2005/02/31" />
+				<text>Texte</text>
+			</item>
+	-->
+	<career>
+		<en>
+		</en>
+		<fr>
+			<item>
+				<title>2nde GT</title>
+				<line>0</line>
+				<period start="2004/09/01" end="2005/06/31" />
+				<text>2nde Générale et Technologique<br/>Effectuée au Lycée d'Enseignement Général et Technologique Agricole (LEGTA) de Laval. Option Ecologie Agronomie Territoire Citoyenneté (EATC)</text>
+			</item>
+			<item>
+				<title>1ere S</title>
+				<line>1</line>
+				<period start="2005/09/01" end="2006/06/31" />
+				<text>1ere Scientifique<br/>Effectuée au Lycée d'Enseignement Général et Technologique Agricole (LEGTA) de Laval. Option Biologie Ecologie.</text>
+			</item>
+			<item>
+				<title>Terminale S</title>
+				<line>2</line>
+				<period start="2006/09/01" end="2007/06/31" />
+				<text>Terminale Scientifique<br/>Effectuée au Lycée d'Enseignement Général et Technologique Agricole (LEGTA) de Laval. Option Biologie Ecologie, spécialité Mathématique. Baccalauréat S obtenu avec mention AB.</text>
+			</item>
+			<item>
+				<title>DUT Informatique</title>
+				<line>3</line>
+				<period start="2007/09/01" end="2009/06/31" />
+				<text>DUT Informatique<br/>Effectué à l'IUT de Laval. Option Génie Logiciel, Vice-major de promotion.</text>
+			</item>
+			<item>
+				<title>Formation CDI</title>
+				<line>4</line>
+				<period start="2010/03/01" end="2012/01/22" />
+				<text>Concepteur Développeur Informatique<br/>Formation diplomante (Titre homologué BAC+4) effectuée à l'ENI Ecole Informatique, en alternance chez CITRUS Ingenierie.</text>
+			</item>
+			<item>
+				<title>Le Gabarier</title>
+				<line>7</line>
+				<period start="2005/08/01" end="2005/08/16" />
+				<period start="2006/07/07" end="2006/08/16" />
+				<text>Commis de cuisine<br/>Assigné à la préparation des entrées et desserts, à la plonge et au contrôle des stocks.</text>
+			</item>
+			<item>
+				<title>Adecco</title>
+				<line>8</line>
+				<period start="2007/07/02" end="2007/08/26" />
+				<text>Intérimaire<br/>Chargé de missions ponctuelles (manutention) auprès des différents clients.</text>
+			</item>
+			<item>
+				<title>STAO</title>
+				<line>9</line>
+				<period start="2007/07/16" end="2007/08/04" />
+				<text>Agent d'entretien<br/>Chargé de l'entretien intérieur (en équipe) des bus du parc de véhicules.</text>
+			</item>
+			<item>
+				<title>Cofiroute</title>
+				<line>10</line>
+				<period start="2008/05/01" end="2008/08/31" />
+				<text>Receveur autoroutier.<br/>Chargé de la réception en guichet et de l'encaissement des paiements. Responsable intermittent de la sécurité de la barrière La Gravelle.</text>
+			</item>
+			<item>
+				<title>GTD Sistemas de Información (Espagne)</title>
+				<line>11</line>
+				<period start="2009/04/06" end="2009/07/12" />
+				<text>Concepteur-Développeur PHP<br/>Intégré au sein du service Qualité, chargé de l'étude de l'intranet courant, afin de concevoir, développer et déployer la nouvelle version. L'utilisation du CMS Joomla! (version espagnole) a été requise par l'entreprise, ainsi que la compatibilité de l'intranet avec de nombreux navigateurs (IE6, IE7, IE8, Firefox, Opera, Safari, Chrome). Une fois l'application déployée, une documentation complète (en espagnol) ainsi qu'une formation des utilisateurs ont été réalisées. De nombreux outils et langages ont été utilisés : Joomla!, XAMPP, IIS, PHP, HTML, CSS, ASP, Java, SQL...</text>
+			</item>
+			<item>
+				<title>Beim Klenge Wum (Luxembourg)</title>
+				<line>12</line>
+				<period start="2009/08/10" end="2009/08/16" />
+				<text>Aide-Traiteur<br/>Réalisation de plats froids pour différents buffets.</text>
+			</item>
+			<item>
+				<title>M. Hostomme &amp; Fils</title>
+				<line>13</line>
+				<period start="2009/09/13" end="2009/09/24" />
+				<text>Vendangeur<br/>Intégré au sein d'une équipe d'environ 40 vendangeurs chargés de la récolte manuelle du raisin pour une maison champenoise.</text>
+			</item>
+			<item>
+				<title>CITRUS Ingenierie</title>
+				<line>14</line>
+				<period start="2010/03/01" end="2012/01/22" />
+				<text>Développeur Flash<br/>Principalement chargé du développement en AS3 d'un simulateur thermique dans le domaine du bâtiment. D'autre travaux annexes sont réalisés, comme le développement d'animations pédagogique, et l'intégration de cours sur la plateforme Disegno.</text>
+			</item>
+		</fr>
+		<es>
+		</es>
+	</career>
+	<skills>
+		<en>
+		</en>
+		<fr>
+			<item>
+				<title>Programmation sur Casio</title>
+				<line>0</line>
+				<period start="2005/01/01" end="2007/10/31" />
+				<text>BASIC Casio / MLC<br/>Découverte de la programmation, avec de nombreux programmes développés : utilitaires (convertisseurs, cours, décomposeurs de nombres premiers...) et jeux (labyrinthe en 3D, snake, demineur, mastermind, plateformes...).<br/>Participation active au développement du langage multi-plateforme MLC (Multi-platform Language for Calcs). Basé sur le C, ce langage permet d'utiliser la majorité des capacité de la machine (vitesse accrue, libriaires adaptées au jeu, niveau de gris...).</text>
+			</item>
+			<item>
+				<title>C / C++</title>
+				<line>1</line>
+				<period start="2005/07/01" end="2006/04/31" />
+				<period start="2008/09/01" end="2009/11/31" />
+				<text>C / C++<br/>Initiation à la programmation sur PC, avec le développement d'un premier soft (type Space Invaders), puis étudié en IUT (C++). Utilisation du framework Qt (QtGui, QtNetwork et QtCore).</text>
+			</item>
+			<item>
+				<title>HTML / CSS / JS</title>
+				<line>2</line>
+				<period start="2006/05/01" end="2008/08/31" />
+				<period start="2009/04/06" end="2009/10/31" />
+				<period start="2010/08/20" end="2010/11/31" />
+				<text>HTML / CSS / Javascript<br/>Réalisation de différents sites web, lors de projets scolaires ou pour des associations. Connaissances en CMS (Joomla!), en normes W3C et en compatibilité inter-navigateurs.</text>
+			</item>
+			<item>
+				<title>PHP</title>
+				<line>3</line>
+				<period start="2006/07/01" end="-" />
+				<text>PHP<br/>Langage largement utilisé, lors de la réalisation de très nombreux scripts (dans un contexte scolaire ou non).</text>
+			</item>
+			<item>
+				<title>SQL</title>
+				<line>4</line>
+				<period start="2006/07/01" end="-" />
+				<text>SQL<br/>Langage étudié en IUT et en Ecole Supérieure (mySQL, SQLServer, Oracle). Maîtrise des transactions de type DDL, DML et TCL, des langages Transact-SQL, PL/SQL, ainsi que des triggers et procédures stockées.</text>
+			</item>
+			<item>
+				<title>Java</title>
+				<line>5</line>
+				<period start="2007/09/01" end="2009/06/31" />
+				<period start="2010/08/15" end="2010/09/07" />
+				<text>Java<br/>Langage principalement étudié en IUT. Développement de petits softs (compression de fichiers, cryptage, jeux, P2P...) à l'aide de l'outil Eclipse. Maîtrise de la POO, du MVC, de certains design pattern (Factory, Abstract Factory, Singleton, Adapter, Iterator, Observer, Callback) et des librairies lang, util, AWT, Swing, Collections, JDBC, I/O, JAR, XML JAXP. Notions en Beans, RMI, Serialization.</text>
+			</item>
+			<item>
+				<title>AS3</title>
+				<line>6</line>
+				<period start="2010/03/01" end="-" />
+				<text>ActionScript 3<br/>Langage découvert en entreprise (CITRUS Ingenierie). Utilisation de Flash CS4 et CS5, ainsi que de FlashDevelop. Développement d'un simulateur thermique (entre autres animations) à l'aide de librairies internes à l'entreprise, puis du présent site web (v2.0).</text>
+			</item>
+			<item>
+				<title>Windows</title>
+				<line>8</line>
+				<period start="2004/01/01" end="2009/06/01" />
+				<period start="2009/07/01" end="2009/08/01" />
+				<period start="2009/09/01" end="-" />
+				<text>98 / XP / Vista / Seven<br/>Utilisation quotidienne de Microsoft Windows, majoritairement XP et Seven.</text>
+			</item>
+			<item>
+				<title>Ubuntu</title>
+				<line>9</line>
+				<period start="2008/04/01" end="2009/02/31" />
+				<text>Ubuntu<br/>Utilisation de la distribution Ubuntu dans un cadre universitaire, maîtrise limitée de l'outil.</text>
+			</item>
+			<item>
+				<title>Eclipse</title>
+				<line>10</line>
+				<period start="2007/09/01" end="2009/06/31" />
+				<period start="2010/08/15" end="2010/09/07" />
+				<text>Eclipse<br/>Maîtrise de l'IDE Eclipse (Europa, Ganymede) et de quelques uns de ses plugins (Omondo, SubClipse, Subversive, QTclipse...).</text>
+			</item>
+			<item>
+				<title>Photoshop / Flash</title>
+				<line>11</line>
+				<period start="2004/01/01" end="2010/03/01" />
+				<period start="2010/04/01" end="2010/09/01" />
+				<period start="2010/10/01" end="-" />
+				<text>Photoshop 7.0 / CS3 / CS5 et Flash CS4 / CS5<br/>Utilisation personnelle récurrente de Photoshop pour des retouche et des créations. Apprentissage à l'aide de tutoriels sur internet.</text>
+			</item>
+			<item>
+				<title>Francais</title>
+				<line>12</line>
+				<period start="2004/01/01" end="-" />
+				<text>Francais<br/>Langue maternelle, excellente maîtrise de l'orthographe. Selection nationale aux Dicos d'Or 2005. Correcteur dans une équipe de sous-titrage depuis 2008.</text>
+			</item>
+			<item>
+				<title>Anglais</title>
+				<line>13</line>
+				<period start="2004/01/01" end="2009/07/10" />
+				<text>Anglais<br/>Langue vivante 01, bon niveau. Pratique courante pendant un séjour de 3 mois à l'étranger (Barcelone, Espagne).</text>
+			</item>
+			<item>
+				<title>Espagnol</title>
+				<line>14</line>
+				<period start="2004/01/01" end="2009/07/10" />
+				<text>Espagnol<br/>Langue vivante 02, niveau scolaire. Pratique régulière pendant deux séjours à l'étranger (Barcelone, Espagne : 2004 et 2009)</text>
+			</item>
+		</fr>
+		<es>
+		</es>
+	</skills>
+	<activities>
+		<en>
+		</en>
+		<fr>
+			<item>
+				<title>Bridge</title>
+				<line>0</line>
+				<period start="2004/09/01" end="2009/10/31" />
+				<text>Bridge Club de Laval<br/>Joueur de niveau national (classé 3e série Coeur en 2009), avec de nombreux titres en catégorie Cadets/Juniors (Champion de France Cadets en 2005, Vice champion de France Junior en 2007).<br/>Membre du conseil d'administration du club à partir de 2007, responsable des équipes Juniors, de la communication web et de la maintenance du site internet.</text>
+			</item>
+			<item>
+				<title>Mah-Jong</title>
+				<line>1</line>
+				<period start="2010/03/01" end="-" />
+				<text>West Castle<br/>Membre du Mah-Jong Club de Pont-Château (West Castle). Membre du bureau du club et responsable de la maintenance du site internet.</text>
+			</item>
+			<item>
+				<title>A.P.H.J</title>
+				<line>2</line>
+				<period start="2010/03/01" end="2012/01/22" />
+				<text>Association Presqu'Île Habitat Jeunes<br/>Association d'aide au logement des jeunes actifs. Activité régulière au sein de l'association, création du logo et ébauche d'une charte graphique.</text>
+			</item>
+			<item>
+				<title>Guitare</title>
+				<line>5</line>
+				<period start="1995/01/01" end="-" />
+				<text>Guitare sèche / électrique, Basse<br/>Formation classique avec un professeur particulier depuis de nombreuses années, puis en autodidacte dès 2004, à la découverte des modèles électro-acoustiques et électriques. Amoureux des guitares, une petite collection s'est peu à peu montée afin de découvrir au mieux les possibilités permises par l'instrument.<br/>Des références majoritairement britanniques comme Pink Floyd, Dire Straits, The Police ou bien Santana on permis un grand développement de l'improvisation et du sens du rythme.</text>
+			</item>
+			<item>
+				<title>LEGTA Rock Band</title>
+				<line>6</line>
+				<period start="2004/10/01" end="2007/06/15" />
+				<text>LEGTA Rock Band<br/>Membre du groupe de Rock du Lycée Agricole de Laval. Guitariste principal du groupe, avec en 2005 un premier concert donné en fin d'année.</text>
+			</item>
+			<item>
+				<title>Cydonia</title>
+				<line>7</line>
+				<period start="2007/07/15" end="2009/08/31" />
+				<text>Cydonia<br/>Membre du groupe de Rock progressif Cydonia. Bassiste (et guitariste au besoin), de très nombreux enregistrements ont été réalisés en privé, puis en studio pour le montage d'une maquette de 7 morceaux. Par un manque de présence du(des) batteurs, le groupe ne pourra pas s'épanouir et s'étendre sur la scène lavalloise. En 2008, une autre expérience du studio est vécue pour une chanteuse de pop-soul (Jessika).</text>
+			</item>
+			<item>
+				<title>Culture Japonaise</title>
+				<line>10</line>
+				<period start="2006/04/01" end="-" />
+				<text>Culture Japonaise<br/>Grand amateur d'animation japonaise à la base, je me suis ensuite intéressé à la culture japonaise (langue, écriture, musique...)</text>
+			</item>
+			<item>
+				<title>AnimeNoSekai</title>
+				<line>11</line>
+				<period start="2008/02/01" end="-" />
+				<text>AnimeNoSekai<br/>Correcteur, checker plan et quality checker au sein d'une équipe de Fansub (sous-titrage d'animations japonaises) bénévole. Chargé de vérifier la qualité de la traduction (orthographe, conjugaison, grammaire et style d'écriture) et de relever les éventuelles erreurs dans les scripts.</text>
+			</item>
+			<item>
+				<title>Culture Web</title>
+				<line>14</line>
+				<period start="2005/07/01" end="-" />
+				<text>Culture Web<br/>Intéressé par le web et ses évolutions, je me tiens informé sur les nouvelles technologies et l'actualité. Curieux de tout, j'aime tester les différentes nouveautés ou lire les critiques de la presse web.</text>
+			</item>
+			<item>
+				<title>Infographie</title>
+				<line>15</line>
+				<period start="2004/07/01" end="-" />
+				<text>Infographie<br/>Amateur sans prétentions en infographie, j'ai apprivoisé l'outil Photoshop (7.0, CS3, CS4, CS5) au travers de nombreuses retouches et créations, personnelles ou pour des tiers. Par curiosité et par plaisir, je suis certains blogs de graphistes sur le web.</text>
+			</item>
+		</fr>
+		<es>
+		</es>
+	</activities>
+</root>

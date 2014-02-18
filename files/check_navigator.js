@@ -1,0 +1,23 @@
+AC_FL_RunContent(
+	'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+	'width', '100%',
+	'minWidth', '800',
+	'height', '100%',
+	'src', 'Site_v3',
+	'quality', 'high',
+	'pluginspage', 'http://www.adobe.com/go/getflashplayer_fr',
+	'align', 'middle',
+	'play', 'true',
+	'loop', 'false',
+	'scale', 'noscale',
+	'wmode', 'window',
+	'devicefont', 'false',
+	'id', 'Site_v3',
+	'bgcolor', '#efefef',
+	'name', 'Site_v3',
+	'menu', 'false',
+	'allowFullScreen', 'true',
+	'allowScriptAccess','sameDomain',
+	'movie', 'Site_v3',
+	'salign', ''
+	); //end AC code
