@@ -1,0 +1,243 @@
+@import "animation";
+@import "fontello";
+
+/* --- Variables --- */
+$c_main 		: #333333;
+$c_hover 		: #111111;
+$b_bottom 		: #eaeaea;
+$b_strip 		: #ffffff;
+
+$logo_size    	: 120px;
+$logo_padding 	: 5px;
+$logo_margin 	: 10px;
+
+/* --- General --- */
+html,
+body {
+	height: 100%;
+	min-width: 430px;
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 22px;
+	font-weight: 200;
+	color: $c_main;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		text-decoration: underline;
+		color: $c_hover;
+	}
+}
+
+/* --- Wrapper --- */
+section {
+	min-height: 500px;
+	min-width: 810px;
+}
+
+/* --- Logo --- */
+.zessx {
+	display: block;
+	position: absolute;
+	left: 50%;
+	width: $logo_size;
+	height: $logo_size;
+	margin: (-$logo_size / 2);
+	background: $b_strip url(../img/logo.png) 0 0 no-repeat;
+	border-radius: $logo_size;
+	text-indent: -9999em;
+	z-index: 30;
+}
+
+/* --- Central strip --- */
+.strip {
+	position: absolute;
+	left: 0;
+	height: $logo_size;
+	width: 100%;
+	padding: $logo_margin 0;
+	margin-top: -70px;
+	text-align: center;
+	z-index: 10;
+
+	a {
+		display: inline-block;
+		font-size: 50px;
+		line-height: $logo_size;
+
+		i {
+			&:before {
+				vertical-align: 3px;
+			}
+			&.icon-email:before {
+				vertical-align: -8px;
+			}
+			&.icon-email:before {
+				vertical-align: -2px;
+			}
+		}
+	}
+	.separator {
+		display: inline-block;
+	}
+}
+
+/* Top/bottom shutters */
+.shutter {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	background: $b_bottom;
+	background-size: 100%;
+	overflow: hidden;
+	z-index: 20;
+
+	&:before {
+		content: ' ';
+		position: absolute;
+		left: 50%;
+		z-index: 20;
+		display: block;
+		width: $logo_size + $logo_padding * 2;
+		height: $logo_size + $logo_padding * 2;
+		margin-left: (-$logo_size / 2 - $logo_padding);
+		background: $b_strip;
+		border: 1px solid $c_main;
+		border-radius: $logo_size + $logo_padding * 2;
+	}
+	&:after {
+		content: ' ';
+		position: absolute;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		height: 1px;
+		background: $c_main;
+	}
+
+	&.shutter-top {
+		top: 0;
+		background-position: center 50%;
+		background-image: url(../img/background.jpg);
+
+		&:before {
+			bottom: (-$logo_size / 2 - $logo_padding);
+		}
+		&:after {
+			bottom: 0;
+		}
+	}
+	&.shutter-bottom {
+		bottom: 0;
+
+		&:before {
+			top: (-$logo_size / 2 - $logo_padding);
+		}
+		&:after {
+			top: 0;
+		}
+		p {
+			padding-top: 70px;
+		}
+		strong {
+			font-size: 35px;
+			font-weight: 300;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	$header-height: 200px;
+	$title-height: 270px;
+
+	body {
+		background: #eaeaea;
+	}
+	.zessx {
+		top: $header-height;
+	}
+	.shutter {
+		&.shutter-top {
+			height: $header-height;
+			background-size: 100% auto;
+		}
+		&.shutter-bottom {
+			height: 100%;
+			margin-bottom: -$header-height;
+		}
+	}
+	.strip {
+		top: $header-height + $title-height;
+		z-index: 999;
+
+		a {
+			font-size: 50px;
+			width: 30%;
+		}
+		.separator {
+			width: 0px;
+		}
+	}
+}
+
+/* Small devices */
+@media screen and (min-width: 768px) {
+	html, body {
+		overflow: hidden;
+		background: #ffffff;
+	}
+	.zessx {
+		top: 50%;
+	}
+	.shutter {
+		&.shutter-top {
+			height: 50%;
+		}
+		&.shutter-bottom {
+			height: 50%;
+		}
+	}
+	.strip {
+		top: 50%;
+		z-index: 1;
+
+		a {
+			font-size: 40px;
+			width: 50px;
+		}
+		.separator {
+			width: ($logo_size + $logo_margin * 2);
+		}
+	}
+	.shutter,
+	.zessx {
+		transition: margin .7s, background-color .3s;
+		-moz-transition: margin .7s, background-color .3s;
+		-webkit-transition: margin .7s, background-color .3s;
+	}
+	.opened {
+		.shutter-top {
+			margin-top: (-$logo_size / 2 - $logo_margin);
+		}
+		.shutter-bottom {
+			margin-bottom: (-$logo_size / 2 - $logo_margin);
+		}
+	}
+}
+/* Medium devices */
+@media screen and (min-width: 992px) {
+	.strip {
+		a {
+			font-size: 50px;
+			width: 70px;
+		}
+	}
+}
+/* Large devices */
+@media screen and (min-width: 1200px) {
+
+}
