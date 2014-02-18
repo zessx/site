@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* ========== BOUTONS ========== */
+.spec, .lang, #browsers {
+	filter:alpha(opacity=30); 
+}
+.spec:hover, .lang:hover, #browsers:hover {
+	filter:none;
+}
+
+/* ========== MENUS ========== */
+.menu {
+	margin-top: -500px;
+}
+.menu:hover {
+	margin-top: -32px;
+}
+.mtext {
+	visibility: hidden; 
+}
+.menu:hover .mtext {
+	visibility: visible;
+}
+#m01, #m01:hover {
+	margin-left: 100px;
+}
+#m02, #m02:hover {
+	margin-left: 340px;
+}
+#m03, #m03:hover {
+	margin-left: 580px;
+}
+#m04, #m04:hover {
+	margin-left: 820px;
+}
+#m05, #m05:hover {
+	margin-left: 1060px;
+}
+
+/* ========== ALERT ========== */
+#browseralert {
+	visibility: visible;
+	width: 100%;
+	height: 28px;
+	text-align: center;
+	background-color: #FFFFE1;
+	color: #000000;
+	position: relative;
+	display: block;
+	border-bottom: 1px solid #000;
+	z-index: 99;
+}
