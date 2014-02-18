@@ -1,0 +1,161 @@
+html, body { 
+	color: #bbbbbb; 
+	font-family: 'Quicksand', sans-serif; 
+	width: 100%; 
+	height: 100%; 
+}
+
+.clearfix { 
+	clear: both; 
+	height: 0px; 
+}
+
+a { 
+	color: #bbbbbb; 
+	text-decoration: none; 
+}
+a:hover { 
+	color: white; 
+}
+
+/* Base / Mobile */
+#container { 
+	position: relative; 
+	width: 100%; 
+	height: 100%; 
+	margin: 0 auto; 
+}
+
+#logo { 
+	display: block; 
+	width: 120px; 
+	height: 120px; 
+	margin: 15px auto; 
+	background: url(../img/logo.png) 0 0 no-repeat; 
+	text-indent: -9999em; 
+}
+#logo:hover { 
+	background-position: 0 -120px; 
+}
+
+nav { 
+	display: block; 
+	background: url(../img/bg-black.png) repeat; 
+}
+nav a.internal { 
+	display: block; 
+	line-height: 25px; 
+	height: 25px; 
+	padding: 0 30px; 
+}
+nav a.internal:hover, 
+nav a.internal.selected { 
+	background: #222222; 
+}
+
+.content { 
+	position: relative;
+	padding: 30px; 
+	background: url(../img/bg-black.png) repeat; 
+}
+
+.up {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 5px;
+	background: #222222;
+}
+
+#intro img {
+	float: left;
+	margin-right: 20px;
+}
+
+#contact a.social {
+	float: left;
+	margin-right: 25px;
+	opacity: 0.5;
+}
+#contact a.social:hover {
+	opacity: 1;
+}
+
+#credits p {
+	width: 300px;
+	float: left;
+}
+#credits a.seemore {
+	display: block;
+}
+
+h1 {
+	display: none;
+}
+h2 {
+	margin-bottom: 10px;
+}
+h3 {
+	margin-bottom: 5px;
+}
+
+/* Tablet */
+@media(min-width: 600px) {
+	#logo { 
+		float: left; 
+		margin: 15px; 
+	}
+	nav { 
+		height: 150px; 
+		margin-bottom: 50px; 
+	}
+	nav a.internal { 
+		float: left; 
+		height: 150px; 
+		line-height: 150px; 
+		padding: 0 10px; 
+	}
+	.content {
+		display: none;
+	}
+	.content.selected {
+		display: block;
+	}
+	.up { 
+		display: none; 
+	}
+} 
+
+/* Desktop */
+@media(min-width: 1000px) {
+	#container { 
+		width: 960px; 
+	}
+	#logo { 
+		clear: left; 
+		margin: 55px 15px; 
+	}
+	nav { 
+		position: absolute; 
+		top: 0; 
+		left: 0; 
+		height: 100%; 
+		width: 150px; 
+	}
+	nav a.internal { 
+		clear: left; 
+		width: 130px; 
+		line-height: 25px; 
+		height: 25px; 
+	}
+	nav a.internal:hover, 
+	nav a.internal.selected { 
+		background: #222222; 
+	}
+	.content { 
+		position: absolute; 
+		top: 200px; 
+		left: 200px; 
+		width: 760px;
+	}
+} 
