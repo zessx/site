@@ -1,0 +1,509 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:4737
+File Name:SpeedSnk
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\ClrText
+"Speed Snake v1.2"
+"By SamsamX"
+"sammuse A msn.com"
+\For 1\->A \To 200
+\Next 
+\While 1
+0\->A~Z
+0\->\r
+0\->\theta
+{7,21}\->\Dim \Mat A
+\ClrText
+\Locate 1,1,"==== \->SPEED SNAKE ==="
+\Locate 1,3,"1. MODE CLASSIQUE"
+\Locate 1,4,"2. MODE STORY"
+\Locate 1,5,"3. CHOISIR UNE MAP"
+\Locate 1,6,"4. MURS ALEATOIRES"
+\Locate 1,7,"5. ~~GENERER MAP~~"
+\Do
+\Getkey
+\LpWhile \Ans\<>72\ And \Ans\<>62\ And \Ans\<>52\ And \Ans\<>73\ And \Ans\<>63
+\ClrText
+\Ans=72\=>1\->E
+\Ans=62\=>1\->\theta
+\Ans=52\=>2\->\theta
+\Ans=73\=>2\->E
+\Ans=63\=>3\->\theta
+\If E
+\Then \Locate 1,1,"===== \->BORDURES ====="
+\Locate 1,3,"1. SANS"
+\Locate 1,4,"2. AVEC"
+\Do
+\Getkey
+\LpWhile \Ans\<>72\ And \Ans\<>62
+147\->R
+\Ans=62\=>71\->F
+\Ans=62\=>95\->R
+\IfEnd
+\If E=2
+\Then \ClrText
+\Locate 1,1,"====== \->NIVEAU ======"
+\Locate 1,3,"1. FACILE"
+\Locate 1,4,"2. MOYEN"
+\Locate 1,5,"3. DIFFICILE"
+\Do
+\Getkey
+\LpWhile \Ans\<>72\ And \Ans\<>62\ And \Ans\<>52
+82-\Ans\->M
+R-M\->R
+\IfEnd
+\If \theta=1
+\Then 1\->\r
+0\->R
+\IfEnd
+\If \theta=2
+\Then \Locate 1,1,"== \->CHOISIR LA MAP =="
+\Locate 1,3,"0~9   NUMEROS DE MAP"
+\Locate 1,4,"[F1]  MAP ALEATOIRE"
+\Locate 1,6,"[F2]  MAP SAUVEGARDEE"
+\Do
+\Getkey\->F
+\If F=79
+\Then \Int 10\Ran#\->Q
+Q=0\=>71\->F
+Q=1\=>72\->F
+Q=2\=>62\->F
+Q=3\=>52\->F
+Q=4\=>73\->F
+Q=5\=>63\->F
+Q=6\=>53\->F
+Q=7\=>74\->F
+Q=8\=>64\->F
+Q=9\=>54\->F
+\IfEnd
+\LpWhile F\<>72\ And F\<>62\ And F\<>52\ And F\<>73\ And F\<>63\ And F\<>53\ And F\<>74\ And F\<>64\ And F\<>54\ And F\<>71\ And F\<>69
+\IfEnd
+\If \theta=3
+\Then \Locate 1,1,"==== \->GENERATEUR ===="
+\Locate 1,3,"[F1]  \-> EFFACER"
+\Locate 1,4,"[F2]  \-> MUR"
+\Locate 1,6,"[EXE] \-> JOUER"
+\Do
+\Getkey
+\LpWhile \Ans\<>31
+\ClrText
+1\->U~V
+147\->R
+\Do
+U\->C
+V\->D
+K=37\=>\Isz D
+K=38\=>\Dsz C
+K=28\=>\Dsz D
+K=27\=>\Isz C
+C=0\=>21\->C
+C=22\=>1\->C
+D=0\=>7\->D
+D=8\=>1\->D
+\Locate U,V," "
+2=\Mat A[V,U\=>\Locate U,V,"#"
+\Locate C,D,"+"
+C\->U
+D\->V
+\If K=79\ Or K=69
+\Then \If K=79
+\Then 3=\Mat A[D,C\=>\Isz R
+0\->\Mat A[D,C
+\Locate C,D," "
+\Else 0=\Mat A[D,C\=>R-1\->R
+2\->\Mat A[D,C
+\Locate C,D,"#"
+\IfEnd
+\Locate C,D,"+"
+\IfEnd
+\Do
+0\->K
+\Getkey\->K
+\LpWhile 0=K
+\LpWhile K\<>31
+\Locate U,V," "
+2=\Mat A[V,U\=>\Locate U,V,"#"
+\Mat A\->\Mat C
+\IfEnd
+\Do
+{2,5}\->\Dim \Mat B
+\theta\<>3\=>\Fill(0,\Mat A)
+1\->X~Y
+6\->G
+2\->H
+\theta=3\=>7\->G
+\theta=3\=>1\->H
+\theta\<>3\=>\ClrText
+\If \r
+\Then \ClrText
+\Locate 4,4,"---NIVEAU  ---"
+\Locate 14,4,\r-1
+\For 1\->J \To 200
+\Next 
+\ClrText
+\r=1\=>71\->F
+\r=2\=>72\->F
+\r=3\=>62\->F
+\r=4\=>52\->F
+\r=5\=>73\->F
+\r=6\=>63\->F
+\r=7\=>53\->F
+\r=8\=>74\->F
+\r=9\=>64\->F
+\r=10\=>54\->F
+\Isz \r
+\r=12\=>\Pi\->\r
+\IfEnd
+\If F=71
+\Then 2\->X~Y
+5\->G
+3\->H
+95\->R
+\For 1\->J \To 7
+\If J=1\ Or J=7
+\Then \Locate 1,J,"#####################"
+\For 1\->I \To 21
+2\->\Mat A[J,I
+\Next 
+\Else \Locate 1,J,"#                   #"
+2\->\Mat A[J,1
+2\->\Mat A[J,21
+\IfEnd
+\Next 
+\IfEnd
+\If F\ And F\<>71
+\Then \ClrText
+\If F=69
+\Then \Mat C\->\Mat A
+\For 1\->I \To 7
+\For 1\->J \To 21
+2=\Mat A[I,J\=>\Locate J,I,"#"
+\Next 
+\Next 
+\IfEnd
+\If F=72
+\Then 122\->R
+\For 2\->J \To 6
+\Locate 3,J,"#"
+\Locate 19,J,"#"
+2\->\Mat A[J,3
+2\->\Mat A[J,19
+\Next 
+\Locate 4,4,"###############"
+\For 4\->J \To 18
+2\->\Mat A[4,J
+\Next 
+\IfEnd
+\IfEnd
+\If F=62
+\Then 123\->R
+\For 2\->J \To 6
+\Locate 10,J,"#"
+\Locate 12,J,"#"
+2\->\Mat A[J,10
+2\->\Mat A[J,12
+\Next 
+\Locate 3,4,"#################"
+\For 3\->J \To 19
+2\->\Mat A[4,J
+\Next 
+0\->\Mat A[4,11
+\Locate 11,4," "
+\IfEnd
+\If F=52
+\Then 107\->R
+\Locate 2,6,"################"
+\Locate 5,2,"################"
+\For 2\->J \To 17
+2\->\Mat A[6,J
+2\->\Mat A[2,J+3
+\Next 
+\For 2\->J \To 6
+\Locate 2,J,"#"
+\Locate 20,J,"#"
+2\->\Mat A[J,2
+2\->\Mat A[J,20
+\Next 
+\IfEnd
+\If F=73
+\Then 103\->R
+\For 2\->J \To 6
+\Locate 9,J,"#"
+\Locate 13,J,"#"
+2\->\Mat A[J,9
+2\->\Mat A[J,13
+\Next 
+\Locate 3,2,"#################"
+\Locate 3,6,"#################"
+\Locate 10,2,"   "
+\Locate 10,6,"   "
+\For 3\->J \To 19
+2\->\Mat A[2,J
+2\->\Mat A[6,J
+\Next 
+\For 10\->J \To 12
+0\->\Mat A[2,J
+0\->\Mat A[6,J
+\Next 
+\IfEnd
+\If F=63
+\Then 107\->R
+\For 2\->J \To 14 \Step 12
+\For 0\->I \To 6
+2\->\Mat A[3,J+I
+2\->\Mat A[5,J+I
+\Locate J+I,3,"#"
+\Locate J+I,5,"#"
+\Next 
+\Next 
+\For 1\->I \To 6 \Step 5
+\For 10\->J \To 12 \Step 2
+2\->\Mat A[I,J
+2\->\Mat A[I+1,J
+\Locate J,I,"#"
+\Locate J,I+1,"#"
+\Next 
+\Next 
+\For 9\->J \To 13 \Step 4
+\For 2\->I \To 6 \Step 4
+2\->\Mat A[I,J
+\Locate J,I,"#"
+\Next 
+\Next 
+\IfEnd
+\If F=53
+\Then 104\->R
+\For 2\->I \To 20 \Step 3
+\For 2\->J \To 6
+\Locate I,J,"#"
+2\->\Mat A[J,I
+\Next 
+\Next 
+\For 3\->J \To 12 \Step 9
+2\->\Mat A[2,J
+2\->\Mat A[2,J+1
+2\->\Mat A[6,J+6
+2\->\Mat A[6,J+7
+\Locate J,2,"#"
+\Locate J+1,2,"#"
+\Locate J+6,6,"#"
+\Locate J+7,6,"#"
+\Next 
+\IfEnd
+\If F=74
+\Then 91\->R
+\Locate 5,3,"#############"
+\Locate 5,5,"#############"
+\For 5\->J \To 17
+2\->\Mat A[3,J
+2\->\Mat A[5,J
+\Next 
+\For 10\->J \To 12
+2\->\Mat A[1,J
+2\->\Mat A[7,J
+\Locate J,1,"#"
+\Locate J,7,"#"
+\Next 
+\For 1\->J \To 19 \Step 18
+\For 2\->I \To 5 \Step 3
+\For 0\->Q \To 2
+2\->\Mat A[I,J+Q
+2\->\Mat A[I+1,J+Q
+\Locate J+Q,I,"#"
+\Locate J+Q,I+1,"#"
+\Next 
+\Next 
+\Next 
+\IfEnd
+\If F=64
+\Then 93\->R
+\Locate 2,6,"###################"
+\For 2\->J \To 20
+2\->\Mat A[6,J
+\Next 
+\For 6\->J \To 14 \Step 8
+\For 0\->I \To 4
+2\->\Mat A[4,J+I
+2\->\Mat A[2,J+I+2
+\Locate J+I,4,"#"
+\Locate J+I+2,2,"#"
+\Next 
+\Next 
+\For 4\->J \To 20 \Step 8
+\For 2\->I \To 4
+2\->\Mat A[I,J
+J\<>20\=>2\->\Mat A[I,J+2
+\Locate J,I,"#"
+J\<>20\=>\Locate J+2,I,"#"
+\Next 
+\Next 
+2\->\Mat A[4,2
+2\->\Mat A[5,2
+2\->\Mat A[2,2
+2\->\Mat A[2,3
+\Locate 2,4,"#"
+\Locate 2,5,"#"
+\Locate 2,2,"#"
+\Locate 3,2,"#"
+\IfEnd
+\If F=54
+\Then 94\->R
+\Locate 1,3,"#####################"
+\Locate 1,5,"#####################"
+\Locate 10,3,"  "
+\For 1\->J \To 21
+2\->\Mat A[3,J
+2\->\Mat A[5,J
+\Next 
+0\->\Mat A[3,10
+0\->\Mat A[3,11
+\Locate 9,2,"#"
+2\->\Mat A[2,9
+\For 1\->J \To 3
+2\->\Mat A[7,J
+\Locate J,7,"#"
+\Next 
+\For 6\->J \To 7
+2\->\Mat A[J,9
+\Locate 9,J,"#"
+\Next 
+\For 9\->J \To 16
+2\->\Mat A[1,J
+\Locate J,1,"#"
+\Next 
+\IfEnd
+\For 1\->J \To M+1
+\Do
+\Int 21\Ran#+1\->A
+\Int G\Ran#+H\->B
+\LpWhile \Mat A[B,A
+\If J=M+1
+\Then 1\->\Mat A[B,A
+\Locate A,B,"*"
+\Else 2\->\Mat A[B,A
+\Locate A,B,"#"
+\IfEnd
+\Next 
+0\->C~E
+0\->T~V
+1\->S
+3\->N
+5\->L
+0\->Z
+\While 1
+\Isz N
+N=L\=>1\->N
+\Getkey
+\If \Ans=79
+\Then \Do
+\Getkey
+\LpWhile \Ans\<>31
+\IfEnd
+\If S
+\Then \If \Ans=28
+\Then 0\->S
+\(-)1\->T
+\IfEnd
+\If \Ans=37
+\Then 0\->S
+1\->T
+\IfEnd
+\Else \If \Ans=27
+\Then 0\->T
+1\->S
+\IfEnd
+\If \Ans=38
+\Then 0\->T
+\(-)1\->S
+\IfEnd
+\IfEnd
+X+S\->X
+Y+T\->Y
+X=0\=>21\->X
+X=22\=>1\->X
+Y=0\=>7\->Y
+Y=8\=>1\->Y
+\If \Mat B[1,N
+\Then 0\->\Mat A[\Mat B[2,N],\Mat B[1,N]
+\Locate \Mat B[1,N],\Mat B[2,N]," "
+\IfEnd
+\Locate X,Y,"O"
+\If 1=\Mat A[Y,X
+\Then \Isz L
+\Augment(\Mat B,[[0][0\->\Mat B
+\Do
+\Int 21\Ran#+1\->A
+\Int 7\Ran#+1\->B
+\LpWhile \Mat A[B,A
+1\->\Mat A[B,A
+\Locate A,B,"*"
+L=R\=>1\->Z
+\If L=25\ And \r
+\Then 2\->Z
+\r=\Pi\=>1\->Z
+\IfEnd
+\Else \Mat A[Y,X\=>1\->Z
+\IfEnd
+Z\=>\Break
+3\->\Mat A[Y,X
+X\->\Mat B[1,N
+Y\->\Mat B[2,N
+\WhileEnd
+Z=1\=>\Break
+\LpWhile 1
+\If \r=\Pi\ Or L=R
+\Then \ClrText
+\For 1\->J \To 6
+\Locate 1,J,"#"
+\Locate J,1,"#"
+\Next 
+\For 1\->J \To 14
+\Locate J+6,1,"#"
+\Locate J,7,"#"
+\Next 
+\For 1\->J \To 7
+\Locate 21,J,"#"
+\Locate J+14,7,"#"
+\Next 
+\Do
+\Getkey
+\Locate 8,4,"THE END"
+\Locate 8,4,"       "
+\LpWhile \Ans\<>31
+\Else \For 1\->J \To 7
+\Locate X,Y,"+"
+\Locate X,Y,"O"
+\Next 
+\For 1\->J \To 7
+\If J\<>4
+\Then \Locate 1,J,"#####################"
+\Else \Locate 1,J,"###### ~PERDU~ ######"
+\IfEnd
+\Next 
+\For 1\->J \To 6
+\Locate 1,J,"                     "
+\Next 
+\IfEnd
+\ClrText
+\Locate 7,2,"##########"
+\Locate 7,3,"# SCORE: #"
+\Locate 7,4,"##########"
+\Locate 8,6,"[      ]"
+\r\=>200(\r-2)+10L-50\->P
+\r=\Pi\=>2000\->P
+0=\r\=>10L-50\->P
+\Locate 10,6,P
+\Do
+\Getkey
+\LpWhile \Ans\<>31
+\WhileEnd
+%End

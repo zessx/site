@@ -1,0 +1,833 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:17646
+File Name:WBacMat
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\ClrText
+"WinBac v1.0"
+"By SamsamX"
+"sammuse A msn.com"
+\For 1\->A \To 200
+\Next 
+\ClrText
+0\->K
+1\->P
+\ViewWindow 1,127,0,1,63
+\BG-None
+\AxesOff
+\Do
+\If P=1
+\Then \ClrGraph
+\Text 2,1,"------- MATHEMATIQUES ------"
+\F-Line 1,8,128,8
+\Text 10,1,"1. ETUDE GLOBALE DES SUITES"
+\Text 16,1,"2. ETUDE LOCALE DES SUITES"
+\Text 22,1,"3. CONTINUITE ET DERIVATION"
+\Text 28,1,"4. EXPONENTIELLE"
+\Text 34,1,"5. LOGARITHME NEPERIEN"
+\Text 40,1,"6. CROISSANCES COMPAREES"
+\Text 46,1,"7. INTEGRALES ET PRIMITIVES"
+\Text 52,1,"8. COMPLEXES"
+\Text 58,1,"[1\slash2]"
+\Do
+\Getkey\->K
+\LpWhile K\<>29\ And K\<>72\ And K\<>62\ And K\<>52\ And K\<>73\ And K\<>63\ And K\<>53\ And K\<>74\ And K\<>64\ And K\<>69
+K=29\=>\Prog "WBACSTO"
+K=69\=>2\->P
+\IfEnd
+\If P=2
+\Then \ClrGraph
+\Text 2,1,"------- MATHEMATIQUES -------"
+\F-Line 1,8,128,8
+\Text 10,1,"1. PLANS DE L'ESPACE"
+\Text 16,1,"2. PRODUIT SCALAIRE"
+\Text 22,1,"3. CONDITION\(-), INDEPEND\(-)"
+\Text 28,1,"4. PROBABILITES, COMBINATOIRE"
+\Text 34,1,"5. LOIES CONTINUES"
+\Text 58,1,"[2\slash2]"
+\Do
+\Getkey\->K
+\LpWhile K\<>29\ And K\<>72\ And K\<>62\ And K\<>52\ And K\<>73\ And K\<>63\ And K\<>79
+K=29\=>\Prog "WBACSTO"
+K=79\=>1\->P
+\IfEnd
+\LpWhile K=79\ Or K=69
+\If K=72\ And P=1
+\Then \ClrGraph
+\Text 2,1,"--- ETUDE GLOBALE DES SUITES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"SUITE ARITHMETIQUE :"
+\Text 16,1,"U(N+1)=U(N)+R (R:RAISON)"
+\Text 22,1,"U(N)=U(P)+(N-P)R"
+\Text 28,1,"U(P) : PREMIER TERME."
+\Text 34,1,"R>0 : LIM(U(N),+INF)=+INF"
+\Text 40,1,"R<0 : LIM(U(N),+INF)=-INF"
+\Text 46,1,"\Sum(U(N),A,B)=(B-A+1)*"
+\Text 52,1," (U(A)+U(B))\slash2"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"--- ETUDE GLOBALE DES SUITES ---"
+\F-Line 1,8,128,8
+\Text 10,1,"SUITE GEOMETRIQUE :"
+\Text 16,1,"U(N+1)=U(N)*Q (Q:RAISON)"
+\Text 22,1,"U(N)=Q^(N-P)*U(P)"
+\Text 28,1,"U(P) : PREMIER TERME."
+\Text 34,1,"Q>1 : LIM(U(N),+INF)=+INF"
+\Text 40,1,"\(-)1<Q<1 : LIM(U(N),+INF)=0"
+\Text 46,1,"\Sum(U(N),A,B)=(U(A)-"
+\Text 52,1," U(A)*Q^(B-A+1))\slash(1-Q)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"--- ETUDE GLOBALE DES SUITES ---"
+\F-Line 1,8,128,8
+\Text 10,1,"RAISONNEMENT PAR RECURRENCE:"
+\Text 16,1,"INITIAL\Dms, HERITAGE,CONCLUS\Dms."
+\Text 22,1,"A\<=B <=> A+K\<=B+K"
+\Text 28,1,"A\<=B <=> AK\<=BK"
+\Text 34,1,"A\<=B ET C\<=D => A+C\<=B+D"
+\Text 40,1,"SUITE MAJOREE : U(N)\<=M"
+\Text 46,1,"SUITE MINOREE : U(N)\>=m"
+\Text 52,1,"SUITE BORNEE : m\<=U(N)\<=M"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"--- ETUDE GLOBALE DES SUITES ---"
+\F-Line 1,8,128,8
+\Text 10,1,"K>0 => U ET KU ONT MEME"
+\Text 16,1,"SENS DE VARIATION."
+\Text 22,1,"U ET V ONT MEME SENS DE VAR\Dms"
+\Text 28,1," => V\Deg>U CROISSANTE."
+\Text 34,1,"U(N+1)\>=U(N) <=> CROISSANTE"
+\Text 40,1,"U(N+1)\<=U(N) <=> DECROISSANTE"
+\Text 46,1,"U(N+1)=U(N) <=> CONSTANTE"
+\Text 52,1,"S'IL N'Y A QU'UN SENS DE"
+\Text 58,1,"VAR\Dms, LA SUITE EST MONOTONE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=62\ And P=1
+\Then \ClrGraph
+\Text 2,1,"--- ETUDE LOCALE DES SUITES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"UNE SUITE CONVERGE VERS L"
+\Text 16,1,"SSI TOUT INTERVALLE OUVERT"
+\Text 22,1,"I CONTENANT L CONTIENT"
+\Text 28,1,"TOUS LES TERMES DE LA SUITE"
+\Text 34,1,"A PARTIR D'UN CERTAIN RANG."
+\Text 40,1,"L : LIMITE DE LA SUITE."
+\Text 46,1,"DIVERGENT\<>CONVERGENT"
+\Text 52,1,"SUITE CONVERGENTE => BORNEE"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"--- ETUDE LOCALE DES SUITES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"THEOREME DES GENDARMES :"
+\Text 16,1,"SI LIM(U(N))=L, LIM(V(N))=L"
+\Text 22,1,"ET U(N)\<=W(N)\<=V(N)"
+\Text 28,1,"ALORS LIM W(N)=L"
+\Text 34,1,"UNE SUITE CROISSANTE"
+\Text 40,1,"ET MAJOREE CONVERGE."
+\Text 46,1,"UNE SUITE DECROISSANTE"
+\Text 52,1,"ET MINOREE CONVERGE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"--- ETUDE LOCALE DES SUITES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"SI U(N) DECROI\(-), V(N) CROI\(-)"
+\Text 16,1,"U\>=V, LIM(U(N)-V(N))=0"
+\Text 22,1,"ALORS U ET V SONT ADJACENTES"
+\Text 28,1,"ET LIM(U(N)=LIM(V(N))"
+\Text 34,1,"LIM(F,INF)=L <=> Y=L EST"
+\Text 40,1,"ASYMPTOTE HORIZONTALE."
+\Text 46,1,"LIM(F,A)=INF <=> X=A EST"
+\Text 52,1,"ASYMPTOTE VERTICALE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"--- ETUDE LOCALE DES SUITES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"F(X)=AX+B+H(X) ET "
+\Text 16,1," LIM(H(X)),+INF)=0 <=>"
+\Text 22,1,"Y=AX+B EST ASYMP\(-) OBLIQUE."
+\Text 28,1,"CAS INDETERMINES :"
+\Text 34,1,"LIM(F+G,INF) SI LIM(F,INF)"
+\Text 40,1," =+INF ET LIM(G,INF)=-INF"
+\Text 46,1,"LIM(FG,INF) SI LIM(F,INF)"
+\Text 52,1," =0 ET LIM(G,INF)=INF"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"--- ETUDE LOCALE DES SUITES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"LIM(F\slashG,INF) SI LIM(G,INF)"
+\Text 16,1," =0, OU LIM(F,INF)=INF ET"
+\Text 22,1," LIM(G,INF)=INF"
+\Text 28,1,"TOUTE FONCT\Dms POLYNOME NON"
+\Text 34,1,"NULLE ADMET MEME LIMITE"
+\Text 40,1,"SON TERME DE + HAUT DEGRE."
+\Text 46,1,"LE THEOREME DES GENDARMES"
+\Text 52,1,"S'APPLIQUE AUSSI AUX"
+\Text 58,1,"FONCTIONS."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=52\ And P=1
+\Then \ClrGraph
+\Text 2,1,"- CONTINUITE ET DERIVATION --"
+\F-Line 1,8,128,8
+\Text 10,1,"F EST DERIVABLE EN A SSI"
+\Text 16,1,"LIM((F(A+H)-F(A))\slashH,H\->0)=L"
+\Text 22,1,"SOIT :"
+\Text 28,1,"LIM((F(X)-F(A))\slash(X-A),X\->A)=L"
+\Text 34,1,"ON NOTE F'(A) LE NOMBRE L."
+\Text 40,1,"LA TANGENTE EN F(A) EST :"
+\Text 46,1,"Y=F'(A)(A-A)+F(A)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"- CONTINUITE ET DERIVATION --"
+\F-Line 1,8,128,8
+\Text 10,1,"DEVELOPPEMENT LIMITE :"
+\Text 16,1,"F(A+H)=F(A)+HF'(A)+"
+\Text 22,1," H{EPSILON}(H)"
+\Text 28,1,"AVEC LIM({EPS}(H),H\->0)=0"
+\Text 34,1,"F'(\sin )=\cos "
+\Text 34,63,"F'(\cos )=-\sin "
+\Text 40,1,"F'(\sqrtX)=1\slash2\sqrtX"
+\Text 46,1,"F'(X^N)=NA^(N-1)"
+\Text 52,1,"F'(1\slashX^N)=-N\slashX^(N-1)"
+\Text 58,1,"F'(\tan X)=1\slash\cos \x^2X=1+\tan \x^2X"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"- CONTINUITE ET DERIVATION --"
+\F-Line 1,8,128,8
+\Text 10,1,"UN POLYNOME EST DERIVABLE"
+\Text 16,1,"SUR SON INTERVALLE DE"
+\Text 22,1,"DEFINITION."
+\Text 28,1,"SI U DEF\(-) ET DER\(-) SUR I ET"
+\Text 34,1,"V DER\(-) SUR J, AVEC U(I)"
+\Text 40,1,"APPARTENANT A J, ALORS"
+\Text 46,1,"V\Deg>U EST DER\(-) SUR I, ET :"
+\Text 52,1,"F'(X)=U'(X).V'(U(X))"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"- CONTINUITE ET DERIVATION --"
+\F-Line 1,8,128,8
+\Text 10,1,"POUR TOUT N\>=2 :"
+\Text 16,1,"(U^N)'=NU'U(N-1)"
+\Text 22,1,"ET SI U>0, ALORS :"
+\Text 28,1,"(\sqrtU)'=U'\slash2\sqrtU"
+\Text 34,1,"F EST CONTINUE EN A SSI :"
+\Text 40,1,"LIM(F(X),X\->A)=F(A)"
+\Text 46,1,"F DER\(-) SUR I => F CONTINUE"
+\Text 52,1,"LIM(U(N))=L ET F CONTINUE"
+\Text 58,1,"SUR I => LIM(F(U(N)))=F(L)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"- CONTINUITE ET DERIVATION --"
+\F-Line 1,8,128,8
+\Text 10,1,"SI F CONT\(-) ET STRICTEMENT"
+\Text 16,1,"MONOTONE SUR [A,B], POUR"
+\Text 22,1,"TT K DE [F(A),F(B)],"
+\Text 28,1,"L'EQUAT\Dms F(X)=K A UNE"
+\Text 34,1,"SOLUTION UNIQUE DE [A,B]."
+\Text 40,1,"F CROI\(-) <=> F'(X)\>=0"
+\Text 46,1,"F DECROI\(-) <=> F'(X)\<=0"
+\Text 52,1,"F CONSTANTE <=> F'(X)=0"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=73\ And P=1
+\Then \ClrGraph
+\Text 2,1,"-------- EXPONENTIELLE --------"
+\F-Line 1,8,128,8
+\Text 10,1,"\e^x(X)=\e^x(X)' ET \e^x(0)=1"
+\Text 16,1,"\e^x(-X)=1\slash\e^x(X)"
+\Text 22,1,"\e^x(X+Y)=\e^x(X)\e^x(Y)"
+\Text 28,1,"\e^x(X-Y)=\e^x(X)\slash\e^x(Y)"
+\Text 34,1,"\e^x(PX)=(\e^x(X))^P"
+\Text 40,1,"LIM(\e^xX,-INF)=0"
+\Text 46,1,"LIM(\e^xX,+INF)=+INF"
+\Text 52,1,"\e^xX EST STRICT- CROISSANTE"
+\Text 58,1,"\e^xX EST STRICT- POSITIVE"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-------- EXPONENTIELLE --------"
+\F-Line 1,8,128,8
+\Text 10,1,"LIM(\e^x(X)\slashX,+INF)=+INF"
+\Text 16,1,"LIM(X\e^x(X),-INF)=0"
+\Text 22,1,"(\e^x(U(X)))'=U'(X)\e^x(U(X))"
+\Text 28,1,"F DER- SUR R EST SOLUT\Dms DE"
+\Text 34,1,"L'EQUADIF Y'=KY SSI :"
+\Text 40,1,"F(X)=C\e^x(KX) (AVEC C CSTE)"
+\Text 46,1,"A ET B DEUX REELS, IL EXISTE"
+\Text 52,1,"UNE UNIQUE F, SOLUT\Dms DE Y'=KY"
+\Text 58,1,"ET VERIFIANT F(A)=B"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=63\ And P=1
+\Then \ClrGraph
+\Text 2,1,"--- LOGARITHME NEPERIEN ----"
+\F-Line 1,8,128,8
+\Text 10,1,"\In (\e^x(X))=X ET \In (1)=0"
+\Text 16,1,"\In (X) ET \e^x(X) SONT SYMETRIQUES"
+\Text 22,1,"PAR RAPPORT A Y=X."
+\Text 28,1,"\In (XY)=\In (X)+\In (Y)"
+\Text 34,1,"\In (1\slashX)=-\In (X)"
+\Text 40,1,"\In (X\slashY)=\In (X)-\In (Y)"
+\Text 46,1,"\In (X^P)=P\In (X)"
+\Text 52,1,"\In (\sqrtX)=1\slash2*\In (X)"
+\Text 58,1,"\In '(X)=1\slashX"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"--- LOGARITHME NEPERIEN ----"
+\F-Line 1,8,128,8
+\Text 10,1,"\In (A)>\In (B) <=> A>B"
+\Text 16,1,"U DER- ET STRICTEMENT"
+\Text 22,1,"POSITIVE SUR I, ALORS \In \Deg>U"
+\Text 28,1,"EST DER- SUR I, ET :"
+\Text 34,1,"F'(X)=U'(X)\slashU(X)"
+\Text 40,1,"LIM(\In X,+INF)=+INF"
+\Text 46,1,"LIM(\In X,0)=-INF"
+\Text 52,1,"LIM((\In X)\slashX,+INF)=0"
+\Text 58,1,"LIM(X(\In X),0)=0"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=53\ And P=1
+\Then \ClrGraph
+\Text 2,1,"----- CROISSANCES COMPAREES ------"
+\F-Line 1,8,128,8
+\Text 10,1,"LES SOLUT\Dms DE L'EQUADIFF-"
+\Text 16,1,"Y'=AY+B SONT DE LA FORME:"
+\Text 22,1,"F(X)=C\e^x(AX)-B\slashA"
+\Text 28,1,"IL EXISTE UNE UNIQUE SOLUT\Dms"
+\Text 34,1,"TQ F(X0)=Y0 (X0 ET Y0 FIXES)"
+\Text 40,1,"LIM(\In X\slashX^N,+INF)=0"
+\Text 46,1,"LIM(X^N\In X,0)=0"
+\Text 52,1,"LIM(\e^xX\slashX^N,+INF)=+INF"
+\Text 58,1,"LIM(X^N\e^xX,-UNF)=0"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----- CROISSANCES COMPAREES ------"
+\F-Line 1,8,128,8
+\Text 10,1,"A^B=\e^x(B\In A) (AVEC A>0)"
+\Text 16,1,"AVEC A>0 ET B>0 :"
+\Text 22,1,"\In (A^B)=B\In (A)"
+\Text 28,1,"A^(C+D)=(A^C)*(A^D)"
+\Text 34,1,"A^(-C)=1\slash(A^C)"
+\Text 40,1,"(A^C)^D=A^(CD)"
+\Text 46,1,"(AB)^C=(A^C)*(B^C)"
+\Text 52,1,"(A\slashB)^C=(A^C)\slash(B^C)"
+\Text 58,1,"\xrtA=A^(1\slashN)  (AVEC X=N)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----- CROISSANCES COMPAREES ------"
+\F-Line 1,8,128,8
+\Text 10,1,"N\<>0, X^N=A N'ADMET QU'UNE"
+\Text 16,1,"SOLUT\Dms DANS [0,+INF[."
+\Text 22,1,"SI F(X)=N\xrtX=X^(1\slashN) ALORS :"
+\Text 28,1,"F'(X)=(1\slashN)*X^((1\slashN)-1)"
+\Text 34,1,"SI A>1 : LIM(A^X,-INF)=0"
+\Text 40,1," LIM(A^X,+INF)=+INF"
+\Text 46,1,"SI 0<A<1 : LIM(A^X,+INF)=0"
+\Text 52,1," LIM(A^X,-INF)=+INF"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=74\ And P=1
+\Then \ClrGraph
+\Text 2,1,"-- INTEGRALES ET PRIMITIVES --"
+\F-Line 1,8,128,8
+\Text 10,1,"SI f POSITIVE :"
+\Text 16,1,"\Integral(f(x)dx,a,b)=A(E)"
+\Text 22,1,"SI f EST POSITIVE :"
+\Text 28,1,"\Integral(f(x)dx,a,b)=-A(E)"
+\Text 34,1,"\Integral(f(x)dx,a,b)=\Integral(f(x)dx,a,c)"
+\Text 40,1," +\Integral(f(x)dx,c,b)"
+\Text 46,1,"\Integral((f+g)(x)dx,a,b)=\Integral(f(x)dx,"
+\Text 52,1," a,b)+\Integral(g(x)dx,a,b)"
+\Text 58,1,"\Integral(Df(x)dx)=D\Integral(f(x)dx)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- INTEGRALES ET PRIMITIVES --"
+\F-Line 1,8,128,8
+\Text 10,1,"\Integral(f(x)dx,a,b)\>=0 SI f EST"
+\Text 16,1,"POSITIVE SUR [a,b]."
+\Text 22,1,"VALEUR MOYENNE DE f :"
+\Text 28,1,"{MU}=1\slash(b-a)*\Integral(f(x)dx,a,b)"
+\Text 34,1,"SI f EST BORNEE PAR m ET M"
+\Text 40,1,"ALORS m\<={MU}\<=M"
+\Text 46,1,"LA PRIMITIVE DE f EST F"
+\Text 52,1,"TELLE QUE F'=f"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- INTEGRALES ET PRIMITIVES --"
+\F-Line 1,8,128,8
+\Text 10,1,"F EST PRIMITIVE DE f SI :"
+\Text 16,1,"F(x)=\Integral(f(t)dt,a,x)"
+\Text 22,1,"AVEC a DEFINI."
+\Text 28,1,"TTE FONCT\Dms CONTINUE ADMET"
+\Text 34,1,"UNE INFINITE DE PRIMITIVES."
+\Text 40,1,"SI F EN EST UNE, LES AUTRES"
+\Text 46,1,"SERONT DE LA FORME F(x)+k."
+\Text 52,1,"AVEC a ET b FIXES, IL N'Y"
+\Text 58,1,"EN A QU'UNE TQ F(a)=b."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- INTEGRALES ET PRIMITIVES --"
+\F-Line 1,8,128,8
+\Text 10,1,"a FIXE. F(x)=\Integral(f(t)dt,a,x)"
+\Text 16,1,"EST LA SEULE S'ANNULANT"
+\Text 22,1,"POUR x=a. AVEC a ET b FIXES,"
+\Text 28,1,"\Integral(f(x)dx,a,b)=F(b)-F(a)"
+\Text 34,1,"PRIMITIVES USUELLES :"
+\Text 40,1,"A\->AX+K - 1\slash\sqrtX\->2\sqrtX+K"
+\Text 46,1,"1\slashX\->\In (X)+K OU \In (\(-)X)+K"
+\Text 52,1,"1\slashX\x^2\->-1\slashX+K - \e^xX\->\e^xX+K"
+\Text 58,1,"\sin X\->-\cos X+K - \cos X\->1X+K"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- INTEGRALES ET PRIMITIVES --"
+\F-Line 1,8,128,8
+\Text 10,1,"X^R\->(1\slash(R+1))*X^(R+1)+K"
+\Text 16,1,"PRIMITIVES DE COMPOSEES :"
+\Text 22,1,"U^P*U'\->(1\slash(P+1))*U^(P+1)"
+\Text 28,1,"U'\slashU\x^2\->-1\slashU - U'\slash\sqrtU\->2\sqrtU"
+\Text 34,1,"U'\slashU\->\In (U) OU \In (-U)"
+\Text 40,1,"U'\e^x(U)\->\e^x(U) - U'\cos U\->\sin U"
+\Text 46,1,"U'\sin U\->-\cos U"
+\Text 52,1,"\Integral(u(x)v'(x)dx,a,b)=[u(x)v(x),"
+\Text 58,1," a,b]-\Integral(u'(x)v(x)dx,a,b)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=64\ And P=1
+\Then \ClrGraph
+\Text 2,1,"----------- COMPLEXES -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"TOUT ELEMENT DE C S'ECRIT"
+\Text 16,1,"DE MANIERE UNIQUE Z=A+B\{i}"
+\Text 22,1,"(FORME ALGEBRIQUE). A=PATIE"
+\Text 28,1,"REELLE,B=PARTIE IMAGINAIRE."
+\Text 34,1,"Z+Z'=(A+A')+(B+B')\{i}"
+\Text 40,1,"ZZ'=(AA'-BB')+(AB'+A'B)\{i}"
+\Text 46,1,"M(A,B) REPRESENTE Z."
+\Text 52,1,"MODULE : r=\sqrt(A\x^2+B\x^2)=]Z["
+\Text 58,1,"ARGUMENT : \theta=ARG(Z)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----------- COMPLEXES -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"A=\r\cos \theta ET B=\r\sin \theta"
+\Text 16,1,"Z=\r(\cos \theta+\{i}\sin \theta) (FORME"
+\Text 22,1,"TRIGONOMETRIQUE)"
+\Text 28,1,"]ZZ'[=]Z[]Z'["
+\Text 34,1,"ARG(ZZ')=ARG(Z)+ARG(Z') (2\Pi)"
+\Text 40,1,"\e^x(\{i}\theta)=\cos \theta+\{i}\sin \theta POUR TT"
+\Text 46,1,"REEL \theta (NOT\Dms EXPONENTIELLE)"
+\Text 52,1,"Z=\r\e^x(\{i}\theta)"
+\Text 58,1,"\e^x(\{i}\theta)*\e^x(\{i}\theta')=\e^x\{i}(\theta+\theta')"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----------- COMPLEXES -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"(\e^x(\{i}\theta))^N=\e^x(\{i}N\theta)"
+\Text 16,1,"[[ (-Z-) = Z BARRE ]]"
+\Text 22,1,"(-Z-)=A-B\{i}"
+\Text 28,1,"Z EST REEL SI Z=(-Z-) ET"
+\Text 34,1,"IMAGIN- PUR SI Z+(-Z-)=0"
+\Text 40,1,"](-Z-)[=]Z["
+\Text 46,1,"ARG(-Z-)=-ARG(Z) (2\Pi)"
+\Text 52,1,"(-\e^x(\{i}\theta)-)=\e^x(-\{i}\theta)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----------- COMPLEXES -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"Z(-Z-)=]Z[\x^2"
+\Text 16,1,"Z+(-Z-)=2R\e^x(Z)"
+\Text 22,1,"Z-(-Z-)=2\{i}Im(Z)"
+\Text 28,1,"(-(Z+Z')-)=(-Z-)+(-Z'-)"
+\Text 34,1,"(-ZZ'-)=(--Z-)(-Z'-)"
+\Text 40,1,"L'EQUAT\Dms AZ+BZ+C ADMET TJR"
+\Text 46,1,"DES SOLUT\Dms DANS C."
+\Text 52,1,"NOTONS {DELTA}=B\x^2-4AC"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----------- COMPLEXES -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"SOLUTIONS :"
+\Text 16,1,"{DELTA}=0 => Z=-B\slash2A"
+\Text 22,1,"{DELTA}>0 => Z1=(-B-\sqrt{D})\slash2A"
+\Text 28,1," ET Z2=(-B+\sqrt{D})\slash2A"
+\Text 34,1,"{DELTA}<0 => Z1=(-B-\{i}\sqrt{D})\slash2A"
+\Text 40,1," ET Z1=(-B+\{i}\sqrt{D})\slash2A"
+\Text 46,1,"A TT Z=A+\{i}B ON ASSOCIE LE"
+\Text 52,1,"VECTEUR IMAGE (\->W)(A,B)."
+\Text 58,1,"KZ EST L'AFFIXE DE K(\->W)."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----------- COMPLEXES -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"]Z+Z'[\<=]Z[+]Z'["
+\Text 16,1,"B-A EST L'AFFIXE DE (\->AB)."
+\Text 22,1,"]B-A[=AB (SEGMENT)"
+\Text 28,1,"S.A\<>B, ARG(B-A)=((\->U),(\->AB))"
+\Text 34,1,"SI A\<>B ET C\<>D :"
+\Text 40,1,"((\->AB),(\->CD))=ARG((D-C)\slash(B-A))"
+\Text 46,1,"M' EST L'IMAGE DE M PAR LA"
+\Text 52,1,"TRANSLAT\Dms DE VECTEUR (\->W) D'"
+\Text 58,1,"AFFIXE {ALPHA} SSI Z'=Z+{A}"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----------- COMPLEXES -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"M' EST L'IMAGE DE M PAR L'"
+\Text 16,1,"HOMOTETIE DE CENTRE {OMEGA}"
+\Text 22,1,"ET DE RAPPORT K SSI"
+\Text 28,1,"Z'-W=K(Z-W)"
+\Text 34,1,"M' EST L'IMAGE DE M PAR LA"
+\Text 40,1,"ROT\Dms DE CENTRE {OMEGA} ET"
+\Text 46,1,"D'ANGLE {ALPHA} SSI"
+\Text 52,1,"Z'-W=\e^x(\{i}{ALPHA})*(Z-W)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=72\ And P=2
+\Then \ClrGraph
+\Text 2,1,"----- PLANS DE L'ESPACE -----"
+\F-Line 1,8,128,8
+\Text 10,1,"SOIT (A1,a1),(A2,a2),(An,an)"
+\Text 16,1,"n POINTS PONDERES."
+\Text 22,1,"\Sum(ai,i=1,n)\<>0\=>IL EXISTE G"
+\Text 28,1,"TQ \Sum(ai(\->GAi),i=1,n)=0"
+\Text 34,1,"G EST APPELE BARYCENTRE."
+\Text 40,1,"xG=(a1x1...+anxn)\slash(a1...+an)"
+\Text 46,1,"SI G BAR.(A,1)(B,2)(C,3)"
+\Text 52,1,"ET H BAR.(B,1)(C,1) ALORS"
+\Text 58,1,"G BAR.(A,1)(H,2+1)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----- PLANS DE L'ESPACE -----"
+\F-Line 1,8,128,8
+\Text 10,1,"IL Y A CONSERVAT\Dms DU BARYC-"
+\Text 16,1,"LORS D'UNE TRANSF\Dms DU PLAN."
+\Text 22,1,"SI G BAR.(A,a)(B,b) IL"
+\Text 28,1,"SE TROUVE SUR (AB). ET SI"
+\Text 34,1,"a ET b SONT DE MEME SIGNE"
+\Text 40,1,"AVEC a+b\<>0, G EST SUR [AB]."
+\Text 46,1,"SI G BAR.(A,a)(B,b)(C,c)"
+\Text 52,1,"ET a+b+c\<>0, ALORS G EST"
+\Text 58,1,"DANS (ABC). ET SI a,b,c..."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----- PLANS DE L'ESPACE -----"
+\F-Line 1,8,128,8
+\Text 10,1,"... SONT DE MEME SIGNE, G"
+\Text 16,1,"EST DANS LE TRIANGLE ABC."
+\Text 22,1,"L'ENSEMBLE DES M(x,y,z)"
+\Text 28,1,"AVEC x=x0+at, y=y0+bt ET"
+\Text 34,1,"z=z0+ct EST LA DROITE D"
+\Text 40,1,"PASSANT PAR A(x0,y0,z0) ET"
+\Text 46,1,"DIRIGE PAR (\->U)(a,b,c)."
+\Text 52,1,"CE SYSTEME EST APPELE"
+\Text 58,1,"REPRES\Dms PARAMETRIQUE DE D."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=62\ And P=2
+\Then \ClrGraph
+\Text 2,1,"- PRODUIT SCALAIRE DANS L'ESPACE -"
+\F-Line 1,8,128,8
+\Text 10,1,"(\->U).(\->V)=U*V*\cos ((\->U),(\->V))"
+\Text 16,1," =XX'+YY'+ZZ'"
+\Text 22,1," =((U+V)\x^2-U\x^2-V\x^2)\slash2"
+\Text 28,1,"AL KASHI:A\x^2=B\x^2+C\x^2-2BC\cos A"
+\Text 34,1,"(\->U)(X,Y,Z) : U=\sqrt(X\x^2+Y\x^2+Z\x^2)"
+\Text 40,1,"((\->U)+(\->V))\x^2=U\x^2+2((\->U)."
+\Text 46,1," (\->V))+V\x^2"
+\Text 52,1,"((\->U)+(\->V)).((\->U)-(\->V))=U\x^2-V\x^2"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"- PRODUIT SCALAIRE DANS L'ESPACE -"
+\F-Line 1,8,128,8
+\Text 10,1,"LE VECTEUR (\->N) NORMAL AU"
+\Text 16,1,"PLAN P EST ORTHONAL A TOUT"
+\Text 22,1,"VECTEUR DU PLAN."
+\Text 28,1,"EQUAT\Dms D'UN PLAN DE VECTEUR"
+\Text 34,1,"(\->N)(A,B,C) : AX,BY,CZ+D=0"
+\Text 40,1,"SOIT M(X,Y,Z) ET (P) UN"
+\Text 46,1,"PLAN. H LE PROJETE ORTHOG-"
+\Text 52,1,"DE M SUR (P) : MH=\Abs (AX+BY+CZ)\slash\sqrt(A\x^2+B\x^2+C\x^2)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=52\ And P=2
+\Then \ClrGraph
+\Text 2,1,"-- CONDITIONNEMENT, DEPENDANCES --"
+\F-Line 1,8,128,8
+\Text 10,1,"A ET B DEUX EVENEMENTS,"
+\Text 16,1,"PB(A)=\ProbP(A ET B)\slash\ProbP(B)"
+\Text 22,1,"\ProbP(A ET B)=PB(A)\ProbP(B)=PA(B)\ProbP(A)"
+\Text 28,1,"A ET B SONT INDEPENDANTS SI:"
+\Text 34,1,"PA(B)=\ProbP(B)"
+\Text 40,1,"OU PB(A)=\ProbP(A)"
+\Text 46,1,"OU \ProbP(A ET B)=\ProbP(A)*\ProbP(B)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- PROBABILITES ET COMBINATOIRE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"A ET B SONT INDEPENDANTS SI:"
+\Text 16,1,"\ProbP(A=a ET B=b)=\ProbP(A=a)\ProbP(B=b)"
+\Text 22,1,"AVEC a ET b DES VALEURS"
+\Text 28,1,"PRISES PAR A ET B."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=73\ And P=2
+\Then \ClrGraph
+\Text 2,1,"-- PROBABILITES ET COMBINATOIRE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"LOI EQUIREPARTIE : TOUTE LES"
+\Text 16,1,"ISSUES ONT MEME PROBABILITE."
+\Text 22,1,"P : NOMBRE DE TIRAGES"
+\Text 28,1,"N : NBRE D'ISSUES AU DEPART"
+\Text 34,1,"AVEC REMISE, LE NOMBRE DE"
+\Text 40,1,"LISTES POSSIBLES EST N^P."
+\Text 46,1,"SANS REMISE, IL EST DE"
+\Text 52,1,"{PI}(N-K,K=0,P+1)"
+\Text 58,1,"({PI} REPRESENTE LE PRODUIT)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- PROBABILITES ET COMBINATOIRE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"EN TIRAGE SIMULTANES, LE"
+\Text 16,1,"NOMBRE DE COMBINAISONS P"
+\Text 22,1,"PARMI N EST NOTE (N P)"
+\Text 28,1,"[[ N EST AU DESSUS DE P ]]"
+\Text 34,1,"(N P)={PI}(N-K,K=0,P+1)\slashP!"
+\Text 40,1," =N!\slash(P!*(N-P!))"
+\Text 46,1,"(N 0)=1  (N N)=1  (N 1)=N"
+\Text 52,1,"(N P)=(N N-P)"
+\Text 58,1,"(N-1 P-1)+(N-1 P)=(N P)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- PROBABILITES ET COMBINATOIRE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"\Sum((N K)A^K*B^(N-K),K=0,N)"
+\Text 16,1," =(A+B)^N"
+\Text 22,1,"LOI DE BERNOULLI : 2 ISSUES"
+\Text 28,1,"\ProbP(E)=\ProbP(X=0)1-P (ECHEC)"
+\Text 34,1,"\ProbP(S)=\ProbP(X=1)=P (SUCCES)"
+\Text 40,1,"E(X)=P (ESPERANCE)"
+\Text 46,1,"V(X)=\ProbP(1-P) (VARIANCE)"
+\Text 52,1,"AVEC X UNE VALEUR ALEATOIRE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- PROBABILITES ET COMBINATOIRE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"LOI BINOMIALE : N EPREUVES"
+\Text 16,1,"DE BERNOULLI."
+\Text 22,1,"\ProbP(Y=K)=(N K)P^K*(1-P)^(N-K)"
+\Text 28,1,"AVEC Y VARIABLE ALEATOIRE."
+\Text 34,1,"E(Y)=NP"
+\Text 40,1,"V(Y)=N\ProbP(1-P)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=63\ And P=2
+\Then \ClrGraph
+\Text 2,1,"--------- LOIS CONTINUES --------"
+\F-Line 1,8,128,8
+\Text 10,1,"ON APPELLE DENSITE DE PROBA"
+\Text 16,1,"TTE FONCT\Dms VERIFIANT :"
+\Text 22,1,"-F CONTINUE SUR I"
+\Text 28,1,"-F\>=0 SUR I"
+\Text 34,1,"-\Integral(F(X)dx,I)=1"
+\Text 40,1,"ON DEFINIT LA LOI DE PROBA"
+\Text 46,1,"P DE DENSITE F EN ASSOCIANT"
+\Text 52,1,"A TT INTERVALLE [A,B] DE I :"
+\Text 58,1,"\ProbP([A,B])=\Integral(F(X)dx,A,B)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"--------- LOIS CONTINUES --------"
+\F-Line 1,8,128,8
+\Text 10,1,"ON APPELLE LOI UNIFORME SUR"
+\Text 16,1,"I LA LOI DE PROBA DONT"
+\Text 22,1,"LA DENSITE EST LA FONCT\Dms"
+\Text 28,1,"CONSTANTE EGALE A 1\slash(D-C)."
+\Text 34,1,"AVEC I=[C,D]"
+\Text 40,1,"POUR CETTE LOI :"
+\Text 46,1,"\ProbP([A,B])=\Integral(1\slash(D-C)dx,A,B)"
+\Text 52,1," =(B-A)\slash(D-C)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"--------- LOIS CONTINUES --------"
+\F-Line 1,8,128,8
+\Text 10,1,"ON APPELLE LOI EXPONENTIELLE"
+\Text 16,1,"SUR R+ LA LOI DE PROBA DONT"
+\Text 22,1,"LA DENSITE EST LA FONCT\Dms"
+\Text 28,1,"F(X)=K\e^x(-KX) AVEC K>0 FIXE."
+\Text 34,1,"POUR CETTE LOI :"
+\Text 40,1,"\ProbP([A,B])=\Integral(K\e^x(-KX)dx,A,B)"
+\Text 46,1," =[-\e^x(-KX),A,B]"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+%End
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:98
+File Name:WBACSTO
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\ClrText
+\ClrGraph
+\Locate 1,1,"\sqrt(9+25)+2"
+\Locate 11,2,"7.830951895"
+\Locate 1,3,"\Ans\slash1.2\EE\(-)3"
+\Locate 11,4,"6525.793246"
+\Do
+\Getkey
+\LpWhile \Ans\<>31
+%End

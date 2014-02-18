@@ -1,0 +1,187 @@
+%Header Record
+Format:TXT
+Communication SW:0
+Data Type:PG
+Capacity:1648
+File Name:WMaker
+Group Name:
+Password:
+Option1:NL
+Option2:
+Option3:
+Option4:
+%Data Record
+\ClrText
+"Wall Maker v1.0"
+"By SamsamX"
+"sammuse A msn.com"
+\For 1\->A \To 200
+\Next 
+\While 1
+{7,21\->\Dim \Mat A
+\ClrText
+1\->\theta
+"====== \->NIVEAU ====== "
+" 1. FACILE"
+" 2. MOYEN"
+" 3. DIFFICILE"
+" 4. DEMONIAQUE"
+" 5. ~~GENERER MAP~~"
+\Do
+\Do
+0\->K
+\Getkey\->K
+\LpWhile K=0
+K=72\=>0\->N
+K=62\=>13\->N
+K=52\=>26\->N
+K=73\=>39\->N
+\LpWhile K\<>72\ And K\<>62\ And K\<>52\ And K\<>73\ And K\<>63
+\If K=63
+\Then 0\->\theta
+\ClrText
+"==== \->GENERATEUR ==== "
+"[F1]  \-> RIEN"
+"[F2]  \-> MUR"
+"[F3]  \-> POMME"
+" "
+"[EXE] \-> JOUER"
+\Do
+\LpWhile \Getkey\<>31
+\ClrText
+0\->A~B
+1\->C~F
+\Do
+\If K=79\ Or K=69\ Or (K=59\ And AB=0)
+\Then \If K=79
+\Then 0\->\Mat A[D,C
+\Locate C,D," "
+\Else \If K=69
+\Then 1\->\Mat A[D,C
+\Locate C,D,"#"
+\Else 2\->\Mat A[D,C
+\Locate C,D,"*"
+C\->A
+D\->B
+\IfEnd
+\IfEnd
+1\->H
+\IfEnd
+K=37\=>D+1\->F
+K=38\=>C-1\->E
+K=27\=>C+1\->E
+K=28\=>D-1\->F
+E=0\=>21\->E
+E=22\=>1\->E
+F=0\=>7\->F
+F=8\=>1\->F
+\If 1=\Mat A[D,C
+\Then \Locate C,D,"#"
+\Else \If 2=\Mat A[D,C
+\Then \Locate C,D,"*"
+\Else \Locate C,D," "
+\IfEnd
+\IfEnd
+E\->C
+F\->D
+\Locate C,D,"+"
+\Do
+0\->K
+\Getkey\->K
+\LpWhile K=0
+\LpWhile K\<>31\ Or AB=0
+\If 1=\Mat A[D,C
+\Then \Locate C,D,"#"
+\Else \If 2=\Mat A[D,C
+\Then \Locate C,D,"*"
+\Else \Locate C,D," "
+\IfEnd
+\IfEnd
+\IfEnd
+1\->S~Y
+0\->W
+0\->Z
+\If \theta
+\Then \ClrText
+\For 1\->C \To N+1
+\Do
+\Int 21\Ran#+1\->A
+\Int 7\Ran#+1\->B
+\LpWhile \Mat A[B,A]=1\ Or AB=1
+\If C=N+1
+\Then \Locate A,B,"*"
+\Else \Locate A,B,"#"
+1\->\Mat A[B,A
+\IfEnd
+\Next 
+\IfEnd
+\Do
+\Int 20\Ran#\->I
+\Int 100\Ran#\->J
+X=0\=>21\->X
+X=22\=>1\->X
+Y=0\=>7\->Y
+Y=8\=>1\->Y
+\Mat A[Y,X]=1\=>\Goto1
+\Locate S,T," "
+\Locate X,Y,"O"
+\If \Abs (X-A)<2\ And \Abs (Y-B)<2
+\Then 1\->\Mat A[B,A
+\Locate A,B,"#"
+\If I=0
+\Then \Int 7\Ran#+1\->I
+\For 1\->C \To 21
+\Locate C,I,"#"
+0\->\Mat A[I,C
+\Next 
+\Locate 1,I,"       ~BONUS~       "
+\For 1\->J \To 200
+\Next 
+\Locate 1,I,"                     "
+\IfEnd
+\If J=0
+\Then \For 1\->J \To 7
+\Locate 1,J,"#####################"
+\Next 
+\Fill(0,\Mat A
+\For 1\->J \To 7
+\Locate 1,J,"                     "
+J=4\=>\Locate 5,4,"~SUPER BONUS~"
+\Next 
+\For 1\->J \To 200
+\Next 
+\ClrText
+\IfEnd
+\Isz Z
+\Do
+\Int 21\Ran#+1\->A
+\Int 7\Ran#+1\->B
+\LpWhile (A=X\ And B=Y)\ Or \Mat A[B,A]\<>0
+1\->\Mat A[B,A
+\Locate A,B,"*"
+\IfEnd
+X\->S
+Y\->T
+\Getkey\->K
+\If K=37\ Or K=28\ Or K=38\ Or K=27
+\Then 0\->V~W
+K=37\=>1\->W
+K=38\=>\(-)1\->V
+K=27\=>1\->V
+K=28\=>\(-)1\->W
+\IfEnd
+S+V\->X
+T+W\->Y
+\LpWhile 1
+\Lbl 1
+\ClrText
+\Locate 7,2,"#########"
+\Locate 7,3,"# PERDU #"
+\Locate 7,4,"#########"
+\Locate 8,6,"SCORE :"
+\Locate 8,7,"[     ]"
+\Locate 9,7,10Z(\Int (N/13)+1)
+\Do
+\LpWhile \Getkey\<>31
+\WhileEnd
+%End

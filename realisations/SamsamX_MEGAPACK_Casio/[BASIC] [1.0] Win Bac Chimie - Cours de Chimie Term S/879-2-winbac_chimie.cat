@@ -1,0 +1,496 @@
+%Header Record
+Format:MCS1
+Type Number:1
+File Name:WBACSTO
+Option Name:
+Communication SW:0
+Capacity:106
+Data Type:PG
+%Data Record
+Password:
+BaseN:0
+\ClrText
+\ClrGraph
+\Locate 1,1,"\sqrt(9+25)+2"
+\Locate 11,2,"7.830951895"
+\Locate 1,3,"\Ans\slash1.2\EE\(-)3"
+\Locate 11,4,"6525.793246"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\@00
+%End
+%Header Record
+Format:MCS1
+Type Number:1
+File Name:WBacChi
+Option Name:
+Communication SW:0
+Capacity:10546
+Data Type:PG
+%Data Record
+Password:
+BaseN:0
+\ClrText
+"WinBac Chimie v1.0"
+"By SamsamX"
+"sammuse A msn.com"
+\For 1\->A \To 200
+\Next 
+\ClrText
+0\->K
+1\->P
+\ViewWindow 1,127,0,1,63
+\BG-None
+\AxesOff
+\Do
+\If P=1
+\Then \ClrGraph
+\Text 2,1,"----------- CHIMIE -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"1. FACTEURS CINETIQUES"
+\Text 16,1,"2. SPECTROPHOTOMETRIE"
+\Text 22,1,"3. VITESSE DE REACTION"
+\Text 28,1,"4. REACTIONS A DOUBLE SENS"
+\Text 34,1,"5. ETAT D'EQUILIBRE"
+\Text 40,1,"6. REACTIONS ACIDOBASIQUES"
+\Text 46,1,"7. pH-METRIE"
+\Text 52,1,"8. EVOLUTION SPONTANEE"
+\Text 58,1,"[1\slash2]"
+\Do
+\Getkey\->K
+\LpWhile K\<>29\ And K\<>72\ And K\<>62\ And K\<>52\ And K\<>73\ And K\<>63\ And K\<>53\ And K\<>74\ And K\<>64\ And K\<>69
+K=29\=>\Prog "WBACSTO"
+K=69\=>2\->P
+\IfEnd
+\If P=2
+\Then \ClrGraph
+\Text 2,1,"----------- CHIMIE -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"1. LES PILES"
+\Text 16,1,"2. ELECTROLYSE"
+\Text 22,1,"3. ESTERIFICATION ET HYDROLYSE"
+\Text 28,1,"4. CHANGEMENT DE REACTIF"
+\Text 34,1,"5. LA CATALYSE"
+\Text 58,1,"[2\slash2]"
+\Do
+\Getkey\->K
+\LpWhile K\<>29\ And K\<>72\ And K\<>62\ And K\<>52\ And K\<>73\ And K\<>63\ And K\<>79
+K=29\=>\Prog "WBACSTO"
+K=79\=>1\->P
+\IfEnd
+\LpWhile K=79\ Or K=69
+\If K=72\ And P=1
+\Then \ClrGraph
+\Text 2,1,"------- FACTEURS CINETIQUES ------"
+\F-Line 1,8,128,8
+\Text 10,1,"OXYDANT:CAPTE DES ELECTRONS."
+\Text 16,1,"REDUCTEUR:CEDE DES ELECTRONS."
+\Text 22,1,"Ox+ne\(-)=Red"
+\Text 28,1,"n2Red1+n1Ox2\->n2Ox1+n1Red2"
+\Text 34,1,"UNE TRANSFORMAT\Dms RAPIDE NE"
+\Text 40,1,"PEUT PAS ETRE SUIVIE."
+\Text 46,1,"UN FACTEUR CINETIQUE"
+\Text 52,1,"MODIFIE LA DUREE POUR"
+\Text 58,1,"ATTEINDRE L'ETAT FINAL."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=62\ And P=1
+\Then \ClrGraph
+\Text 2,1,"------- SPECTROPHOTOMETRIE -------"
+\F-Line 1,8,128,8
+\Text 10,1,"LA COULEUR D'UNE SOLUT\Dms EST"
+\Text 16,1,"CELLE DES RADIAT\Dms REJETEES"
+\Text 22,1,"A=\log (I0\slashI) (A:ABSORBANCE)"
+\Text 28,1,"I0 : INT\(-) LUMI\(-) INITIALE"
+\Text 34,1,"I  : INT\(-) LUMI\(-) TRANSMISE"
+\Text 40,1,"A=kC (VALABLE SI LA LUMIERE"
+\Text 46,1,"EST MONOCH\(-), LA SOLUT\Dms"
+\Text 52,1,"DILUEE, HOMOGENE ET SANS"
+\Text 58,1,"REACT\Dms PHOTOCHIMIQUE"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=52\ And P=1
+\Then \ClrGraph
+\Text 2,1,"------ VITESSE DE REACTION -------"
+\F-Line 1,8,128,8
+\Text 10,1,"LORS D'UN TITRAGE, IL Y A"
+\Text 16,1,"CHANGEMENT DE REACTIF"
+\Text 22,1,"LIMITANT A L'EQUIVALENCE."
+\Text 28,1,"v=1\slashV*dx\slashdt [MOL\slashM3\slashS]"
+\Text 34,1,"v:VIT\(-) VOLUMIQUE DE REACT\Dms."
+\Text 40,1,"x(t1\slash2)=xf\slash2"
+\Text 46,1,"SI LA TRANSFORMAT\Dms EST"
+\Text 52,1,"TOTALE : xf=xMAX"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=73\ And P=1
+\Then \ClrGraph
+\Text 2,1,"---- REACTIONS A DOUBLE SENS -----"
+\F-Line 1,8,128,8
+\Text 10,1,"ACIDE : FOURNI DES (H+)"
+\Text 16,1,"BASE : CAPTE DES (H+)"
+\Text 22,1,"A=B+(H+)"
+\Text 28,1,"AMPHOLYTE : BASE ET ACIDE."
+\Text 34,1,"A1+B2\->B1+A2"
+\Text 40,1,"pH=\(-)\log [H3O+]"
+\Text 46,1,"[H3O+]=\10^x\(-)pH [MOL\slashL]"
+\Text 52,1,"LE pH\(-)METRE EST APPROXIMATIF"
+\Text 58,1,"(23\slash100 D'INCERTITUDE)."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- REACTIONS A DOUBLE SENS -----"
+\F-Line 1,8,128,8
+\Text 10,1,"xf EST MESURE S'IL N'Y A"
+\Text 16,1,"PLUS D'EVOLUTION."
+\Text 22,1,"xMAX EST MESURE QUAND IL"
+\Text 28,1,"NE RESTE QU'UN REACTIF."
+\Text 34,1,"{TAU}=xf\slashxMAX"
+\Text 40,1,"{TAU}:TAUX D'AVENCM\(-) FINAL."
+\Text 46,1,"xf\<>xMAX : EQUILIBRE"
+\Text 52,1,"ON PEUT LE DEPLACER EN"
+\Text 58,1,"MODIFIANT LES CONTRAINTES."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=63\ And P=1
+\Then \ClrGraph
+\Text 2,1,"-------- ETAT D'EQUILIBRE --------"
+\F-Line 1,8,128,8
+\Text 10,1,"G=1\slashR=I\slashU={SIGMA}S\slashl"
+\Text 16,1,"G : CONDUCTANCE"
+\Text 22,1,"{SIGMA}=({LAMBDA}C+)[C+]+"
+\Text 28,1," ({LAMBDA}A-)[A-] [SIEM\slashM]"
+\Text 34,1,"{SIGMA} : CONDUCTIVITE."
+\Text 40,1,"Qr=([C]^C[D]^D)\slash([A]^A[B]^B)"
+\Text 46,1,"K=Qr,EQ (CSTE EQUILIBRE)"
+\Text 52,1,"K NE DEPEND QUE DE LA T\DmsC"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=53\ And P=1
+\Then \ClrGraph
+\Text 2,1,"-- REACTIONS ACIDOBASIQUES ---"
+\F-Line 1,8,128,8
+\Text 10,1,"AUTOPROTOLYSE DE L'EAU :"
+\Text 16,1," 2(H2O)\->(HO\(-))+(H3O+)"
+\Text 22,1,"(DANS TTE SOLUT\Dms AQUEUSE)"
+\Text 28,1,"Ke=[H3O+]EQ*[OH\(-)]EQ"
+\Text 34,1,"Ke:PRODUIT IONIQUE DE L'EAU"
+\Text 40,1,"Ka=[B]EQ[H3O+]EQ\slash[A]EQ"
+\Text 46,1,"Ka:CSTE D'ACIDITE"
+\Text 52,1,"pH=pKa+\log ([B]EQ\slash[A]EQ)"
+\Text 58,1,"pH=pKa : SOLUT\Dms NEUTRE"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- REACTIONS ACIDOBASIQUES ---"
+\F-Line 1,8,128,8
+\Text 10,1,"SI pKa AUG\(-), {TAU} DIM\(-)."
+\Text 16,1,"UN INDICATEUR COLORE EST UN"
+\Text 22,1,"COUPLE DONT HInd ET Ind\(-)"
+\Text 28,1,"ONT DES TEINTES DIFFERENTES."
+\Text 34,1,"ZONE DE VIRAGE: pKa(Ind)-1"
+\Text 40,1," <pH<pKa(Ind)+1"
+\Text 46,1,"LA SOLUT\Dms A UNE TEINTE DITE"
+\Text 52,1,"SENSIBLE"
+\Text 58,1,"K=KA1\slashKA2=\10^x(pKa2-pKa1)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=74\ And P=1
+\Then \ClrGraph
+\Text 2,1,"----------- pH-METRIE -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"TITRAGE ACIDYBASIQUE:DETERMINE"
+\Text 16,1,"CONCENTRAT\Dms DE L'ACIDE OU DE"
+\Text 22,1,"LA BASE DANS UNE SOLUT\Dms EN"
+\Text 28,1,"UTILISANT UNE REACT\Dms A-BAS."
+\Text 34,1,"A EQUIVALENCE, n(A)=n(B)"
+\Text 40,1,"LA REACT\Dms DE TITRAGE DOIT ETRE"
+\Text 46,1,"RAPIDE, TOALE ET UNIVOQUE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----------- pH-METRIE -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"A EQ\(-), SI LE REACTIF EST:"
+\Text 16,1,"\(-)BASE  : C(B)V(B)=C(A)V(E)"
+\Text 22,1,"\(-)ACIDE : C(A)V(A)=C(B)V(E)"
+\Text 28,1,"DETERMT\Dms GRAPHIQUE DE L'EQ\(-):"
+\Text 34,1,"-CONDUCTIMETRIE : CHANGEMENT"
+\Text 40,1,"DE LA PENTE."
+\Text 46,1,"-pHMETRIE : PIC DE LA COURBE"
+\Text 52,1,"dpH\slashdt (DERIVEE DE pH)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----------- pH-METRIE -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"METHODE TANGENTES PRALL\(-):"
+\Text 16,1,"ON TRACE DEUX TANGENTES DE"
+\Text 22,1,"CHAQUE COTE DU SAUT DE pH"
+\Text 28,1,"ET UNE 3eme AU MILIEU DES"
+\Text 34,1,"2 AUTRES. ELLE COUPE LA"
+\Text 40,1,"COURBE DE TITRAGE AU POINT"
+\Text 46,1,"E(V(E),pH)"
+\Text 52,1,"PAR COLORIMETRIE, L'EQ\(-) EST"
+\Text 58,1,"LE CNANGEMENT DE COULEUR."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=64\ And P=1
+\Then \ClrGraph
+\Text 2,1,"------ EVOLUTION SPONTANEE ------"
+\F-Line 1,8,128,8
+\Text 10,1,"SENS DIRECT  : A+B\->C+D"
+\Text 16,1,"SENS INVERSE : C+D\->A+B"
+\Text 22,1,"UN SYS- CHIMIQUE EVOLUE"
+\Text 28,1,"SPONTANEM- VERS L'EQUILIBRE"
+\Text 34,1,"Qr,i TEND VERS K."
+\Text 40,1,"LE CRITERE D'EVOLUT\Dms NE"
+\Text 46,1,"DONNE AUCUN RENSEIGNEMENT"
+\Text 52,1,"SUR LE TAUX D'AVANCEMENT"
+\Text 58,1,"FINAL DE LA REACTION."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=72\ And P=2
+\Then \ClrGraph
+\Text 2,1,"----------- LES PILES -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"LE TRANSFERT D'ELECTRONS D'"
+\Text 16,1,"UNE OXYDORED\Dms PEUT AVOIR"
+\Text 22,1,"LIEU DS UN PONT CONDUCTEUR."
+\Text 28,1,"UNE PILE CONVERTIT L'ENERGIE"
+\Text 34,1,"CHIMIQUE EN ELECTRIQUE."
+\Text 40,1,"UNE PILE CONTIENT DEUX DEMI"
+\Text 46,1,"PILES, RELIEES PAR UN PONT"
+\Text 52,1,"SALIN. UNE DEMI-PILE EST"
+\Text 58,1,"UNE ELECTRODE PTONGEANT..."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----------- LES PILES -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"DANS UN ELECTROLYTE. LE PONT"
+\Text 16,1,"SALIN EN CONTIENT UN AUSSI,"
+\Text 22,1,"PERMET LA CIRCUL\Dms DU COURANT,"
+\Text 28,1,"L'ELECTRONEUTRALITE."
+\Text 34,1,"ANODE : -POLE (-)"
+\Text 40,1,"-SIEGE DE L'OXYDAT\Dms"
+\Text 46,1,"-DEPART DES ELECTRONS"
+\Text 52,1,"SCHEMA D'UNE PILE :"
+\Text 58,1,"M\slashM'(AQ)\slash\slashN'(AQ)\slashN (M:ANODE)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----------- LES PILES -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"LORSQUE LA PILE A ATTEINT L'"
+\Text 16,1,"EQUILIBRE, ELLE EST USEE."
+\Text 22,1,"I=(n(e-)transf)F\slash{DELTA}t"
+\Text 28,1,"SI LA PILE EST USEE :"
+\Text 34,1,"QMAX=I{DELTA}tMAX"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=62\ And P=2
+\Then \ClrGraph
+\Text 2,1,"---------- ELECTROLYSE -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"UNE TRANSFORMAT\Dms FORCEE A"
+\Text 16,1,"BESOIN D'ENERGIE EXTERIEURE."
+\Text 22,1,"ELLE EVOLUE ALORS EN SENS"
+\Text 28,1,"INVERSE AU SPONTANE."
+\Text 34,1,"Qr S'ELOIGNE DE K DANS UNE"
+\Text 40,1,"TRANSFORMAT\Dms FORCEE."
+\Text 46,1,"L'ELECTROLYSE EST UNE"
+\Text 52,1,"TRANSF\Dms FORCEE DUE A LA"
+\Text 58,1,"CIRCULAT\Dms D'UN COURANT ELEC-."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---------- ELECTROLYSE -----------"
+\F-Line 1,8,128,8
+\Text 10,1,"Q=I{DELTA}t=(n(e-)transf)F"
+\Text 16,1,"Q S'EXPRIME EN COULOMB (C)."
+\Text 22,1,"EXEMPLE:L'ACCUMULATEUR EST"
+\Text 28,1,"LE SIEGE D'UNE OXYDORED\Dms"
+\Text 34,1,"PENDANT SA DECHARGE, ET D'"
+\Text 40,1,"UNE OXYDORED\Dms FORCEE"
+\Text 46,1,"PENDANT SA CHARGE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=52\ And P=2
+\Then \ClrGraph
+\Text 2,1,"-- ESTERIFICATION ET HYDROLYSE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"ALCOOL : (GPE ALKYLE)-OH"
+\Text 16,1,"NOMENCLATURE DES ALCOOLS :"
+\Text 22,1,"ON REMPLACE LE (-E) FINAL DE"
+\Text 28,1,"L'ALCANE PAR (-OL), PRECEDE"
+\Text 34,1,"DU NUM- DE L'ATOME LIE A -OH."
+\Text 40,1,"ACIDE CARBOXYLIQUE : -COOH"
+\Text 46,1,"NOMENCL- D'UN AC- CARBOX- :"
+\Text 52,1,"(ACIDE) + NOM DE L'ALCANE ET"
+\Text 58,1,"ON CHANGE (-E) EN (-OIQUE)."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- ESTERIFICATION ET HYDROLYSE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"ESTER : R-COO-R' AVEC R UN"
+\Text 16,1,"GPE ALKYLE OU UN H, ET R'"
+\Text 22,1,"UN GPE ALKYLE. NOMENCL- :"
+\Text 28,1,"NOM DE L'AC- CARBOX- EN"
+\Text 34,1,"CHANGEANT (-OIQUE)EN(-OATE),"
+\Text 40,1,"ET EN AJOUTANT LE NOM DU"
+\Text 46,1,"GPE ALKYLE LIE A L'OXYGENE."
+\Text 52,1,"ESTERIFICAT\Dms : ACIDE +"
+\Text 58,1," ALCOOL = ESTER + EAU"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- ESTERIFICATION ET HYDROLYSE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"HYDROLYSE : INV- ESTERIF\Dms."
+\Text 16,1,"RENDEMENT : r=n(EQ)\slashn(MAX)"
+\Text 22,1,"K=n(ES)*n(EAU)\slash(n(AC)*n(AL))"
+\Text 28,1,"(POUR L'ESTERIFICAT\Dms)"
+\Text 34,1,"K'=n(AC)*n(AL)\slash(n(ES)*n(EAU))"
+\Text 40,1,"(POUR L'HYDROLYSE)"
+\Text 46,1,"CES REACT\Dms SONT LENTES ET"
+\Text 52,1,"LIMITEES. POUR AUGMENTER LA"
+\Text 58,1,"VITESSE, ON UTILISE UN..."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- ESTERIFICATION ET HYDROLYSE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"...CATALYSEUR OU ON ELEVE"
+\Text 16,1,"LA TEMPERATURE."
+\Text 22,1,"ON PEUT AUGMENTER SON"
+\Text 28,1,"RENDEMENT EN AUGMENTANT LA"
+\Text 34,1,"PROPORTION D'UN REACTIF,"
+\Text 40,1,"OU EN PRELEVANT UN PRODUIT"
+\Text 46,1,"AU COURS DE SA FORMAT\Dms."
+\Text 52,1,"ON DEPLACE AINSI L'ETAT D'"
+\Text 58,1,"EQUIL- DANS LE SENS DIRECT."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=73\ And P=2
+\Then \ClrGraph
+\Text 2,1,"----- CHANGEMENT DE REACTIF ------"
+\F-Line 1,8,128,8
+\Text 10,1,"ANHYDRIDE D'ACIDE:-CO-O-CO-"
+\Text 16,1,"IL PROVIENT D'ELIMININAT\Dms"
+\Text 22,1,"D'UN H2O PENDANT LA REACT\Dms"
+\Text 28,1,"ENTRE 2 AC- CARBOX-."
+\Text 34,1,"SON NOM:ON REMPLACE (ACIDE)"
+\Text 40,1,"PAR (ANHYDRIDE)."
+\Text 46,1,"(AN-AC)+ALCOOL=ESTER+(AC-CAR)"
+\Text 52,1,"CETTE REACT\Dms D'ESTERIF\Dms EST"
+\Text 58,1,"RAPIDE ET TOTALE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----- CHANGEMENT DE REACTIF ------"
+\F-Line 1,8,128,8
+\Text 10,1,"HYDROLYSE BASIQUE D'ESTER :"
+\Text 16,1,"ESTER+(OH-)=ALCOOL+(ION..."
+\Text 22,1," CARBOXYLATE)"
+\Text 28,1,"L'ION EST LA BASE CONJUGEE"
+\Text 34,1,"DE L'AC-CARBOX- DE L'ESTER."
+\Text 40,1,"AUTRE NOM : SAPONIFICAT\Dms."
+\Text 46,1,"ELLE EST TOTALE, RAPIDE"
+\Text 52,1,"ET EXOTHERMIQUE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----- CHANGEMENT DE REACTIF ------"
+\F-Line 1,8,128,8
+\Text 10,1,"SAVON : TRIGLYCERIDES"
+\Text 16,1,"SAPONNIFIES. IL EST FAIT DE"
+\Text 22,1,"CARBOXYLXTES DE NA+ OU K+."
+\Text 28,1,"RELARGAGE:PRECIP\Dms DE SAVONS"
+\Text 34,1,"DS DES EAUX DURES,SALEES."
+\Text 40,1,"L'ION CARBOXYLXTE EST UNE"
+\Text 46,1,"MOLECULE AMPHIPHILE, AVEC"
+\Text 52,1,"UNE TETE IONIQUE HYDROPHILE"
+\Text 58,1,"ET UNE CHAINE HYDROPHOBE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=63\ And P=2
+\Then \ClrGraph
+\Text 2,1,"---------- LA CATALYSE ----------"
+\F-Line 1,8,128,8
+\Text 10,1,"UN CATALYSEUR AUGMENTE LA"
+\Text 16,1,"VITESSE SANS CHANGER LE"
+\Text 22,1,"RENDEMENT. LA CATALYSE EST"
+\Text 28,1,"HOMOGENE SI LES REACTIFS"
+\Text 34,1,"ONT LE MFME ETAT PHYSIQUE."
+\Text 40,1,"POUR UN SYSSTEME SUSCEPTIBLE"
+\Text 46,1,"D'EVOLUER SELON PLUSIEURS"
+\Text 52,1,"REAC\Dms, UN CAT- EST SELECTIF"
+\Text 58,1,"S'IL EN AVANTAGE UNE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd\@00
+%End

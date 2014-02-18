@@ -1,0 +1,832 @@
+%Header Record
+Format:MCS1
+Type Number:1
+File Name:WBACSTO
+Option Name:
+Communication SW:0
+Capacity:106
+Data Type:PG
+%Data Record
+Password:
+BaseN:0
+\ClrText
+\ClrGraph
+\Locate 1,1,"\sqrt(9+25)+2"
+\Locate 11,2,"7.830951895"
+\Locate 1,3,"\Ans\slash1.2\EE\(-)3"
+\Locate 11,4,"6525.793246"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\@00
+%End
+%Header Record
+Format:MCS1
+Type Number:1
+File Name:WBacPhy
+Option Name:
+Communication SW:0
+Capacity:17571
+Data Type:PG
+%Data Record
+Password:
+BaseN:0
+\ClrText
+"WinBac Physique v1.0"
+"By SamsamX"
+"sammuse A msn.com"
+\For 1\->A \To 200
+\Next 
+\ClrText
+0\->K
+1\->P
+\ViewWindow 1,127,0,1,63
+\BG-None
+\AxesOff
+\Do
+\If P=1
+\Then \ClrGraph
+\Text 2,1,"---------- PHYSIQUE ----------"
+\F-Line 1,8,128,8
+\Text 10,1,"1. ONDES PROGRESSIVES"
+\Text 16,1,"2. ONDES PERIODIQUES"
+\Text 22,1,"3. MODELE DE LA LUMIERE"
+\Text 28,1,"4. RADIOACTIVITE"
+\Text 34,1,"5. NOYAU, MASSE, ENERGIE"
+\Text 40,1,"6. DIPOLE RC"
+\Text 46,1,"7. DIPOLE RL"
+\Text 52,1,"8. DIPOLE RLC"
+\Text 58,1,"[1\slash2]
+\Do
+\Getkey\->K
+\LpWhile K\<>29\ And K\<>72\ And K\<>62\ And K\<>52\ And K\<>73\ And K\<>63\ And K\<>53\ And K\<>74\ And K\<>64\ And K\<>69
+K=29\=>\Prog "WBACSTO"
+K=69\=>2\->P
+\IfEnd
+\If P=2
+\Then \ClrGraph
+\Text 2,1,"---------- PHYSIQUE ----------"
+\F-Line 1,8,128,8
+\Text 10,1,"1. MECANIQUES DE NEWTON"
+\Text 16,1,"2. CHUTE LIBRE"
+\Text 22,1,"3. SATELLITES ET PLANETES"
+\Text 28,1,"4. SYSTEMES OSCILLANTS"
+\Text 34,1,"5. DISPOSITIF SOLIDE-RESSORT"
+\Text 40,1,"6. SYSTEMES MECANIQUES"
+\Text 46,1,"7. LE MONDE QUANTIQUE"
+\Text 52,1,"8. EVOLUTION TEMPORELLE"
+\Text 58,1,"[2\slash2]"
+\Do
+\Getkey\->K
+\LpWhile K\<>29\ And K\<>72\ And K\<>62\ And K\<>52\ And K\<>73\ And K\<>63\ And K\<>53\ And K\<>74\ And K\<>64\ And K\<>79
+K=29\=>\Prog "WBACSTO"
+K=79\=>1\->P
+\IfEnd
+\LpWhile K=79\ Or K=69
+\If K=72\ And P=1
+\Then \ClrGraph
+\Text 2,1,"----- ONDES PROGRESSIVES -----"
+\F-Line 1,8,128,8
+\Text 10,1,"PROPAGAT\Dms D'UNE PERTURBAT\Dms"
+\Text 16,1,"EN MILIEU MATERIEL SANS"
+\Text 22,1,"TRANSPORT DE MATIERE, ET"
+\Text 28,1,"AVEC PROPAGAT\Dms D'ENERGIE."
+\Text 34,1,"TRANSVERSALE : DEPLACEMENT"
+\Text 40,1,"DES POINTS PERPENDICULIRE"
+\Text 46,1,"A LA DIRECT\Dms."
+\Text 52,1,"LONGITUDINALE : DEPLACEMENT"
+\Text 58,1,"PARALLELE A LA DIRECT\Dms."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----- ONDES PROGRESSIVES -----"
+\F-Line 1,8,128,8
+\Text 10,1,"LA RENCONTRE DE DEUX ONDES"
+\Text 16,1,"NE LES MODIFIE PAS."
+\Text 22,1,"v=MM'\slashTAU [m.s\x^-1]"
+\Text 28,1,"v : CELERITE DE L'ONDE."
+\Text 34,1,"v CONSTANTE DANS UN MILIEU"
+\Text 40,1,"HOMOGENE."
+\Text 46,1,"LES ONDES PEUVENT AVOIR UNE,"
+\Text 52,1,"DEUX OU TROIS DIMENS\Dms."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=62\ And P=1
+\Then \ClrGraph
+\Text 2,1,"----- ONDES PERIODIQUES ------"
+\F-Line 1,8,128,8
+\Text 10,1,"DOUBLE PERIODICITE :"
+\Text 16,1,"- TEMPORELLE (T)"
+\Text 22,1,"- SPACIALE {LAMBDA}"
+\Text 28,1,"LAMBDA=vT=v\slashf [m]"
+\Text 34,1,"f : FREQUENCE DE L'ONDE."
+\Text 40,1,"SI v DEPEND DE f, LE MILIEU"
+\Text 46,1,"EST DIT DISPERSIF."
+\Text 52,1,"A LA RENCONTRE D'OBSTACLES"
+\Text 58,1,"LES ONDES SONT DIFFRACTEES"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"----- ONDES PERIODIQUES -----"
+\F-Line 1,8,128,8
+\Text 10,1,"IL Y A ALORS ETALEMENT DES"
+\Text 16,1,"DIRECTIONS SANS CHANGEMENT DE"
+\Text 22,1,"FREQUENCE OU DE CELERITE."
+\Text 28,1,"LA DIFFRACTION A LIEU SI a\<=f"
+\Text 34,1,"a : LARGEUR DE L'OSTACLE."
+\Text 40,1,"LA DIFFRACTION EST"
+\Text 46,1,"CARACTERISTIQUE DU MODELE"
+\Text 52,1,"ONDULATOIRE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=52\ And P=1
+\Then \ClrGraph
+\Text 2,1,"---- MODELE DE LA LUMIERE ----"
+\F-Line 1,8,128,8
+\Text 10,1,"UNE LUMIERE INDECOMPOSABLE"
+\Text 16,1,"EST MONOCHROMATIQUE."
+\Text 22,1,"INVERSE : POLYCHROMATIQUE."
+\Text 28,1,"LES ONDES LUMINEUSES SONT"
+\Text 34,1,"DE NATURE ONDULATOIRE."
+\Text 40,1,"c=3.00\EE8 [m.s\x^-1] DANS LE VIDE."
+\Text 46,1,"{LAMDA}=C\slash{NU} [m]"
+\Text 52,1,"LA COULEUR D'UNE MONOCH\(-)"
+\Text 58,1,"DEPENT DE {LAMBDA} OU {NU}."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- MODELE DE LA LUMIERE ----"
+\F-Line 1,8,128,8
+\Text 10,1,"UNE LUMIERE POLYCH\(-) EST LA"
+\Text 16,1,"SUPERPOSIT\Dms D'ONDES MONOCH\(-)"
+\Text 22,1,"\theta={LAMBDA}\slasha [rad]"
+\Text 28,1,"\theta : ANGLE DE DIFFRACTION."
+\Text 34,1,"SEUL{LAMBDA}DEPEND DU MILIEU"
+\Text 40,1,"n=c\slashv (SANS UNITE)"
+\Text 46,1,"n : INDICE DE REFRACT\Dms"
+\Text 52,1,"DECOMPOSIT\Dms : PHENOMENE DE"
+\Text 58,1,"DISPERT\Dms DES ONDES."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=73\ And P=1
+\Then \ClrGraph
+\Text 2,1,"------- RADIOACTIVITE --------"
+\F-Line 1,8,128,8
+\Text 10,1,"A : NB DE NUCLEONS"
+\Text 16,1,"Z : NB DE PROTONS"
+\Text 22,1,"N=A-Z : NB DE NEUTRONS"
+\Text 28,1,"ISOTOPES : Z=Z' ET A\<>A'"
+\Text 34,1,"LOIS DE SODDY : LORS D'UNE"
+\Text 40,1,"REACT\Dms NUCLEAIRE, LA CHARGE"
+\Text 46,1,"ELECTRIQUE ET LE NB DE"
+\Text 52,1,"NUCLEONS SONT CONSERVES."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"------- RADIOACTIVITE --------"
+\F-Line 1,8,128,8
+\Text 10,1,"{ALPHA} EMET UN [4\slash2]He"
+\Text 16,1,"{BETA}+ EMET UN [0\slash1]e"
+\Text 22,1,"{BETA}- EMET UN [0\slash\(-)1]e"
+\Text 28,1,"APRES LA REACTION, LE NOYAU"
+\Text 34,1,"FILS Y PEUT ETRE EXCITE, Y*"
+\Text 40,1,"IL SE DESEXCITE PAR UN"
+\Text 46,1,"RAYONMT\(-) ELECTROMAGNET\(-)"
+\Text 52,1,"[A\slashZ]Y* \-> [A\slashZ]Y+{GAMMA}"
+\Text 58,1,"RADIOACTIVITE EST ALEATOIRE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"------- RADIOACTIVITE --------"
+\F-Line 1,8,128,8
+\Text 10,1,"A=\(-){DELTA}N\slash{DELTA}t [Bq]"
+\Text 16,1,"A : ACTIVITE ECHANTILLON."
+\Text 22,1,"A(\ProbT(1\slash2))=A(t0)\slash2"
+\Text 28,1,"\ProbT(1\slash2) : DEMI\(-)VIE"
+\Text 34,1,"N(t)=N0*\e^x(\(-){LAMBDA}t)"
+\Text 40,1,"A(t)=A0*\e^x(\(-){LAMBDA}t)"
+\Text 46,1,"A(t)={LAMBDA}N(t)"
+\Text 52,1,"{TAU}=1\slash{LAMBDA} [s]"
+\Text 58,1,"\ProbT(1\slash2)=\In 2\slash{LAMB}={TAU}\In 2"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=63\ And P=1
+\Then \ClrGraph
+\Text 2,1,"-- NOYAUX, MASSE, ENERGIE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"L'ENERGIE DE LIAISON El EST"
+\Text 16,1,"L'ENERGIE QU'IL FAUT"
+\Text 22,1,"APPORTER A UN NOYAU AU"
+\Text 28,1,"REPOS POUR LE DIVISER"
+\Text 34,1,"EN SES NUCLEONS ISOLES."
+\Text 40,1,"1 eV=1.6021\EE8 J"
+\Text 46,1,"E=mc\x^2 [J]"
+\Text 52,1,"E : ENERGIE DE MASSE"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- NOYAUX, MASSE, ENERGIE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"{DELTA}E=({DELTA}m)c\x^2"
+\Text 16,1,"DEFAUT DE MASSE=(Zm(PROT-)"
+\Text 22,1," +(a-z)m(NEUTR-))-m(NOYAU)"
+\Text 28,1,"LE DEFAUT DE MASSE EST LA"
+\Text 34,1,"DIFFERNCE ENTRE LA MASSE DES"
+\Text 40,1,"NUCLEONS ET CELLE DU NOYAU."
+\Text 46,1,"LE DEFAUT DE MASSE EST"
+\Text 52,1,"SUPERIEUR A 0."
+\Text 58,1,"El=(DEFAUT DE MASSE)c\x^2"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- NOYAUX, MASSE, ENERGIE ---"
+\F-Line 1,8,128,8
+\Text 10,1,"TOUTES LES REACTIONS"
+\Text 16,1,"NUCLEAIRES LIBERENT DE"
+\Text 22,1,"L'ENERGIE."
+\Text 28,1,"LA FISSION DIVISE UN NOYAU"
+\Text 34,1,"LOURD EN DEUX NOYAUX PLUS"
+\Text 40,1,"LEGERS."
+\Text 46,1,"LA FUSION EST L'INVERSE"
+\Text 52,1,"DE LA FISSION."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=53\ And P=1
+\Then \ClrGraph
+\Text 2,1,"---------- DIPOLE RC ----------"
+\F-Line 1,8,128,8
+\Text 10,1,"UN CONDENSATEUR EST FAIT"
+\Text 16,1,"DE 2 ARMATURES SEPAREES"
+\Text 22,1,"PAR UN DIELECTRIQUE."
+\Text 28,1,"qA=-qB [C]"
+\Text 34,1,"L'INTENSITE DU COURANT"
+\Text 40,1,"EST LE DEBIT DE CHARGE."
+\Text 46,1,"i(t)=dqA\slashdt [A]"
+\Text 52,1,"qA(t)=CUab(t) [C]"
+\Text 58,1,"C : CAPACITE DU CONDENSATEUR"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---------- DIPOLE RC ----------"
+\F-Line 1,8,128,8
+\Text 10,1,"ECHELON MONTANT:"
+\Text 16,1,"dUab\slashdt=-Uab(t)\slashRC+E\slashRC"
+\Text 22,1,"SI Uab(t0)=0 V, ALORS"
+\Text 28,1,"Uab(t)=E(1-e(-t\slashRC))"
+\Text 34,1,"ECHELON DESCENDANT:"
+\Text 40,1,"dUab\slashdt=-Uab(t)\slashRC"
+\Text 46,1,"SI Uab(t0)=E V, ALORS"
+\Text 52,1,"Uab(t)=Ee(-t\slashRC)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---------- DIPOLE RC ----------"
+\F-Line 1,8,128,8
+\Text 10,1,"{TAU}=RC [s]"
+\Text 16,1,"{TAU} EST LA CONSTANTE"
+\Text 22,1,"DE TEMPS."
+\Text 28,1,"UN CONDENSATEUR STOCKE"
+\Text 34,1,"L'ENERGIE POUR L'UTILISER"
+\Text 40,1,"PLUS TARD."
+\Text 46,1,"Eelec(t)=C(Uab(t))\x^2 [J]"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=74\ And P=1
+\Then \ClrGraph
+\Text 2,1,"---------- DIPOLE RL ----------"
+\F-Line 1,8,128,8
+\Text 10,1,"BOBINE A UNE RESISTANCE r"
+\Text 16,1,"ET UNE INDUCTANCE L EXPRIMEE"
+\Text 22,1,"EN HENRY H. A SES BORNES :"
+\Text 28,1,"UL(t)=ri(t)+Ldi\slashdt"
+\Text 34,1,"ON UTILISE LA CONVENTION"
+\Text 40,1,"RECEPTEUR : (\->UL)=-(\->i)"
+\Text 46,1,"REP- A UNE TENS\Dms MONTANTE :"
+\Text 52,1,"di\slashdt=-Ri(t)\slashL+E\slashL"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---------- DIPOLE RL ----------"
+\F-Line 1,8,128,8
+\Text 10,1,"SOLUT\Dms QUAND i(t0)=0 :"
+\Text 16,1,"i(t)=E\slashR*(1-\e^x(-Rt\slashL))"
+\Text 22,1,"SI r=0 : UL(t)=E\e^x(-Rt\slashL)"
+\Text 28,1,"{TAU}=L\slashR (CSTE DE TEMPS)"
+\Text 34,1,"Emag(t)=1\slash2*Li\x^2(t)  [J]"
+\Text 40,1,"Eelec(t)=1\slash2*C(Uc\x^2(t)) [J]"
+\Text 46,1,"i({TAU})=0.63*E\slashR"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=64\ And P=1
+\Then \ClrGraph
+\Text 2,1,"---------- DIPOLE RLC ---------"
+\F-Line 1,8,128,8
+\Text 10,1,"LA DECHARGE D'1 CONDENSATEUR"
+\Text 16,1,"DANS UNE BOBINE PEUT FAIRE"
+\Text 22,1,"DES OSCIL\Dms ELECT- LIBRES."
+\Text 28,1,"R=r+r' (BOB- + RESIST-)"
+\Text 34,1,"R FAIBLE : PSEUDOPERIODIQUE"
+\Text 40,1,"R ELEVE : APERIODIQUE"
+\Text 46,1,"R=0 : PERIODIQUE"
+\Text 52,1,"DANS RLC, YA UN TRANSFERT"
+\Text 58,1,"CONTINUEL D'ENERGIE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---------- DIPOLE RLC ---------"
+\F-Line 1,8,128,8
+\Text 10,1,"E\ProbT(t) CSTE SI PERIODIQUE."
+\Text 16,1,"SINON, E\ProbT(t) DIMINUE AVEC"
+\Text 22,1,"L'EFFET JOULE"
+\Text 28,1,"d\x^2UC\slashdt\x^2+1\slashLC*UC(t)=0"
+\Text 34,1,"SOLUT\Dms DE L'EQUADIF :"
+\Text 40,1,"UC(t)=Um\cos (2\Pit\slashT0+{PHI})"
+\Text 46,1,"Um:AMPLITUDE DES OSCIL\Dms [V]"
+\Text 52,1,"T0 NE DEPEND QUE DE L ET C."
+\Text 58,1,"{PHI}:PHASE D'ORIGINE [rad]"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---------- DIPOLE RLC ---------"
+\F-Line 1,8,128,8
+\Text 10,1,"T0=2\Pi\sqrtLC"
+\Text 16,1,"i(t)=-Im\sin (2\Pit\slashT0+{PHI})"
+\Text 22,1,"Im=2\Pi\slashT0*CUm"
+\Text 28,1,"Um ET {PHI} DEPENDENT DES"
+\Text 34,1,"CONDIT\Dms INI- POUR UC ET i"
+\Text 40,1,"SI LE REGIME EST PERIODIQUE"
+\Text 46,1,"LA PERIODE T0 EST APPELEE"
+\Text 52,1,"PERIODE PROPRE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=72\ And P=2
+\Then \ClrGraph
+\Text 2,1,"---- MECANIQUE DE NEWTON -----"
+\F-Line 1,8,128,8
+\Text 10,1,"(\->OG)=x(\->i)+y(\->j)+z(\->k)"
+\Text 16,1,"(\->vG)(t)=d(\->OG)\slashdt"
+\Text 22,1,"1ere LOI DE NEWTON :"
+\Text 28,1,"\Sum((\->Fext))=0<=>(vG)=k"
+\Text 34,1,"2eme LOI DE NEWTON :"
+\Text 40,1,"\Sum((\->Fext))=m(\->aG)"
+\Text 46,1,"3eme LOI DE NEWTON :"
+\Text 52,1,"(\->Fa\slashb)=-(\->Fb\slasha)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- MECANIQUE DE NEWTON -----"
+\F-Line 1,8,128,8
+\Text 10,1,"LES LOIS 1 ET 2 SONT"
+\Text 16,1,"DANS UN REFERENCIEL"
+\Text 22,1,"GALILEEN."
+\Text 28,1,"(\->aG)(t)=d(\->vG)\slashdt [m.s-2]"
+\Text 34,1,"(\->aG) : VECT- ACCELERAT\Dms"
+\Text 40,1,"P=mg"
+\Text 46,1,"{PI}={RHO}fluide*Vg"
+\Text 52,1,"{PI} : POUSSEE D'ARCHIMEDE"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- MECANIQUE DE NEWTON -----"
+\F-Line 1,8,128,8
+\Text 10,1,"f=-kv{ALPHA}"
+\Text 16,1,"AVEC {ALPHA}=1"
+\Text 22,1,"DANS UN FLUIDE CALME,"
+\Text 28,1,"ET {ALPHA}=2 DANS UN"
+\Text 34,1,"FLUIDE TURBULENT."
+\Text 40,1,"(\->P)+(\->{PI})+(\->f)=m(\->aG)"
+\Text 46,1,"Eelec(t)=C(Uab(t))\x^2 [J]"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- MECANIQUE DE NEWTON -----"
+\F-Line 1,8,128,8
+\Text 10,1,"f=kv{ALPHA}"
+\Text 16,1,"AVEC {ALPHA}=1"
+\Text 22,1,"DANS UN FLUIDE CALME,"
+\Text 28,1,"ET {ALPHA}=2 DANS UN"
+\Text 34,1,"FLUIDE TURBULENT."
+\Text 40,1,"(\->P)+(\->{PI})+(\->f)=m(\->aG)"
+\Text 46,1,"dvZ\slashdt=g(1-{RHO}fluide"
+\Text 52,1," V\slashm)-kvZ{ALPHA}(t)\slashm"
+\Text 58,1,"dvL\slashdt=O"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- MECANIQUE DE NEWTON -----"
+\F-Line 1,8,128,8
+\Text 10,1,"RESOLUTION DE L'EQUADIF-"
+\Text 16,1,"PAR LE METHODE D'EULER:"
+\Text 22,1,"vZ(tn+1)=vZ(tn)+"
+\Text 28,1," (dvZ\slashdt)(tn)*{DELTA}t"
+\Text 34,1,"ON CONFRONTE LES"
+\Text 40,1,"RESULTATS DE {ALPHA}=1"
+\Text 46,1,"ET =2 POUR VALIDER LE"
+\Text 52,1,"BON MODELE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=62\ And P=2
+\Then \ClrGraph
+\Text 2,1,"------- CHUTE LIBRE ---------"
+\F-Line 1,8,128,8
+\Text 10,1,"EN CHUTE LIBRE, IL N'Y"
+\Text 16,1,"A QUE L'ACTION DU POIDS."
+\Text 22,1,"(\->g)=(\->P)\slashm"
+\Text 28,1,"(\->aG)=(\->g)"
+\Text 34,1,"aZ(t)=-g"
+\Text 40,1,"dvZ(t)\slashdt=-g"
+\Text 46,1,"vZ(t)=-gt"
+\Text 52,1,"z(t)=-1\slash2*gt\x^2"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"------- CHUTE LIBRE ---------"
+\F-Line 1,8,128,8
+\Text 10,1,"AVEC VITESSE INITIALE:"
+\Text 16,1,"vX(t)=v0\cos {ALPHA}"
+\Text 22,1,"vZ(t)=-gt+vO\sin {ALPHA}"
+\Text 28,1,"x(t)=vO(\cos {ALPHA})(t)"
+\Text 34,1,"z(t)=-1\slash2*gt\x^2+vO*"
+\Text 40,1," (\sin {ALPHA})(t)"
+\Text 46,1,"LE MOUVEMENT DE G EST"
+\Text 52,1,"ALORS UNE PARABOLE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=52\ And P=2
+\Then \ClrGraph
+\Text 2,1,"-- SATELLITES ET PLANETES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"1ere LOI DE KEPLER:"
+\Text 16,1,"DANS UN REF- HELIOCENTRIQUE"
+\Text 22,1,"LA TRAJECTOIRE D'UNE"
+\Text 28,1,"PLANETE EST UNE ELLIPSE"
+\Text 34,1,"AVEC LE SOLEIL COMME"
+\Text 40,1,"UN DES FOYERS."
+\Text 46,1,"(LOI DES ORBITES)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- SATELLITES ET PLANETES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"2eme LOI DE KEPLER:"
+\Text 16,1,"LE SEGMENT [SP] RELIANT"
+\Text 22,1,"LES CENTRES DU SOLEIL ET"
+\Text 28,1,"D'UNE PLANETE BALAYE DES"
+\Text 34,1,"AIRES EGALES PENDANT DES"
+\Text 40,1,"DUREES EGALES."
+\Text 46,1,"(LOI DES AIRES)"
+\Text 52,1,"IL Y A DONC ACCELERAT\Dms"
+\Text 58,1,"A L'APPROCHE DU SOLEIL."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- SATELLITES ET PLANETES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"3eme LOI DE KEPLER:"
+\Text 16,1,"T\x^2\slashL^3=k [s2\slashm3]"
+\Text 22,1,"T:PERIODE DE REVOLUT\Dms"
+\Text 28,1,"D'UNE PLANETE."
+\Text 34,1,"L:LONGUEUR DU DEMI-"
+\Text 40,1,"GRAND AXE DE L'ORBITE."
+\Text 46,1,"(LOI DES PERIODES)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- SATELLITES ET PLANETES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"EN MOUVEMENT CIRCULAIRE"
+\Text 16,1,"UNIFORME :"
+\Text 22,1,"(\->a)=v\x^2(\->Un)\slashr"
+\Text 28,1,"(\->a): VECT- ACCELERAT\Dms"
+\Text 34,1,"(\->Un): VECT- UNITAIRE"
+\Text 40,1,"G A UN MOUVEMENT CIRCULAIRE"
+\Text 46,1,"UNIFORME SI \Sum(\->Fext) EST"
+\Text 52,1,"CENTRIPETE OU SI (\->F)=mv\x^2\slashr"
+\Text 58,1,"ET RESTE CONSTANTE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- SATELLITES ET PLANETES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"(\->F(A\slashB))=\(-)(Gm(A)m(B))\slash(AB\x^2)*"
+\Text 16,1," (\->U(AB))"
+\Text 22,1,"DANS LE REFERENCIEL HELIOC\(-)"
+\Text 28,1,"LE MOUVEMENT D'UNE PLANETE"
+\Text 34,1,"EST CIRCULAIRE UNIFORME SI"
+\Text 40,1,"v=\sqrt(GMs\slashr) (Ms:MASSE SOL\(-))"
+\Text 46,1,"T=2\Pir\slashv=2\Pi\sqrt(r^3\slashGMs)"
+\Text 52,1,"POUR LA LUNE : v=\sqrt(GMT\slashr) ET"
+\Text 58,1,"T=2\Pi\sqrt((RT+Z)^3\slashGMT)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"-- SATELLITES ET PLANETES ----"
+\F-Line 1,8,128,8
+\Text 10,1,"UN SATELLITE GEOSTATIONNAIRE"
+\Text 16,1,"A UNE PERIODE DE REV\Dms EGALE"
+\Text 22,1,"A LA PERIODE DE ROT\Dms DE LA"
+\Text 28,1,"TERRE."
+\Text 34,1,"L'IMPESANTEUR EST L'ABSENCE"
+\Text 40,1,"APPARENTE DE PESANTEUR."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=73\ And P=2
+\Then \ClrGraph
+\Text 2,1,"---- SYSTEMES OSCILLANTS -----"
+\F-Line 1,8,128,8
+\Text 10,1,"SYS\(-) AYANT UN MOUVEMENT DE"
+\Text 16,1,"VA\(-)ET\(-)VIENT PERIODIQUE."
+\Text 22,1,"IL REVIENT A SA POSITION"
+\Text 28,1,"D'EQUILIBRE PAR OSCILLAT\Dms"
+\Text 34,1,"LIBRES AMORTIES."
+\Text 40,1,"CES OSCIL\Dms SONT ENTRETENUES"
+\Text 46,1,"SI UN SYS\(-) EXT\(-) FOURNIT"
+\Text 52,1,"L'ENERGIE POUR EVITER"
+\Text 58,1,"L'AMORTISSEMENT."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- SYSTEMES OSCILLANTS -----"
+\F-Line 1,8,128,8
+\Text 10,1,"ELLES SONT FORCEES SI LE"
+\Text 16,1,"SYS\(-) EXT\(-) IMPOSE LA PERIODE."
+\Text 22,1,"\theta(T)=((\->OG0),(\->OG))"
+\Text 28,1,"\theta(T) : ABSCISSE ANGULAIRE."
+\Text 34,1,"\thetam=\theta(T)MAX (\thetam:AMPLITUDE)"
+\Text 40,1,"SANS FROTTEMENTS, LA PERIODE"
+\Text 46,1,"DES OSCIL\Dms DE FAIBLE \thetam EST"
+\Text 52,1,"APPELEE PERIODE PROPRE T0."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- SYSTEMES OSCILLANTS -----"
+\F-Line 1,8,128,8
+\Text 10,1,"PENDULE SIMPLE : SOLIDE"
+\Text 16,1,"DE MASSE NULLE."
+\Text 22,1,"T0=2\Pi\sqrt(L\slashg)"
+\Text 28,1,"POUR UN PENDULE SIMPLE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=63\ And P=2
+\Then \ClrGraph
+\Text 2,1,"- DISPOSITIF SOLIDE-RESSORT -"
+\F-Line 1,8,128,8
+\Text 10,1,"SANS FROTTEMENTS, LA PERIODE"
+\Text 16,1,"DU DISPO- EST PROPRE : T0"
+\Text 22,1,"FROTTEMENTS : "
+\Text 28,1,"-FAIBLES : PSEUDOPERIOD-"
+\Text 34,1,"-IMPORTANTS : APERIOD-"
+\Text 40,1,"(\->F)=-k(\->A0A)"
+\Text 46,1,"k : RAIDEUR [N\slashM]"
+\Text 52,1,"(\->F) : FORCE DE RAPPEL"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"- DISPOSITIF SOLIDE-RESSORT -"
+\F-Line 1,8,128,8
+\Text 10,1,"d\x^2x\slashdt\x^2+k\slashm*x(t)-(fx)\slashm=0"
+\Text 16,1,"SANS FROTTEMENTS:(fx)=0"
+\Text 22,1,"x(t)=Xm\cos (2\Pit\slashT0+{PHI})"
+\Text 28,1,"Xm:AMPLITUDE OSCIL\Dms [M]"
+\Text 34,1,"Xm ET {PHI} DEPENDENT DES"
+\Text 40,1,"CONDIT\Dms INI- DU MOUVEMENT."
+\Text 46,1,"T0=2\Pi\sqrt(m\slashk)"
+\Text 52,1,"UN EXITATEUR IMPOSE UNE"
+\Text 58,1,"PERIODE AU RESSORT. CE..."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"- DISPOSITIF SOLIDE-RESSORT -"
+\F-Line 1,8,128,8
+\Text 10,1,"RESSORT EST ALORS APPELE"
+\Text 16,1,"RESONNATEUR. "
+\Text 22,1,"T(EXI)=T(RES)=T"
+\Text 28,1,"L'AMPLITUDE DES OSCIL\Dms DU"
+\Text 34,1,"RES- DEPEND DE T ET EST"
+\Text 40,1,"MAXIMAL A LA RESONANCE."
+\Text 46,1,"A LA RESONNANCE, LA PERIODE"
+\Text 52,1,"T DES OSCIL\Dms EST PROCHE DE"
+\Text 58,1,"LA T0 DU RESONNATEUR."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=53\ And P=2
+\Then \ClrGraph
+\Text 2,1,"---- SYSTEMES MECANIQUES -----"
+\F-Line 1,8,128,8
+\Text 10,1,"WAB(\->F)=(\->F).(\->AB)=FAB\cos \theta"
+\Text 16,1,"(POUR UNE FORCE CSTE)."
+\Text 22,1,"UNE FORCE PEUT TOUJOURS"
+\Text 28,1,"ETRE CONSIDEREE COMME CSTE"
+\Text 34,1,"SUR UN DEPLACEM- ELEMENTAIRE."
+\Text 40,1,"CE DEPLACM- ELEMENTAIRE"
+\Text 46,1,"SE NOTE (\->{DELTA}l),TANGENT"
+\Text 52,1,"A LA TRAJECTOIRE,INFINIEMT"
+\Text 58,1,"PETIT. [C'EST UN PT DELTA]"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- SYSTEMES MECANIQUES -----"
+\F-Line 1,8,128,8
+\Text 10,1,"{DELTA}W=(\->F).(\->{DELTA}l)"
+\Text 16,1,"{DELTA}W:TRAVAIL ELEMENTAIRE"
+\Text 22,1,"WAB(\->F)=\Sum({DELTA}W,1,+INF)"
+\Text 28,1,"C'EST LE TRAVAIL GLOBAL."
+\Text 34,1,"EXEMPLE:TRAVAIL DE LA FORCE"
+\Text 40,1,"APPLIQUEE PAR UN OPERATEUR"
+\Text 46,1,"SUR UN RESSORT :"
+\Text 52,1,"WAB(\->F(OP))=k\slash2*(xB\x^2-xA\x^2)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- SYSTEMES MECANIQUES -----"
+\F-Line 1,8,128,8
+\Text 10,1,"Epp(z)=mgz+K [J]"
+\Text 16,1,"(SI (Oz) EST VERS LE HAUT)"
+\Text 22,1,"WAB(\->F(OP))=Ep(B)-Ep(A)"
+\Text 28,1,"ENERGIE POTENT- ELASTIQUE"
+\Text 34,1,"D'UN RESSORT :"
+\Text 40,1,"Epe(x)=kx\x^2\slash2 [J]"
+\Text 46,1,"L'ENERGIE MECA- (Em) EST LA"
+\Text 52,1,"SOMME DES ENERG- CINETIQUE"
+\Text 58,1,"ET POTENTIELLE."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- SYSTEMES MECANIQUES -----"
+\F-Line 1,8,128,8
+\Text 10,1,"{DELTA}Em=W(\->f)"
+\Text 16,1,"Em=mv\x^2\slash2+mgz"
+\Text 22,1,"(SANS FROTTEMENTS)"
+\Text 28,1,"zMAX=(v0\sin {ALPHA})\x^2\slash2g"
+\Text 34,1,"Em=mv\x^2\slash2+kx\x^2\slash2 POUR UN"
+\Text 40,1,"DISPOSITIF SOLIDE-RESSORT."
+\Text 46,1,"vMAX=\sqrt(kxMAX\slashm)"
+\Text 52,1,"(SANS FROTTEMENTS)"
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd
+\If K=74\ And P=2
+\Then \ClrGraph
+\Text 2,1,"---- LE MONDE QUANTIQUE ------"
+\F-Line 1,8,128,8
+\Text 10,1,"L'ENERGIE ECHANGEE ENTRE LA"
+\Text 16,1,"MATIERE ET UN RAYONNEMENT"
+\Text 22,1,"ELECTROMAGN- EST POSITIVE:"
+\Text 28,1,"E=h{NU} [J]"
+\Text 34,1,"h:CSTE DE PLANK [J.S]"
+\Text 40,1,"SI LA MATIERE ABSORBE OU"
+\Text 46,1,"EMET DE L'ENERGIE PAR"
+\Text 52,1,"RAYONM-, CA NE SE FAIT QUE"
+\Text 58,1,"PAR PAQUETS MULTIPLES DE E."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- LE MONDE QUANTIQUE ------"
+\F-Line 1,8,128,8
+\Text 10,1,"\slash\slash\slashL'ENERGIE ECHANGEE ENTRE LA"
+\Text 16,1,"MATIERE ET UN RAYONNEMENT"
+\Text 22,1,"ELECTROMAGN- EST POSITIVE:"
+\Text 28,1,"E=h{NU} [J]"
+\Text 34,1,"h:CSTE DE PLANK [J.S]"
+\Text 40,1,"SI LA MATIERE ABSORBE OU"
+\Text 46,1,"EMET DE L'ENERGIE PAR"
+\Text 52,1,"RAYONM-, CA NE SE FAIT QUE"
+\Text 58,1,"PAR PAQUETS MULTIPLES DE E."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- LE MONDE QUANTIQUE ------"
+\F-Line 1,8,128,8
+\Text 10,1,"L'ENERGIE ECHANGEE ENTRE LA"
+\Text 16,1,"MATIERE ET UN RAYONNEMENT"
+\Text 22,1,"ELECTROMAGN- EST POSITIVE:"
+\Text 28,1,"E=h{NU} [J]"
+\Text 34,1,"h:CSTE DE PLANK [J.S]"
+\Text 40,1,"SI LA MATIERE ABSORBE OU"
+\Text 46,1,"EMET DE L'ENERGIE PAR"
+\Text 52,1,"RAYONM-, CA NE SE FAIT QUE"
+\Text 58,1,"PAR PAQUETS MULTIPLES DE E."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\ClrGraph
+\Text 2,1,"---- LE MONDE QUANTIQUE ------"
+\F-Line 1,8,128,8
+\Text 10,1,"L'ENERGIE ECHANGEE ENTRE LA"
+\Text 16,1,"MATIERE ET UN RAYONNEMENT"
+\Text 22,1,"ELECTROMAGN- EST POSITIVE:"
+\Text 28,1,"E=h{NU} [J]"
+\Text 34,1,"h:CSTE DE PLANK [J.S]"
+\Text 40,1,"SI LA MATIERE ABSORBE OU"
+\Text 46,1,"EMET DE L'ENERGIE PAR"
+\Text 52,1,"RAYONM-, CA NE SE FAIT QUE"
+\Text 58,1,"PAR PAQUETS MULTIPLES DE E."
+\Do
+\Getkey
+\LpWhile \Ans\<>31\ And \Ans\<>29
+\Ans=29\=>\Prog "WBACSTO"
+\IfEnd\@00
+%End
