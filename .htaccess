@@ -139,6 +139,7 @@ RewriteRule ^rib$ files/rib.png [L]
 RewriteRule ^cnis$ files/cnis.jpg [L]
 RewriteRule ^carte-identite$ files/cnis.jpg [L]
 RewriteRule ^cv$ files/CV_2012.pdf [L]
+RewriteRule ^bmac$ files/bmac.png [L]
 
 # Errors
 ErrorDocument 404 /
