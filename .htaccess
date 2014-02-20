@@ -111,7 +111,7 @@ Options -Indexes +FollowSymLinks
 </IfModule>
 
 RewriteEngine On
-RewriteBase /smarchal/v6/
+RewriteBase /
 
 # Domains
 RewriteCond %{HTTP_HOST} ^blog\.zes\.sx [NC]
