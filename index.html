@@ -1,26 +1,4 @@
 <!DOCTYPE html>
-<?php
-	function asset($filename)
-	{
-		$folders    = array(
-			'css'   => 'assets/css/',
-			'js'    => 'assets/js/',
-			'png'   => 'assets/img/',
-			'jpg'   => 'assets/img/',
-			'jpeg'  => 'assets/img/',
-			'ico'   => '',
-		);
-		$host       = 'http://'.$_SERVER['HTTP_HOST'].'/';
-		$extension  = preg_replace('/^.+\.(css|js|png|jpe?g|ico)$/i', '$1', $filename);
-		$folder     = $folders[$extension];
-		$file       = implode(array(
-			preg_replace('/^(.+)\..+$/i', '$1', $filename),
-			filemtime(dirname(__FILE__).'/'.$folder.$filename),
-			$extension
-			), '.');
-		return $host.$folder.$file;
-	}
-?>
 <html lang="en">
 
 <head>
@@ -31,9 +9,9 @@
 
 	<title>Samuel Marchal > Web Developer</title>
 
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300' rel='stylesheet' type='text/css'>
-	<link href="<?php echo asset('app.css') ?>" rel="stylesheet">
-	<link href="<?php echo asset('favicon.ico')?>" rel="shortcut icon" type="image/x-icon">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400' rel='stylesheet' type='text/css'>
+	<link href="assets/css/app.min.css" rel="stylesheet">
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 
 </head>
 
@@ -115,39 +93,52 @@
 
 					<article>
 						<h3><a href="http://smarchal.com/monsterflat" class="external" title="Monsterflat">Monsterflat</a></h3>
-						<aside class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/html5">html5</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/css3">css3</a>
+						<aside>
+							<img src="assets/img/works/monsterflat.png">
 						</aside>
 						<p>
-							Monsterflat is a pack of websites' logos using flat design.
+							Monsterflat is a pack of websites' logos using flat design. An iconic font based on it is planned in future.
 						</p>
+						<div class="labels">
+							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/html5">html5</a>
+							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/css3">css3</a>
+						</div>
 					</article>
 
 					<article>
 						<h3><a href="http://smarchal.com/twbscolor" class="external" title="TWBSColor">TWBSColor</a></h3>
-						<aside class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/twitter-bootstrap-3">twitter-bootstrap-3</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/css3">css3</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/sass">sass</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/less">less</a>
+						<aside>
+							<img src="assets/img/works/twbscolor.png">
 						</aside>
 						<p>
 							TWBSColor allows you to easily generate a new Bootstrap navbar with customized colors.
 						</p>
+						<div class="labels">
+							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/twitter-bootstrap-3">twitter-bootstrap-3</a>
+							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/css3">css3</a>
+							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/sass">sass</a>
+							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/less">less</a>
+						</div>
 					</article>
 
 					<article>
 						<h3><a href="http://smarchal.com/24ss" class="external" title="24SSgrid">24SSgrid</a></h3>
-						<aside class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/css3">css3</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/sass">sass</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/grid">grid</a>
+						<aside>
+							<img src="assets/img/works/24ss.png">
 						</aside>
 						<p>
 							24SSgrid is a solid grid for SASS. It use 24 columns by default, but is fully configurable.
 						</p>
+						<div class="labels">
+							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/css3">css3</a>
+							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/sass">sass</a>
+							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/grid">grid</a>
+						</div>
 					</article>
+
+					<h2>They talk about it</h2>
+					<a class="twitter-timeline" href="https://twitter.com/zessx/favorites" data-widget-id="435806969497014272">Tweets favoris de @zessx</a>
+
 				</div>
 			</div>
 		</div>
@@ -204,15 +195,18 @@
 	</footer>
 
 	<!-- Core JavaScript Files -->
-	<script src="<?php echo asset('jquery.min.js') ?>"></script>
-	<script src="<?php echo asset('jquery.easing.min.js') ?>"></script>
-	<script src="<?php echo asset('bootstrap.min.js') ?>"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.easing.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
 
-	<!-- Google Maps API Key - You will need to use your own API key to use the map feature -->
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+	<!-- Google Maps API -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdJeZJJPUiy8dcBh8VJvW1XXcZqykvCb0&sensor=false"></script>
+
+	<!-- Twitter API -->
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 	<!-- Custom JavaScript -->
-	<script src="<?php echo asset('app.min.js') ?>"></script>
+	<script src="assets/js/app.min.js"></script>
 
 </body>
 

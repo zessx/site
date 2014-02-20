@@ -18,6 +18,27 @@ $(function() {
     });
 });
 
+$('article').each(function() {
+    var link = $(this).find('h3 a').first();
+    link.on('click mousedown', function(event) {
+        event.preventDefault();
+    });
+    $(this).on('mousedown', function(event) {
+        var url = link.attr('href');
+        if(event.which == 2 ) {
+            window.open(url, '_blank');
+            event.preventDefault();
+        } else if(event.which == 1 ) {
+            if (event.ctrlKey) {
+                window.open(url, '_blank');
+            } else {
+                window.location.href = url;
+            }
+            event.preventDefault();
+        }
+    });
+});
+
 //Google Map Skin - Get more at http://snazzymaps.com/
 var myOptions = {
     zoom: 12,
@@ -44,7 +65,7 @@ var myOptions = {
         "featureType": "road.highway",
         "elementType": "geometry.fill",
         "stylers": [{
-            "color": "#000000"
+            "color": "#e74c3c"
         }, {
             "lightness": 17
         }]
@@ -52,17 +73,17 @@ var myOptions = {
         "featureType": "road.highway",
         "elementType": "geometry.stroke",
         "stylers": [{
-            "color": "#000000"
+            "color": "#c0392b"
         }, {
             "lightness": 29
         }, {
-            "weight": 0.2
+            "weight": 0.1
         }]
     }, {
         "featureType": "road.arterial",
         "elementType": "geometry",
         "stylers": [{
-            "color": "#000000"
+            "color": "#e74c3c"
         }, {
             "lightness": 18
         }]
@@ -70,7 +91,7 @@ var myOptions = {
         "featureType": "road.local",
         "elementType": "geometry",
         "stylers": [{
-            "color": "#000000"
+            "color": "#e74c3c"
         }, {
             "lightness": 16
         }]

@@ -5832,6 +5832,15 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 1px; }
 
+h1 small {
+  color: #e74d3c; }
+
+h2 {
+  font-weight: 400; }
+
+h3 {
+  font-weight: 400; }
+
 p {
   margin: 0 0 25px;
   font-size: 18px;
@@ -5843,13 +5852,13 @@ p {
     font-size: 20px;
     line-height: 1.6; } }
 a {
-  color: #28c3ab;
+  color: #e74d3c;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out; }
   a:hover, a:focus {
     text-decoration: none;
-    color: #1f9986; }
+    color: #d62d1a; }
 
 img::selection {
   background: 0 0; }
@@ -5860,12 +5869,12 @@ img::-moz-selection {
 ::-moz-selection {
   text-shadow: none;
   color: black;
-  background: #28c3ab; }
+  background: #e74d3c; }
 
 ::selection {
   text-shadow: none;
   color: black;
-  background: #28c3ab; }
+  background: #e74d3c; }
 
 /* --- Helper classes --- */
 .light {
@@ -5907,16 +5916,16 @@ i.animated:hover {
   transition: all .5s ease-in-out; }
 
 .btn-default {
-  border: 1px solid #28c3ab;
-  color: #28c3ab;
+  border: 1px solid #e74d3c;
+  color: #e74d3c;
   background-color: transparent; }
 
 .btn-default:hover,
 .btn-default:focus {
-  border: 1px solid #28c3ab;
+  border: 1px solid #e74d3c;
   outline: 0;
   color: black;
-  background-color: #28c3ab; }
+  background-color: #e74d3c; }
 
 .btn-huge {
   padding: 25px;
@@ -5924,12 +5933,12 @@ i.animated:hover {
 
 .label-default {
   color: black;
-  background-color: #28c3ab; }
+  background-color: #e74d3c; }
 
 .label-default[href]:hover,
 .label-default[href]:focus {
   color: black;
-  background-color: #1f9986; }
+  background-color: #d62d1a; }
 
 /* --- Header --- */
 .navbar {
@@ -6061,8 +6070,28 @@ i.animated:hover {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover; }
-  .works-section article .labels {
-    font-size: 20px; }
+  .works-section article {
+    position: relative;
+    padding: 24px 24px 24px 174px;
+    text-align: left;
+    min-height: 128px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out; }
+    .works-section article h3 {
+      margin-bottom: 5px; }
+    .works-section article p {
+      margin-bottom: 5px; }
+    .works-section article aside {
+      position: absolute;
+      top: 24px;
+      left: 24px; }
+    .works-section article .labels {
+      font-size: 18px; }
+    .works-section article:hover {
+      background: rgba(255, 255, 255, 0.2); }
 
 .work-monsterflat {
   background: #17a17f url(../img/logo-monsterflat.png) 0 0 no-repeat; }
@@ -6089,7 +6118,7 @@ i.animated:hover {
 .banner-social-buttons li a {
   font-size: 40px;
   padding-bottom: 5px;
-  border-bottom: 0px solid #1f9986; }
+  border-bottom: 0px solid #d62d1a; }
 
 .banner-social-buttons li:hover a {
   border-bottom-width: 10px; }
