@@ -5833,7 +5833,8 @@ h6 {
   letter-spacing: 1px; }
 
 h1 small {
-  color: #e74d3c; }
+  color: #e74d3c;
+  font-weight: 200; }
 
 h2 {
   font-weight: 400; }
