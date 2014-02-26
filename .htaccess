@@ -113,33 +113,12 @@ Options -Indexes +FollowSymLinks
 RewriteEngine On
 RewriteBase /
 
-# Domains
-RewriteCond %{HTTP_HOST} ^blog\.zes\.sx [NC]
-RewriteRule (.*) http://smarchal.com/ok [QSA,R=301,L]
-
 RewriteCond %{HTTP_HOST} ^www\.smarchal\.com [NC]
 RewriteRule (.*) http://smarchal.com/$1 [QSA,R=301,L]
-
-RewriteCond %{HTTP_HOST} ^(\w+\.)?zes\.sx [NC]
-RewriteRule (.*) http://%1smarchal.com/$1 [QSA,R=301,L]
 
 # Assets
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)\.\d+\.(css|js|png|jpe?g|ico)$ $1.$2 [L]
-
-# Pages
-RewriteRule ^Monsterflat(.*)$ monsterflat$2 [L,R=301]
-RewriteRule ^TWBSColor(.*)$   twbscolor$2 [L,R=301]
-RewriteRule ^24SS(.*)$        24ss$2 [L,R=301]
-
-RewriteRule ^r/(.*)$ /r/index.php?v=$1 [L]
-RewriteRule ^myanimelist/mysign.php$ http://ony.me/mal [L]
-RewriteRule ^avatar$ assets/img/photo.jpg [L]
-RewriteRule ^rib$ files/rib.png [L]
-RewriteRule ^cnis$ files/cnis.jpg [L]
-RewriteRule ^carte-identite$ files/cnis.jpg [L]
-RewriteRule ^cv$ files/CV_2012.pdf [L]
-RewriteRule ^bmac$ files/bmac.png [L]
 
 # Errors
 ErrorDocument 404 /
