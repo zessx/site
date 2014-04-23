@@ -23,20 +23,18 @@ $('article').each(function() {
 	link.on('click mousedown', function(event) {
 		event.preventDefault();
 	});
-	$(this).on('mousedown', function(event) {
-		if(event.target == link) {
-			var url = link.attr('href');
-			if(event.which == 2 ) {
+	$(this).on('click mousedown', function(event) {
+		var url = link.attr('href');
+		if(event.which == 2 ) {
+			window.open(url, '_blank');
+			event.preventDefault();
+		} else if(event.which == 1 ) {
+			if (event.ctrlKey) {
 				window.open(url, '_blank');
-				event.preventDefault();
-			} else if(event.which == 1 ) {
-				if (event.ctrlKey) {
-					window.open(url, '_blank');
-				} else {
-					window.location.href = url;
-				}
-				event.preventDefault();
+			} else {
+				window.location.href = url;
 			}
+			event.preventDefault();
 		}
 	});
 });
