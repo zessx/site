@@ -2827,12 +2827,10 @@ i.animated:hover {
     background: rgba(255, 255, 255, 0.1); }
 
 /* --- Content section --- */
-.content-section {
-  padding-top: 100px; }
+.content-section > .row {
+  margin-top: 100px;
+  margin-bottom: 100px; }
 
-@media (min-width: 767px) {
-  .content-section {
-    padding-top: 250px; } }
 /* --- Works section --- */
 .works-section {
   width: 100%;

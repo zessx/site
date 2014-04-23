@@ -292,13 +292,9 @@ i.animated:hover {
 }
 
 /* --- Content section --- */
-.content-section {
-	padding-top: 100px;
-}
-@media(min-width:767px) {
-	.content-section {
-		padding-top: 250px;
-	}
+.content-section > .row {
+	margin-top: 100px;
+	margin-bottom: 100px;
 }
 
 /* --- Works section --- */
