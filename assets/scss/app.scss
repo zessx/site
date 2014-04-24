@@ -143,6 +143,7 @@ i.animated:hover {
 }
 .label-default {
 	color: $c_dark;
+	line-height: 2.1;
 	background-color: $c_medium;
 }
 .label-default[href]:hover,
@@ -311,8 +312,8 @@ i.animated:hover {
 
 	article {
 		position: relative;
-		padding: 24px 24px 24px 174px;
-		text-align: left;
+		padding: 24px;
+		text-align: center;
 		min-height: 128px;
 		margin-bottom: 20px;
 		cursor: pointer;
@@ -327,9 +328,8 @@ i.animated:hover {
 			margin-bottom: 5px;
 		}
 		aside {
-			position: absolute;
-			top: 24px;
-			left: 24px;
+			display: inline-block;
+			width: 128px;
 		}
 		.labels {
 			font-size: 18px;
@@ -364,6 +364,17 @@ i.animated:hover {
 @media(min-width:767px) {
 	.works-section {
 		padding: 100px 0;
+
+		article {
+			padding-left: 174px;
+			text-align: left;
+
+			aside {
+				position: absolute;
+				top: 24px;
+				left: 24px;
+			}
+		}
 	}
 }
 

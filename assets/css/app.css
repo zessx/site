@@ -1,5 +1,5 @@
 @charset "CP850";
-/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/* normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -2707,6 +2707,7 @@ i.animated:hover {
 
 .label-default {
   color: black;
+  line-height: 2.1;
   background-color: #e74d3c; }
 
 .label-default[href]:hover,
@@ -2844,8 +2845,8 @@ i.animated:hover {
   -o-background-size: cover; }
   .works-section article {
     position: relative;
-    padding: 24px 24px 24px 174px;
-    text-align: left;
+    padding: 24px;
+    text-align: center;
     min-height: 128px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -2857,9 +2858,8 @@ i.animated:hover {
     .works-section article p {
       margin-bottom: 5px; }
     .works-section article aside {
-      position: absolute;
-      top: 24px;
-      left: 24px; }
+      display: inline-block;
+      width: 128px; }
     .works-section article .labels {
       font-size: 18px; }
     .works-section article:hover {
@@ -2882,7 +2882,14 @@ i.animated:hover {
 
 @media (min-width: 767px) {
   .works-section {
-    padding: 100px 0; } }
+    padding: 100px 0; }
+    .works-section article {
+      padding-left: 174px;
+      text-align: left; }
+      .works-section article aside {
+        position: absolute;
+        top: 24px;
+        left: 24px; } }
 /* --- Contact section --- */
 .banner-social-buttons {
   margin-top: 0; }
