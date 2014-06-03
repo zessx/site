@@ -47,6 +47,7 @@ var myOptions = {
 	center: new google.maps.LatLng(48.50395409999999, -2.76519959999996),
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
 	disableDefaultUI: true,
+	scrollwheel: false,
 	styles: [{
 		"featureType": "water",
 		"elementType": "geometry",
