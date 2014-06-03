@@ -116,6 +116,9 @@ RewriteBase /
 RewriteCond %{HTTP_HOST} ^www\.smarchal\.com [NC]
 RewriteRule (.*) http://smarchal.com/$1 [QSA,R=301,L]
 
+# Fix old url
+RewriteRule ^(monsterflat|24ss|twbscolor|hashicon) http://$1.smarchal.com/ [L,R=301]
+
 # Assets
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)\.\d+\.(css|js|png|jpe?g|ico)$ $1.$2 [L]
