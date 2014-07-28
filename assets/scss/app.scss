@@ -6,16 +6,33 @@ $c_dark   : #000000;
 $c_medium : #e74d3c;
 $c_light  : #ffffff;
 
+/* --- Fonts --- */
+@font-face{
+	font-family: 'Source Sans Pro Light'; src: url('../fonts/SourceSansPro-ExtraLight.otf');
+}
+@font-face{
+	font-family: 'Source Sans Pro'; src: url('../fonts/SourceSansPro-Regular.otf');
+}
+%font-light {
+	font-family: "Source Sans Pro Light", "Trebuchet MS", sans-serif;
+	font-style: normal;
+	font-weight: 200;
+}
+%font-regular {
+	font-family: "Source Sans Pro", "Trebuchet MS", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
 /* --- Standart elements --- */
 html {
 	width: 100%;
 	height: 100%;
 }
 body {
+	@extend %font-light;
 	width: 100%;
 	height: 100%;
-	font-family: "Source Sans Pro", "Trebuchet MS", sans-serif;
-	font-weight: 200;
 	color: $c_light;
 	background-color: $c_dark;
 	webkit-tap-highlight-color: rgba(255,255,255,.2);
@@ -26,22 +43,20 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 200;
+	@extend %font-light;
 	margin: 0 0 35px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
 h1 {
 	small {
+		@extend %font-light;
 		color: $c_medium;
-		font-weight: 200;
 	}
 }
-h2 {
-	font-weight: 400;
-}
+h2,
 h3 {
-	font-weight: 400;
+	@extend %font-regular;
 }
 p {
 	margin: 0 0 25px;
@@ -85,9 +100,6 @@ img::-moz-selection {
 }
 
 /* --- Helper classes --- */
-.light {
-	font-weight: 400;
-}
 i.animated:hover {
 	-webkit-animation: pulse 1.5s linear infinite;
 	animation: pulse 1.5s linear infinite;
@@ -154,14 +166,13 @@ i.animated:hover {
 
 /* --- Header --- */
 .navbar {
+	@extend %font-regular;
 	margin-bottom: 0;
 	border-bottom: 1px solid rgba(255,255,255,.3);
 	text-transform: uppercase;
 	background-color: $c_dark;
 }
 .navbar-brand {
-	font-weight: 700;
-
 	&:focus {
 		outline: 0;
 	}
