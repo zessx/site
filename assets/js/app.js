@@ -43,8 +43,8 @@ $('article').each(function() {
 
 //Google Map Skin - Get more at http://snazzymaps.com/
 var myOptions = {
-	zoom: 12,
-	center: new google.maps.LatLng(48.50395409999999, -2.76519959999996),
+	zoom: 13,
+	center: new google.maps.LatLng(48.5756446, 7.7473311),
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
 	disableDefaultUI: true,
 	scrollwheel: false,
