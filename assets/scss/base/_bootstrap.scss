@@ -1,0 +1,144 @@
+/*
+    Boostrap
+ */
+* {
+    box-sizing: border-box;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    @extend %font-light;
+    width: 100%;
+    height: 100%;
+    color: $c_light;
+    background-color: $c_dark;
+    webkit-tap-highlight-color: rgba(255,255,255,.2);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend %font-light;
+    margin: 0 0 35px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+h1 {
+    small {
+        @extend %font-light;
+        color: $c_medium;
+    }
+}
+h2,
+h3 {
+    @extend %font-regular;
+}
+p {
+    margin: 0 0 25px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+@media(min-width:767px) {
+    p {
+        margin: 0 0 35px;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+}
+a {
+    color: $c_medium;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: darken($c_medium, 10%);
+    }
+}
+img::selection {
+    background: 0 0;
+}
+img::-moz-selection {
+    background: 0 0;
+}
+::-moz-selection {
+    text-shadow: none;
+    color: $c_dark;
+    background: $c_medium;
+}
+::selection {
+    text-shadow: none;
+    color: $c_dark;
+    background: $c_medium;
+}
+
+
+i.animated:hover {
+    -webkit-animation: pulse 1.5s linear infinite;
+    animation: pulse 1.5s linear infinite;
+}
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.btn {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+.btn-default {
+    border: 1px solid $c_medium;
+    color: $c_medium;
+    background-color: transparent;
+}
+.btn-default:hover,
+.btn-default:focus {
+    border: 1px solid $c_medium;
+    outline: 0;
+    color: $c_dark;
+    background-color: $c_medium;
+}
+.btn-huge {
+    padding: 25px;
+    font-size: 26px;
+}
+.label-default {
+    color: $c_dark;
+    line-height: 2.1;
+    background-color: $c_medium;
+}
+.label-default[href]:hover,
+.label-default[href]:focus {
+    color: $c_dark;
+    background-color: darken($c_medium, 10%);
+}

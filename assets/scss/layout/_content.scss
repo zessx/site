@@ -1,0 +1,201 @@
+/*
+    Content
+ */
+/* --- Intro --- */
+.intro {
+    display: table;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: $c_light;
+    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+    background-color: $c_dark;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.intro-body {
+    display: table-cell;
+    padding: 100px 0;
+    vertical-align: middle;
+    background: rgba(0, 0, 0, .5);
+}
+.brand-heading {
+    font-size: 40px;
+}
+.intro-text {
+    font-size: 18px;
+}
+@media(min-width:767px) {
+    .intro {
+        height: 100%;
+    }
+    .intro-body {
+        padding: 0;
+    }
+    .brand-heading {
+        font-size: 100px;
+    }
+    .intro-text {
+        font-size: 30px;
+    }
+}
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    border: 2px solid $c_light;
+    border-radius: 35px;
+    font-size: 40px;
+    color: $c_light;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+
+    i {
+        margin: 0;
+        display: block;
+        -webkit-transition: 1s -webkit-transform;
+        transition: 1s transform;
+
+        &:before {
+            margin: 0;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        outline: 0;
+        color: $c_light;
+        background: rgba(255,255,255,.1);
+    }
+}
+
+/* --- Content section --- */
+.content-section > .row {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+/* --- Works section --- */
+.works-section {
+    width: 100%;
+    padding: 50px 0;
+    color: $c_light;
+    background: url(../img/works-bg.jpg) no-repeat center center scroll;
+    background-color: $c_dark;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+
+    article {
+        position: relative;
+        padding: 24px;
+        text-align: center;
+        min-height: 128px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        -webkit-transition: background .3s ease-in-out;
+        -moz-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+
+        h3 {
+            margin-bottom: 5px;
+        }
+        p {
+            margin-bottom: 5px;
+        }
+        aside {
+            display: inline-block;
+            width: 128px;
+        }
+        .labels {
+            font-size: 18px;
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, .2);
+        }
+    }
+}
+.work-monsterflat {
+    background: #17a17f url(../img/logo-monsterflat.png) 0 0 no-repeat;
+
+    a, a:hover, a:active, a:focus {
+        color: #17a17f;
+    }
+}
+.work-twbscolor {
+    background: #9b59b6 url(../img/logo-twbscolor.png) 0 0 no-repeat;
+
+    a, a:hover, a:active, a:focus {
+        color: #9b59b6;
+    }
+}
+.work-24ss {
+    background: #e74c3c url(../img/logo-24ss.png) 0 0 no-repeat;
+
+    a, a:hover, a:active, a:focus {
+        color: #e74c3c;
+    }
+}
+@media(min-width:767px) {
+    .works-section {
+        padding: 100px 0;
+
+        article {
+            padding-left: 174px;
+            text-align: left;
+
+            aside {
+                position: absolute;
+                top: 24px;
+                left: 24px;
+            }
+        }
+    }
+}
+
+/* --- Contact section --- */
+.banner-social-buttons {
+    margin-top: 0;
+}
+.banner-social-buttons li a {
+    font-size: 40px;
+    padding-bottom: 5px;
+    border-bottom: 0px solid darken($c_medium, 10%);
+}
+.banner-social-buttons li:hover a {
+    border-bottom-width: 10px;
+}
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        margin-top: 15px;
+    }
+}
+@media(max-width:767px) {
+    ul.banner-social-buttons>li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons>li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* --- Map section --- */
+#map {
+    width: 100%;
+    height: 200px;
+    margin-top: 100px;
+}
+@media(min-width:767px) {
+    #map {
+        height: 400px;
+        margin-top: 250px;
+    }
+}
