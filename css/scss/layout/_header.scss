@@ -1,0 +1,65 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+
+    h1,
+    svg,
+    aside {
+        position: relative;
+        font-size: 40px;
+        margin: 20px;
+        z-index: 3;
+
+        small {
+            font-size: 30px;
+        }
+    }
+    h1 {
+        text-align: right;
+    }
+    h1,
+    aside {
+        opacity: 0;
+        animation: opacify 1s ease 3s 1 normal forwards;
+    }
+    svg {
+        stroke: none;
+        fill: none;
+        transition: top .7s, transform .7s;
+
+        path {
+            stroke: $main;
+            stroke-width: 2px;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+
+            &.tohide {
+                opacity: 0;
+                animation: drawpath 3s ease 1s 1 normal forwards;
+            }
+            &.tokeep {
+                animation: drawpath 3s ease 3.5s 1 normal forwards;
+            }
+        }
+        polygon {
+            opacity: 0;
+            animation: opacify 3s ease 2s 1 normal forwards;
+
+            &#logo-top {
+                fill: $main_light;
+            }
+            &#logo-bottom {
+                fill: $main;
+            }
+            &#logo-shadow {
+                fill: rgba(0, 0, 0, .3);
+            }
+        }
+    }
+}

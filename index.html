@@ -3,348 +3,78 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Personnal website of Samuel Marchal (@zessx)">
-	<meta name="author" content="Samuel Marchal">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta property="og:title" content="Samuel Marchal > Web Developer" />
-	<meta property="og:type" content="website" />
+	<title>Samuel Marchal > Le Site</title>
+	<meta name="description" content="Site personnel d'un développeur web de Strasbourg">
+
+	<meta property="og:site_name" content="Samuel Marchal" />
+	<meta property="og:locale" content="fr_FR" />
 	<meta property="og:url" content="http://smarchal.com" />
-	<meta property="og:image" content="http://smarchal.com/logo.png" />
+	<meta property="og:image" content="http://smarchal.com/images/zessx.png" />
+	<meta property="og:description" content="Site personnel d'un développeur web de Strasbourg" />
+	<meta property="og:type" content="website" />
 
-	<title>Samuel Marchal > Web Developer</title>
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:site" content="zessx" />
+	<meta property="twitter:creator" content="zessx" />
+	<meta property="twitter:image" content="http://smarchal.com/images/zessx.png" />
+	<meta property="twitter:image:width" content="360" />
+	<meta property="twitter:image:height" content="360" />
+	<meta property="twitter:description" content="Site personnel d'un développeur web de Strasbourg" />
+	<meta property="twitter:title" content="amuel Marchal" />
 
-	<link href="assets/css/app.min.css" rel="stylesheet">
-	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="canonical" href="http://smarchal.com">
+	<link rel="me" href="https://twitter.com/zessx">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 </head>
 
-<body id="top" data-spy="scroll" data-target=".navbar-custom">
+<body>
 
-	<header>
-		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-			<div class="container">
-				<div class="navbar-header page-scroll">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-						<i class="fa fa-bars"></i>
-					</button>
-					<a class="navbar-brand" href="#top">
-						<i class="zessxr animated"></i>
-					</a>
-				</div>
+	<header class="active">
 
-				<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-					<ul class="nav navbar-nav">
-						<li class="hidden">
-							<a href="#top"></a>
-						</li>
-						<li class="page-scroll">
-							<a href="#about">About</a>
-						</li>
-						<li class="page-scroll">
-							<a href="#works">Works</a>
-						</li>
-						<li>
-							<a href="http://blog.smarchal.com">Blog</a>
-						</li>
-						<li class="page-scroll">
-							<a href="#contact">Contact</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+		<h1>
+			Samuel Marchal<br>
+			<small>@zessx</small>
+		</h1>
+
+		<svg id="logo" width="180" height="180" version="1.1" xmlns="http://www.w3.org/2000/svg">
+			<path class="tohide" d="M 115,115 l 50,-50 l 0,-50 l -150,0 l 100,100" />
+			<path class="tohide" d="M 65,65 l -50,50 l 0,50 l 150,0 l -100,-100" />
+			<path class="tokeep" d="M 170,10 l 10,-10" />
+			<path class="tokeep" d="M 10,170 l -10,10" />
+			<polygon id="logo-bottom" points="65,65 165,165 15,165 15,115"/>
+			<polygon id="logo-shadow" points="15,15 115,115 107,122"/>
+			<polygon id="logo-top" points="15,15 165,15 165,65 115,115"/>
+		</svg>
+
+		<aside>
+			Web Developer<br>
+			<small>Strasbourg</small>
+		</aside>
+		<canvas id="bg"></canvas>
+
 	</header>
 
-	<section class="intro">
-		<div class="intro-body">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<h1 class="brand-heading">Samuel Marchal<br><small>zessx</small></h1>
-						<p class="intro-text">Web Developer - Strasbourg</p>
-						<div class="page-scroll">
-							<a href="#about" class="btn btn-circle">
-								<i class="icon-angle-double-down animated"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<article>
 
-	<section id="about" class="container content-section text-center">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2">
-				<h2>About me</h2>
-				<p>
-					I'm <strong><a href="http://smarchal.com">Samuel Marchal</a></strong>, mostly known as <strong><a href="https://twitter.com/zessx">zessx</a></strong> on the Internet.
-				</p>
-				<p>
-					Web Developer, I'm a strong user of <strong><a href="http://php.net/">PHP 5</a></strong>, <strong><a href="http://jquery.com/">jQuery</a></strong>, <strong><a href="http://sass-lang.com/">SASS</a></strong> and <strong><a href="http://getbootstrap.com/">Bootstrap</a></strong>.
-				</p>
-				<p>
-					I'm continually looking to try new technologies,<br>
-					you can follow my discoveries and my tips on <strong><a href="http://blog.smarchal.com">my blog</a></strong>.
-				</p>
-			</div>
-		</div>
-	</section>
+	</article>
 
-	<section id="works" class="content-section text-center">
-		<div class="works-section">
-			<div class="container">
-				<div class="col-lg-8 col-lg-offset-2">
-					<h2>Works</h2>
-
-					<article>
-						<h3><a href="http://smarchal.com/sass-flexbox" class="external" title="SassFlexbox">SassFlexbox</a></h3>
-						<aside>
-							<img src="assets/img/works/sass-flexbox.png" alt="SassFlexbox">
-						</aside>
-						<p>
-							SassFlexbox helps you using Flexbox<br>
-							in Sass without carrying of vendor prefixes.
-						</p>
-						<div class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/sass">sass</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/flexbox">flexbox</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/mixins">mixins</a>
-						</div>
-					</article>
-
-					<article>
-						<h3><a href="http://smarchal.com/sass-queries" class="external" title="SassQueries">SassQueries</a></h3>
-						<aside>
-							<img src="assets/img/works/sass-queries.png" alt="SassQueries">
-						</aside>
-						<p>
-							SassQueries is a micro-library<br>
-							to manage media-queries easily in Sass.
-						</p>
-						<div class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/sass">sass</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/media-queries">media-queries</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/mixins">mixins</a>
-						</div>
-					</article>
-
-					<article>
-						<h3><a href="http://smarchal.com/cookiesplease" class="external" title="CookiesPlease">CookiesPlease</a></h3>
-						<aside>
-							<img src="assets/img/works/cookiesplease.png" alt="CookiesPlease">
-						</aside>
-						<p>
-							CookiesPlease is a little script to quickly comply with<br>
-							EU cookie law. It allows users to accept or not cookie storage.
-						</p>
-						<div class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/js">js</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/cookies">cookies</a>
-						</div>
-					</article>
-
-					<article>
-						<h3><a href="http://smarchal.com/cementjs" class="external" title="CementJS">CementJS</a></h3>
-						<aside>
-							<img src="assets/img/works/cementjs.png" alt="CementJS">
-						</aside>
-						<p>
-							CementJS is a Masonry alternative.<br>
-							It presents a list of elements under a grid layout.
-						</p>
-						<div class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/js">js</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/html">html</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/grid">grid</a>
-						</div>
-					</article>
-
-					<article>
-						<h3><a href="http://smarchal.com/bootstrap-expand-btn" class="external" title="Bootstrap Expand Button">Bootstrap Expand Button</a></h3>
-						<aside>
-							<img src="assets/img/works/bootstrap-expend-btn.png" alt="Bootstrap Expand Button">
-						</aside>
-						<p>
-							Bootstrap Expand Button provide expanding buttons for Bootstrap 3. It uses nothing more than a simple class.
-						</p>
-						<div class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/css3">css3</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/twitter-bootstrap-3">twitter-bootstrap-3</a>
-						</div>
-					</article>
-
-					<article>
-						<h3><a href="http://hashicon.smarchal.com" class="external" title="HashIcon">HashIcon</a></h3>
-						<aside>
-							<img src="assets/img/works/hashicon.png" alt="HashIcon">
-						</aside>
-						<p>
-							HashIcon generate unique icons based on a hash. It currently work with SHA-256, GOST, HAVAL-256 and SNEFRU.
-						</p>
-						<div class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/php">php</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/sha256">sha256</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/identicon">identicon</a>
-						</div>
-					</article>
-
-					<article>
-						<h3><a href="http://smarchal.com/drulers/" class="external" title="Drulers">Drulers</a></h3>
-						<aside>
-							<img src="assets/img/works/drulers.png" alt="Drulers">
-						</aside>
-						<p>
-							Drulers is a debug rulers tool for front-end developers.<br>
-							It simply add rulers on your page, which can be easily hidden.
-						</p>
-						<div class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/js">js</a>
-						</div>
-					</article>
-
-					<article>
-						<h3><a href="http://24ss.smarchal.com" class="external" title="24SSgrid">24SSgrid</a></h3>
-						<aside>
-							<img src="assets/img/works/24ss.png" alt="24SSgrid">
-						</aside>
-						<p>
-							24SSgrid is a solid grid for SASS.<br>
-							It use 24 columns by default, but is fully configurable.
-						</p>
-						<div class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/css3">css3</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/sass">sass</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/grid">grid</a>
-						</div>
-					</article>
-
-					<article>
-						<h3><a href="http://twbscolor.smarchal.com" class="external" title="TWBSColor">TWBSColor</a></h3>
-						<aside>
-							<img src="assets/img/works/twbscolor.png" alt="TWBSColor">
-						</aside>
-						<p>
-							TWBSColor allows you to easily generate a new Bootstrap navbar with customized colors.
-						</p>
-						<div class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/twitter-bootstrap-3">twitter-bootstrap-3</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/css3">css3</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/sass">sass</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/less">less</a>
-						</div>
-					</article>
-
-					<article>
-						<h3><a href="http://monsterflat.smarchal.com" class="external" title="Monsterflat">Monsterflat</a></h3>
-						<aside>
-							<img src="assets/img/works/monsterflat.png" alt="Monsterflat">
-						</aside>
-						<p>
-							Monsterflat is a pack of websites' logos using flat design.<br>
-							An iconic font based on it is planned in future.
-						</p>
-						<div class="labels">
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/html5">html5</a>
-							<a class="label label-default" href="http://stackoverflow.com/questions/tagged/css3">css3</a>
-						</div>
-					</article>
-
-					<h2>They talk about it</h2>
-					<a class="twitter-timeline" href="https://twitter.com/zessx/timelines/473754681412694016" data-widget-id="473757298335051776">Feedbacks</a>
-
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="contact" class="container content-section text-center">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2">
-				<h2>Contact me !</h2>
-				<p>
-					Feel free to email me for any question or proposal.
-				</p>
-				<ul class="list-inline">
-					<li><a href="mailto:contact@smarchal.com" class="btn btn-default btn-lg"><i class="icon-email"></i> contact@smarchal.com</a></li>
-				</ul>
-
-				<br>
-
-				<p>
-					You can also find me on...
-				</p>
-				<ul class="list-inline banner-social-buttons">
-					<li class="col-xs-3 col-sm-1 col-sm-offset-2"><a href="https://github.com/zessx" class="external" title="Github"><i class="icon-github-circled"></i></a></li>
-					<li class="col-xs-3 col-sm-1"><a href="http://stackoverflow.com/users/1238019/zessx" class="external" title="Stackoverflow"><i class="icon-stackoverflow"></i></a></li>
-					<li class="col-xs-3 col-sm-1"><a href="http://fr.viadeo.com/fr/profile/samuel.marchal2" class="external" title="Viadeo"><i class="icon-viadeo"></i></a></li>
-					<li class="col-xs-3 col-sm-1"><a href="https://www.linkedin.com/in/zessx" class="external" title="Linkedin"><i class="icon-linkedin"></i></a></li>
-					<li class="col-xs-3 col-sm-1"><a href="http://careers.stackoverflow.com/zessx" class="external" title="Careers"><i class="icon-careers"></i></a></li>
-					<li class="col-xs-3 col-sm-1"><a href="https://www.twitter.com/zessx" class="external" title="Twitter"><i class="icon-twitter"></i></a></li>
-					<li class="col-xs-3 col-sm-1"><a href="https://www.facebook.com/zessx" class="external" title="Facebook"><i class="icon-facebook"></i></a></li>
-					<li class="col-xs-3 col-sm-1"><a href="https://google.com/+SamuelMarchal-zessx" class="external" title="Google+"><i class="icon-gplus"></i></a></li>
-					<li class="col-xs-3 col-sm-1"><a href="http://blog.smarchal.com" class="external" title="Rss"><i class="icon-rss"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</section>
-
-	<section id="map"></section>
-
-	<footer class="container text-center">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2">
-				<p>
-					Made by <a href="http://smarchal.com">Samuel Marchal</a>,<br>
-					With <a href="http://sass-lang.com/">SASS</a>, <a href="http://getbootstrap.com/">Bootstrap</a> and <a href="http://startbootstrap.com/grayscale">Grayscale</a><br>
-					Hosted by <a href="https://github.com/zessx/zessx.github.io">GitHub</a>
-				</p>
-				<p>
-					<a class="license" rel="license" href="http://opensource.org/licenses/MIT"><img alt="Licence MIT" src="http://smarchal.com/assets/img/license-mit.png"></a>
-				</p>
-				<p>
-					<a class="donate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=KTYWBM9HJMMSE&amp;lc=FR&amp;item_name=Buy%20a%20coffee%20to%20zessx%20%28Samuel%20Marchal%29&amp;currency_code=EUR&amp;bn=PP%2dDonationsBF%3abmac%3aNonHosted" onclick="_gaq.push(['_trackEvent', 'Donate', 'Donate', 'Paypal', 1, true]);" target="_blank"><img src="data:image/png;base64,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" alt="Buy me a coffee!" onmouseover="this.style.boxShadow='0 0 5px #00335e'" onmouseout="this.style.boxShadow=null"></a>
-					<span>&nbsp;or&nbsp;</span>
-					<a class="donate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=KTYWBM9HJMMSE&amp;lc=FR&amp;item_name=Buy%20a%20tea%20to%20zessx%20%28Samuel%20Marchal%29&amp;currency_code=EUR&amp;bn=PP%2dDonationsBF%3abmat%3aNonHosted" onclick="_gaq.push(['_trackEvent', 'Donate', 'Donate', 'Paypal', 1, true]);" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAAgCAMAAAAIToc+AAAC01BMVEX///9vkin///////////////////////////////////////////////////////////////////8lSgAnTQApTQIqTwAtUQAuUQAuUgAvUgAvUwAwUgAwUwAwVAAxUwAxVAAxVQcyVAA0VgA0VwA2WAI3WAA4WQA4WgA5WQg5WgA7WgA8XAA9XAM+XQA+XgA/XgA/XwdAXgBAYAxAYBBBXwBCYhFCYhNDYgtEZBRKZxZLaBtRbiRSbCVSbh5TbSZTbx5UcB9VcixYcylZdSZeeC1kekFkekJkfTJogTxpgTdpgj5pgkVqgz1rg0JthT1thT5vkilwhj1wkytyiER0h1h4jlh5jk16kFF6kFh7kFB7mkF7m0J8kVV+klaCllqClluDk2uDl1yDmWGFmV6FmV+Ho1aIm2aInGOKnGOKnGaKnmWOoWqPoWqPoWuQomuRn32Rom6SpG+Sq2iSq2mUpnCVpnSWpnKWpnOYqHWYqHiZqnmZqnuZqnyaqneaqn+bqnibq3mcrHucrH2drH2ds3ids3meqo2erX2ern6fr4Chr4Sks4anuoenu4iotYmpt4upt4+puJKqtJuqtJyruZCsupKtuY+tuZ2uu5KuvJewvZqxvpexwpezv5q2v6q2wZy4w6C6yaO7xKG7xqa7yaO7yaS+yarBybjBy6vBzK7E0bDE0bHM0sXN1bvN2L3Q2MDR2cDV2sXV3MjW3snX3NHX3cnX3svZ383a4M7e5NTf5dXg5dbh5Nvh5Nzh5dTh5dfh5tbh59ji5d3i5tfi59rj59vn69/n6+Dn7ODo7OHp7ePs7unv8unv8urw8uvx8+vx8+zz9e7z9fD09vD09vL09vP19vT29/L29/P29/T3+fX3+fb4+PT4+fT4+fX4+fb5+vb5+vf5+/f6+/n7/Pn7/Pr8/Pr8/fv8/fz9/fz9/vz+/v7+//7///3///7////JasSWAAAAE3RSTlMAf+rr7O3u7/Dx8vP09fb3+Pn6lWHs8wAABONJREFUeAHEzUESgDAIQ9FqIQnUy3n/yyhl7dq3/ZnJGOP+y1HnOL/MaQ4qcpXMCImkpIgsq13dX7EngJvNZuYOgEUb2RkP8eX93EYRhmEmxJSfKZAQU2IgFOMsphcwPXT4gFDgIDbl6EHA0QuEIoXCUSJCAWEweDFozVEuFEw3hYNwdAwIYjomxPj7E3j39mKdNJIczWjGj2dPK/tWz7fF742OhbyJJ4smWo2m8GSxeqn94zc++mey7J+eedSh53zNPPxcaQk2AcWNZ2rC/tvJl7z6+ifovHbEMCc5he66lWiA60RZqo59f+pUXH6588rbj758jBMMwIzms2aMR8d4lQiJPK7NGgn71YuZV1x73E1XLP6xdA5EhRzReygAReTJ4sDU4pBDlM4T5TBPfdV4ep9cXTNQvr6jwKry3q2ZsF/1KPMPp73C5cAMPI8oVGThpeCSzQDGNJGdJkvpKxVMqa5NaebQIVviZoz28TdZyb5Wwn7x/cxfnfgSl4MPw1g3RxYKSesFNVMfQA+yIEe2RcAxFeXQtMhBD1qKCvYGKh2ctRP2h59l/um+D7kc/WEuOWnMyCaJtxZ6wIvKcaCBJCd9BgEkRhQNw51SMVYsajXtf4xwJfSBCzF/i6TEJKL5BAy02TZTJVKho/WBWefQ9LSd4ScrsMmubS/yHyfIE4jGA3hRgmRNbNZTdQgUxrPBMkumywV+QBq3mv3fu8+/cP78Cy66rPN07uycN+/4G/7kcQIJFHMopS/h7SEbHqAkSpEhfo8+OgzMXYoBbg7Zw1vdVQqvVU7dr3uvu0mzZvpG3Nw8Y8Y6ezxx8x0fcEU+sxoXe+Y/7vN9tpqtaROChaZtg2nr7fkOV8DWS9goTNp8ue82wsCRvnX7c595YMfzuBxFaSU9ZrdYQUaALCfxCCBi4iHWREn7/QGz2o1c097esv8XzMccvIJLgdVC6gXReYvpEl0pIbpLa7Tl+AohDCZ6yiw/ZPOdinYhNj3yZx4+8AQuJ5C+TrxkgnfAPEekOIEOBh1NESh0wifs2RuX2JvPGuUnN3uEIwpEgSQqODo0FQFc0nEBg0L0o4JMSkR0c0rMtUiiAnvlrWpC+2MzRdHe2tryEL+w237fFO020UD0UX6UXrDbZmn7hBjsFmBOCk1kUc2DuDGwKM72mk/mKcb+/u5bFu1tbbMOO2mLnZ8vJi0mjeYqbLtJOxNyICMMHUu7RUdGpDB1jzSOyfbEoRurav/rjGmiSOuuO2x9+ItctJufwCU7ynALuRqvaJeYm832p0SXPn4oQIglECKd4mzHDqyUV7fzy7u0tMXM3na7p999exmPcymR66Axdl4/62H2oyriQ8d6s5cIkUETqejQMcfZjiFsGOXqdr535obNhunrX8clwB6k0RgXx5ykMF7RN4Xow0u3OXJD2IEhtiJhnO0Y0suav3+vZV/++PXXLFhwy8KFt914zzIuwevJsxclfa8M8z09Qa9iHw18uyg7xFqf7c9mlw5hJUz8A2R7XvphnP+jIyM17A0hIw7iumigvU+Ivd6q397EDWEwu+i7+r9J1fwWObXp/7FxcHLz8PHx8/Hx8fLy8HDz8PDwQgAPkAcEYBGgAgEBQUEhQSEhIUEBAX6QWlCvEtb95AB1HJmZUU1nA1rOwBg4UICBAQAzZYSk/kmIKwAAAABJRU5ErkJggg==" alt="Buy me a tea!" onmouseover="this.style.boxShadow='0 0 5px #3f5e00'" onmouseout="this.style.boxShadow=null"></a>
-				</p>
-			</div>
-		</div>
-	</footer>
-
-	<!-- Core JavaScript Files -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/cookiesplease/cookiesplease.min.js"></script>
-	<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-	<!-- Google Maps API -->
-	<script>
-	$(function() {
-		cookiesplease.init();
-	});
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-32364969-7']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
 	</script>
-
-	<!-- Google Maps API -->
-	<script src="https://maps.googleapis.com/maps/api/js"></script>
-
-	<!-- Twitter API -->
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-	<!-- Google Analytics -->
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-32364969-7', 'smarchal.com');
-	  ga('send', 'pageview');
-
-	</script>
-
-	<!-- Custom JavaScript -->
-	<script src="assets/js/app.min.js"></script>
+	<script src="js/trianglify.min.js"></script>
+	<script src="js/app.js"></script>
 
 </body>
 
