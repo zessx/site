@@ -14,3 +14,7 @@ html, body {
     opacity: 0;
     animation: opacify 1s ease 0s 1 normal forwards;
 }
+a {
+    color: inherit;
+    text-decoration: none;
+}
