@@ -5,31 +5,75 @@ header {
     position: relative;
     width: 100vw;
     height: 100vh;
+    font-size: 1.5em;
     z-index: 1;
 
-    h1,
-    svg,
-    aside {
-        position: relative;
-        font-size: 40px;
-        margin: 20px;
-        z-index: 3;
+    .profile {
+        @extend %col-left;
+        overflow: hidden;
 
-        small {
-            font-size: 30px;
+        h1 {
+            margin: 0;
+            font-weight: normal;
+        }
+        .social {
+            font-size: 1.6em;
+            text-align: right;
+            width: 100%;
+
+            p {
+                float: right;
+                width: 200px;
+                transition: all .4s;
+            }
+            ul {
+                margin: 0;
+                list-style: none;
+                opacity: 0;
+                font-size: .8em;
+                line-height: 2em;
+                float: right;
+                transition: all .4s;
+
+                li {
+                    float: left;
+                    margin-left: 10px;
+
+                    a {
+                        box-shadow: 0 0;
+
+                        &:hover,
+                        &:focus {
+                            box-shadow: 0 1px;
+                        }
+                    }
+                }
+            }
+
+            &:hover,
+            &:focus {
+                p {
+                    margin-right: -200px;
+                }
+                ul {
+                    opacity: 1;
+                }
+            }
         }
     }
-    h1 {
-        text-align: right;
-    }
-    h1,
     aside {
+        @extend %col-right;
+        font-size: 2em;
+    }
+    .profile,
+    aside {
+        z-index: 3;
         opacity: 0;
-        margin: 0 110px;
         margin-top: 100px;
         animation: opacify 1s ease 3s 1 normal forwards;
     }
     svg {
+        z-index: 3;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -66,6 +110,30 @@ header {
             &#logo-shadow {
                 fill: rgba(0, 0, 0, .3);
             }
+        }
+    }
+    .scroller {
+        position: fixed;
+        z-index: 3;
+        left: 50%;
+        opacity: 0;
+        bottom: $document_padding;
+        transform: translate(-50%, -140%);
+        height: 60px;
+        width: 34px;
+        border: 2px solid $main;
+        border-radius: 50%/30%;
+        animation: opacify 1s ease 5s 1 normal forwards;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 14px;
+            top: 15%;
+            width: 2px;
+            height: 0;
+            background: $main;
+            animation: scroller 2s ease-in-out infinite;
         }
     }
 }

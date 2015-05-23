@@ -1,9 +1,37 @@
 article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
     z-index: 2;
+
+    .posts {
+        @extend %col-left;
+
+        h2 {
+            small {
+                font-size: 0.5em;
+            }
+        }
+        ul {
+            @extend %listing;
+
+            li a:after {
+                left: auto;
+                right: 1px;
+            }
+        }
+    }
+    .works {
+        @extend %col-right;
+
+        ul {
+            @extend %listing;
+        }
+    }
 }
 #bg {
     position: fixed;
