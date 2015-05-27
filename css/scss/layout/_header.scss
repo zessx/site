@@ -70,9 +70,9 @@ header {
         z-index: 3;
         opacity: 0;
         margin-top: 100px;
-        animation: opacify 1s ease 3s 1 normal forwards;
+        animation: opacify 1s ease 4s 1 normal forwards;
     }
-    svg {
+    #logo {
         z-index: 3;
         position: fixed;
         top: 50%;
@@ -94,7 +94,7 @@ header {
                 animation: drawpath 3s ease 1s 1 normal forwards;
             }
             &.tokeep {
-                animation: drawpath 3s ease 3.5s 1 normal forwards;
+                animation: drawpath 3s ease 5s 1 normal forwards;
             }
         }
         polygon {
@@ -121,7 +121,7 @@ header {
         transform: translate(-50%, -140%);
         height: 60px;
         width: 34px;
-        border: 2px solid $main;
+        border: 2px solid $main_dark;
         border-radius: 50%/30%;
         animation: opacify 1s ease 5s 1 normal forwards;
 
@@ -132,7 +132,7 @@ header {
             top: 15%;
             width: 2px;
             height: 0;
-            background: $main;
+            background: $main_dark;
             animation: scroller 2s ease-in-out infinite;
         }
     }

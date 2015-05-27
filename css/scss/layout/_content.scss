@@ -37,6 +37,7 @@ article {
     position: fixed;
     top: 0;
     left: 0;
-    filter: grayscale(100%);
-    animation: colorize 2s ease 3s 1 normal forwards;
+    background: radial-gradient(ellipse at center, lighten($main, 20%) 0%, lighten($main, 0%) 100%);
+    opacity: 0;
+    animation: opacify 3s ease 2.5s 1 normal forwards;
 }
