@@ -1,7 +1,8 @@
 var loadedPosts,
     loadedWorks,
     posts = document.querySelector('.posts > ul'),
-    works = document.querySelector('.works > ul');
+    works = document.querySelector('.works > ul'),
+    animated = true;
 
 /* Trianglify canvas */
 function drawCanvas() {
@@ -78,17 +79,20 @@ function drawCanvas() {
                         }
                     }
                     polygon.setAttribute('fill','rgba(0,0,0,'+(Math.random()/4)+')');
-                    var animate = document.createElementNS('http://www.w3.org/2000/svg','animate');
-                    animate.setAttribute('fill','freeze');
-                    animate.setAttribute('attributeName','points');
-                    animate.setAttribute('dur',refreshDuration+'ms');
-                    animate.setAttribute('calcMode','linear');
-                    polygon.appendChild(animate);
+                    if(animated) {
+                        var animate = document.createElementNS('http://www.w3.org/2000/svg','animate');
+                        animate.setAttribute('fill','freeze');
+                        animate.setAttribute('attributeName','points');
+                        animate.setAttribute('dur',refreshDuration+'ms');
+                        animate.setAttribute('calcMode','linear');
+                        polygon.appendChild(animate);
+                    }
                     svg.appendChild(polygon);
                 }
             }
         }
 
+        document.querySelector('#bg').classList.add('ready');
         refreshCanvas();
 
     }
@@ -105,17 +109,19 @@ function drawCanvas() {
     }
 
     function refreshCanvas() {
-        randomizeCanvas();
-        for(var i = 0; i < document.querySelector('#bg svg').childNodes.length; i++) {
-            var polygon = document.querySelector('#bg svg').childNodes[i];
-            var animate = polygon.childNodes[0];
-            if(animate.getAttribute('to')) {
-                animate.setAttribute('from',animate.getAttribute('to'));
+        if(animated) {
+            randomizeCanvas();
+            for(var i = 0; i < document.querySelector('#bg svg').childNodes.length; i++) {
+                var polygon = document.querySelector('#bg svg').childNodes[i];
+                var animate = polygon.childNodes[0];
+                if(animate.getAttribute('to')) {
+                    animate.setAttribute('from',animate.getAttribute('to'));
+                }
+                animate.setAttribute('to',points[polygon.point1].x+','+points[polygon.point1].y+' '+points[polygon.point2].x+','+points[polygon.point2].y+' '+points[polygon.point3].x+','+points[polygon.point3].y);
+                animate.beginElement();
             }
-            animate.setAttribute('to',points[polygon.point1].x+','+points[polygon.point1].y+' '+points[polygon.point2].x+','+points[polygon.point2].y+' '+points[polygon.point3].x+','+points[polygon.point3].y);
-            animate.beginElement();
+            refreshTimeout = setTimeout(function() {refreshCanvas();}, refreshDuration);
         }
-        refreshTimeout = setTimeout(function() {refreshCanvas();}, refreshDuration);
     }
 
     var canvas = document.querySelector('#bg svg');
@@ -190,6 +196,7 @@ function loadWorks(offset, soft) {
 
 /* Init */
 function init() {
+    // setTimeout(function() { drawCanvas(); }, 5000);
     drawCanvas();
     fetchPosts();
     fetchWorks();

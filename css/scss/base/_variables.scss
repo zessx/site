@@ -50,3 +50,14 @@ $document_padding: 30px;
         }
     }
 }
+
+%flipping {
+    backface-visibility: hidden;
+    transition: .7s;
+    transform: rotateX(180deg);
+
+    &.active {
+        backface-visibility: hidden;
+        transform: rotateX(0deg);
+    }
+}

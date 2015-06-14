@@ -11,28 +11,41 @@ header {
     .profile {
         @extend %col-left;
         overflow: hidden;
+        perspective: 1000;
+        z-index: 3;
 
+        h1,
+        .social {
+            backface-visibility: hidden;
+            transform: rotateX(180deg);
+            animation: flipin 1s ease 4s 1 normal forwards;
+        }
         h1 {
             margin: 0;
+            cursor: default;
             font-weight: normal;
         }
         .social {
             font-size: 1.6em;
             text-align: right;
-            width: 100%;
+            position: relative;
+            perspective: 1000;
 
             p {
-                float: right;
-                width: 200px;
+                backface-visibility: hidden;
+                position: absolute;
+                top: 0;
+                right: 0;
                 transition: all .4s;
             }
             ul {
+                backface-visibility: hidden;
+                transform: rotateX(-180deg);
                 margin: 0;
                 list-style: none;
-                opacity: 0;
                 font-size: .8em;
                 line-height: 2em;
-                float: right;
+                overflow: hidden;
                 transition: all .4s;
 
                 li {
@@ -53,10 +66,10 @@ header {
             &:hover,
             &:focus {
                 p {
-                    margin-right: -200px;
+                    transform: rotateX(180deg);
                 }
                 ul {
-                    opacity: 1;
+                    transform: rotateX(0deg);
                 }
             }
         }
@@ -64,13 +77,16 @@ header {
     aside {
         @extend %col-right;
         font-size: 2em;
-    }
-    .profile,
-    aside {
+        perspective: 1000;
         z-index: 3;
-        opacity: 0;
-        margin-top: 100px;
-        animation: opacify 1s ease 4s 1 normal forwards;
+
+        > p,
+        > small {
+            backface-visibility: hidden;
+            transform: rotateX(180deg);
+            cursor: default;
+            animation: flipin 1s ease 4s 1 normal forwards;
+        }
     }
     #logo {
         z-index: 3;
@@ -86,29 +102,33 @@ header {
         path {
             stroke: $main;
             stroke-width: 2px;
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-
-            &.tohide {
-                opacity: 0;
-                animation: drawpath 3s ease 1s 1 normal forwards;
-            }
-            &.tokeep {
-                animation: drawpath 3s ease 5s 1 normal forwards;
-            }
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+            animation: logodiagonal 1s ease 5s 1 normal forwards;
         }
         polygon {
-            opacity: 0;
-            animation: opacify 3s ease 2s 1 normal forwards;
+            stroke: $main;
+            stroke-width: 2px;
+            stroke-dasharray: 420;
+            stroke-dashoffset: 420;
+            transform-origin: 90px 90px;
 
             &#logo-top {
-                fill: $main_light;
+                fill: none;
+                transform: rotate3d(-1, 1, 0, 720deg) translate(15px, -15px);
+                animation: logotop 3s ease-in-out 1s 1 normal forwards;
             }
             &#logo-bottom {
-                fill: $main;
+                fill: none;
+                transform: rotate3d(-1, 1, 0, 720deg) translate(-15px, 15px);
+                animation: logobottom 3s ease-in-out 1s 1 normal forwards;
             }
             &#logo-shadow {
                 fill: rgba(0, 0, 0, .3);
+                stroke: none;
+                opacity: 0;
+                transform: rotate3d(-1, 1, 0, 720deg) translate(15px, -15px);
+                animation: logoshadow 3s ease-in-out 1s 1 normal forwards;
             }
         }
     }

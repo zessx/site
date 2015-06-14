@@ -37,7 +37,12 @@ article {
     position: fixed;
     top: 0;
     left: 0;
-    background: radial-gradient(ellipse at center, lighten($main, 20%) 0%, lighten($main, 0%) 100%);
+    background: $white;
     opacity: 0;
-    animation: opacify 3s ease 2.5s 1 normal forwards;
+    transition: opacity 1s;
+
+    &.ready {
+        opacity: 1;
+    }
+    // animation: opacify 3s ease 1.5s 1 normal forwards;
 }
