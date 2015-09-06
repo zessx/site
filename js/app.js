@@ -1,138 +1,101 @@
 var loadedPosts,
     loadedWorks,
     posts = document.querySelector('.posts > ul'),
-    works = document.querySelector('.works > ul'),
-    animated = true;
+    works = document.querySelector('.works > ul');
 
-/* Trianglify canvas */
-function drawCanvas() {
-    var refreshDuration = 10000;
-    var refreshTimeout;
-    var numPointsX;
-    var numPointsY;
-    var unitWidth;
-    var unitHeight;
-    var points;
-
-    function initCanvas()
-    {
-        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('width',window.innerWidth);
-        svg.setAttribute('height',window.innerHeight);
-        document.querySelector('#bg').appendChild(svg);
-
-        var unitSize = (window.innerWidth+window.innerHeight)/20;
-        numPointsX = Math.ceil(window.innerWidth/unitSize)+1;
-        numPointsY = Math.ceil(window.innerHeight/unitSize)+1;
-        unitWidth = Math.ceil(window.innerWidth/(numPointsX-1));
-        unitHeight = Math.ceil(window.innerHeight/(numPointsY-1));
-
-        points = [];
-
-        for(var y = 0; y < numPointsY; y++) {
-            for(var x = 0; x < numPointsX; x++) {
-                points.push({x:unitWidth*x, y:unitHeight*y, originX:unitWidth*x, originY:unitHeight*y});
-            }
-        }
-
-        randomizeCanvas();
-
-        for(var i = 0; i < points.length; i++) {
-            if(points[i].originX != unitWidth*(numPointsX-1) && points[i].originY != unitHeight*(numPointsY-1)) {
-                var topLeftX = points[i].x;
-                var topLeftY = points[i].y;
-                var topRightX = points[i+1].x;
-                var topRightY = points[i+1].y;
-                var bottomLeftX = points[i+numPointsX].x;
-                var bottomLeftY = points[i+numPointsX].y;
-                var bottomRightX = points[i+numPointsX+1].x;
-                var bottomRightY = points[i+numPointsX+1].y;
-
-                var rando = Math.floor(Math.random()*2);
-
-                for(var n = 0; n < 2; n++) {
-                    var polygon = document.createElementNS(svg.namespaceURI, 'polygon');
-
-                    if(rando==0) {
-                        if(n==0) {
-                            polygon.point1 = i;
-                            polygon.point2 = i+numPointsX;
-                            polygon.point3 = i+numPointsX+1;
-                            polygon.setAttribute('points',topLeftX+','+topLeftY+' '+bottomLeftX+','+bottomLeftY+' '+bottomRightX+','+bottomRightY);
-                        } else if(n==1) {
-                            polygon.point1 = i;
-                            polygon.point2 = i+1;
-                            polygon.point3 = i+numPointsX+1;
-                            polygon.setAttribute('points',topLeftX+','+topLeftY+' '+topRightX+','+topRightY+' '+bottomRightX+','+bottomRightY);
-                        }
-                    } else if(rando==1) {
-                        if(n==0) {
-                            polygon.point1 = i;
-                            polygon.point2 = i+numPointsX;
-                            polygon.point3 = i+1;
-                            polygon.setAttribute('points',topLeftX+','+topLeftY+' '+bottomLeftX+','+bottomLeftY+' '+topRightX+','+topRightY);
-                        } else if(n==1) {
-                            polygon.point1 = i+numPointsX;
-                            polygon.point2 = i+1;
-                            polygon.point3 = i+numPointsX+1;
-                            polygon.setAttribute('points',bottomLeftX+','+bottomLeftY+' '+topRightX+','+topRightY+' '+bottomRightX+','+bottomRightY);
-                        }
-                    }
-                    polygon.setAttribute('fill','rgba(0,0,0,'+(Math.random()/4)+')');
-                    if(animated) {
-                        var animate = document.createElementNS('http://www.w3.org/2000/svg','animate');
-                        animate.setAttribute('fill','freeze');
-                        animate.setAttribute('attributeName','points');
-                        animate.setAttribute('dur',refreshDuration+'ms');
-                        animate.setAttribute('calcMode','linear');
-                        polygon.appendChild(animate);
-                    }
-                    svg.appendChild(polygon);
-                }
-            }
-        }
-
-        document.querySelector('#bg').classList.add('ready');
-        refreshCanvas();
-
-    }
-
-    function randomizeCanvas() {
-        for(var i = 0; i < points.length; i++) {
-            if(points[i].originX != 0 && points[i].originX != unitWidth*(numPointsX-1)) {
-                points[i].x = points[i].originX + Math.random()*unitWidth-unitWidth/2;
-            }
-            if(points[i].originY != 0 && points[i].originY != unitHeight*(numPointsY-1)) {
-                points[i].y = points[i].originY + Math.random()*unitHeight-unitHeight/2;
-            }
-        }
-    }
-
-    function refreshCanvas() {
-        if(animated) {
-            randomizeCanvas();
-            for(var i = 0; i < document.querySelector('#bg svg').childNodes.length; i++) {
-                var polygon = document.querySelector('#bg svg').childNodes[i];
-                var animate = polygon.childNodes[0];
-                if(animate.getAttribute('to')) {
-                    animate.setAttribute('from',animate.getAttribute('to'));
-                }
-                animate.setAttribute('to',points[polygon.point1].x+','+points[polygon.point1].y+' '+points[polygon.point2].x+','+points[polygon.point2].y+' '+points[polygon.point3].x+','+points[polygon.point3].y);
-                animate.beginElement();
-            }
-            refreshTimeout = setTimeout(function() {refreshCanvas();}, refreshDuration);
-        }
-    }
-
-    var canvas = document.querySelector('#bg svg');
-    if(canvas) {
-        document.querySelector('#bg svg').remove();
-        clearTimeout(refreshTimeout);
-    }
-    initCanvas();
+// Debouncer
+function debounce(funct, timeout) {
+   var timeoutID , timeout = timeout || 200;
+   return function () {
+      var scope = this , args = arguments;
+      clearTimeout( timeoutID );
+      timeoutID = setTimeout( function () {
+          funct.apply( scope , Array.prototype.slice.call( args ) );
+      } , timeout );
+   }
 }
 
-/* Fetch blog posts */
+// setAttribute multiple
+Element.prototype.setAttributes = function(attrs) {
+  for(var key in attrs) {
+    this.setAttribute(key, attrs[key]);
+  }
+}
+
+// Trianglified header
+var points = [],
+    polygons = [],
+    oldWidth = 0;
+function trianglify() {
+  if(oldWidth == window.innerWidth) {
+    return;
+  }
+  var svg = document.querySelector('#canvas');
+
+  points = [];
+  polygons = [];
+  oldWidth = window.innerWidth;
+  while (svg.firstChild) {
+      svg.removeChild(svg.firstChild);
+  }
+
+  var margin = 30,
+      fullWidth = window.innerWidth - margin * 2,
+      fullHeight = window.innerHeight - margin * 2,
+      attributes = {
+        'width': fullWidth,
+        'height': fullHeight
+      }
+
+  svg.setAttributes(attributes);
+
+  var unitSize = (fullWidth+fullHeight)/20;
+      numPointsX = Math.ceil(fullWidth/unitSize)+1;
+      numPointsY = Math.ceil(fullHeight/unitSize)+1;
+      unitWidth = Math.ceil(fullWidth/(numPointsX-1));
+      unitHeight = Math.ceil(fullHeight/(numPointsY-1));
+
+  for(var y = 0; y < numPointsY; y++) {
+      for(var x = 0; x < numPointsX; x++) {
+          points.push([
+              unitWidth * x + ((x == 0 || x == numPointsX - 1) ? 0 : (Math.random() * unitWidth - unitWidth / 2) / 1.4),
+              unitHeight * y + ((y == 0 || y == numPointsY - 1) ? 0 : (Math.random() * unitHeight - unitHeight / 2) / 1.4)
+          ]);
+      }
+  }
+
+  for(var i = 0; i < points.length; i++) {
+      if(i % numPointsX != numPointsX - 1 && i <= numPointsY * numPointsX - numPointsX - 1) {
+          var rando = Math.floor(Math.random()*2);
+          for(var n = 0; n < 2; n++) {
+              var polygon = document.createElementNS(svg.namespaceURI, 'polygon'),
+                  coords = '';
+              if(rando==0) {
+                  if(n==0) {
+                      coords = points[i].join(',')+' '+points[i+numPointsX].join(',')+' '+points[i+numPointsX+1].join(',');
+                  } else if(n==1) {
+                      coords = points[i].join(',')+' '+points[i+1].join(',')+' '+points[i+numPointsX+1].join(',');
+                  }
+              } else if(rando==1) {
+                  if(n==0) {
+                      coords = points[i].join(',')+' '+points[i+numPointsX].join(',')+' '+points[i+1].join(',');
+                  } else if(n==1) {
+                      coords = points[i+numPointsX].join(',')+' '+points[i+1].join(',')+' '+points[i+numPointsX+1].join(',');
+                  }
+              }
+              polygon.setAttributes({
+                'class': 'nofill nostroke',
+                'points': coords,
+                'fill': 'rgba(0,0,0,'+(Math.random()/4)+')'
+              });
+              polygons.push(polygon);
+              svg.appendChild(polygon);
+          }
+      }
+  }
+}
+
+// Fetch blog posts
 function fetchPosts(offset, soft) {
     offset = typeof offset !== 'undefined' ? offset : 0;
     soft = typeof soft !== 'undefined' ? soft : false;
@@ -163,7 +126,7 @@ function loadPosts(offset, soft) {
     request.send();
 }
 
-/* Fetch works */
+// Fetch works
 function fetchWorks(offset, soft) {
     offset = typeof offset !== 'undefined' ? offset : 0;
     soft = typeof soft !== 'undefined' ? soft : false;
@@ -196,10 +159,9 @@ function loadWorks(offset, soft) {
 
 /* Init */
 function init() {
-    // setTimeout(function() { drawCanvas(); }, 5000);
-    drawCanvas();
+    trianglify();
     fetchPosts();
     fetchWorks();
 }
 window.addEventListener('DOMContentLoaded', init, false);
-window.addEventListener('resize', drawCanvas, false);
+window.addEventListener('resize', debounce(trianglify, 50));
