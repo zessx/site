@@ -49,6 +49,9 @@ gulp.task('js', function() {
 	return gulp.src(source + 'js/app.js')
 		.pipe(plumber())
 		.pipe(uglify())
+		.pipe(rename({
+			basename: 'dist'
+		}))
 		.pipe(chmod(755))
 		.pipe(gulp.dest(dest + '/js/'));
 });
