@@ -3,9 +3,9 @@ var gulp = require('gulp');
 
 // Debug plugins
 var plumber      = require("gulp-plumber");
-var chmod        = require("gulp-chmod");
 
 // Other plugins
+var concat       = require('gulp-concat');
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var cssnano      = require('gulp-cssnano');
@@ -40,19 +40,20 @@ gulp.task('css', function() {
 		.pipe(rename({
 			extname: '.css'
 		}))
-		.pipe(chmod(755))
 		.pipe(gulp.dest(dest + '/css/'));
 });
 
 // JS
 gulp.task('js', function() {
-	return gulp.src(source + 'js/app.js')
+	return gulp.src([
+			'bower_components/Snap.svg/dist/snap.svg.js',
+			source + 'js/app.js'
+		])
 		.pipe(plumber())
-		.pipe(uglify())
-		.pipe(rename({
-			basename: 'dist'
-		}))
-		.pipe(chmod(755))
+		.pipe(concat('dist.js'))
+		/*.pipe(uglify({
+			mangle: false
+		}))*/
 		.pipe(gulp.dest(dest + '/js/'));
 });
 

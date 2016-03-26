@@ -8,27 +8,9 @@ html {
     height: 100vh;
 }
 body {
-    @extend %font-light;
-    color: $main_dark;
-    opacity: 0;
-    font-size: 20px;
-    animation: opacify 2s ease 0s 1 normal forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     overflow: hidden;
-
-    &:before {
-        content: "";
-        position: fixed;
-        box-shadow: inset 0 0 0 $document_padding $white;
-        height: 100vh;
-        width: 100vw;
-        z-index: 99;
-        pointer-events: none;
-    }
-}
-a {
-    color: inherit;
-    text-decoration: none;
-}
-p {
-    margin: 0;
 }
