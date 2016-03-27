@@ -46,7 +46,6 @@ gulp.task('css', function() {
 // JS
 gulp.task('js', function() {
 	return gulp.src([
-			'bower_components/Snap.svg/dist/snap.svg.js',
 			source + 'js/app.js'
 		])
 		.pipe(plumber())

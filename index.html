@@ -36,7 +36,50 @@
 
 <body>
 
-
+	<svg width="200" height="154" fill="#222" style="overflow:visible">
+		<defs>
+			<filter id="filterReverse">
+				<feColorMatrix in="SourceGraphic" type="matrix" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"></feColorMatrix>
+			</filter>
+			<mask id="maskAnimation">
+				<rect id="maskAnimationRect" x="100" y="77" width="1" height="0" fill="#fff"></rect>
+			</mask>
+		</defs>
+		<g>
+			<rect x="0" y="0" width="200" height="42"></rect>
+			<rect x="0" y="56" width="200" height="42"></rect>
+			<rect x="0" y="112" width="200" height="42" id="dot3"></rect>
+			<rect x="0" y="112" width="200" height="42" id="dot4"></rect>
+		</g>
+		<g mask="url('#maskAnimation')">
+			<rect x="-4100" y="-2077" width="8000" height="4000"></rect>
+			<g filter="url('#filterReverse')">
+				<rect x="0" y="0" width="200" height="42"></rect>
+				<rect x="0" y="56" width="200" height="42" id="dot1"></rect>
+				<rect x="0" y="56" width="200" height="42" id="dot2"></rect>
+				<rect x="0" y="112" width="200" height="42"></rect>
+			</g>
+		</g>
+		<animate xlink:href="#maskAnimationRect" attributeName="height" to="8000" dur="0.7s" begin="1s" fill="freeze" id="animShowBackground"/>
+		<animate xlink:href="#maskAnimationRect" attributeName="y" to="-2077" dur="0.7s" begin="animShowBackground.begin" fill="freeze"/>
+		<animate xlink:href="#maskAnimationRect" attributeName="width" to="4000" dur="0.7s" begin="animShowBackground.end" fill="freeze" id="animExtendBackground"/>
+		<animateTransform xlink:href="#maskAnimationRect" attributeName="transform" type="rotate" from="0 100 105" to="-28.71 100 105" dur="0.4s" begin="animExtendBackground.end" fill="freeze" id="animRotateBackground"/>
+		<animate xlink:href="#dot1" attributeName="rx" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot1" attributeName="ry" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot1" attributeName="width" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot1" attributeName="x" to="100" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot2" attributeName="rx" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot2" attributeName="ry" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot2" attributeName="width" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot2" attributeName="x" to="158" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot3" attributeName="rx" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot3" attributeName="ry" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot3" attributeName="width" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot4" attributeName="rx" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot4" attributeName="ry" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot4" attributeName="width" to="42" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+		<animate xlink:href="#dot4" attributeName="x" to="58" dur="0.4s" begin="animRotateBackground.end" fill="freeze"/>
+	</svg>
 
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];

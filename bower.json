@@ -2,7 +2,6 @@
   "name": "zessx.github.io",
   "description": "Personal website",
   "dependencies": {
-    "Snap.svg": "adobe-webplatform/Snap.svg#^0.4.1"
   },
   "authors": [
     {
