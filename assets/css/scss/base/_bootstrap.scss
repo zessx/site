@@ -8,9 +8,19 @@ html {
     height: 100vh;
 }
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
     overflow: hidden;
+
+    &:after {
+        content: '';
+        box-sizing: border-box;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        border: (3 * $unit) solid white;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 99;
+    }
 }

@@ -1,2 +1,72 @@
 @charset "UTF-8";
 
+%section {
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    z-index: 2;
+
+    h2 {
+        position: absolute;
+        bottom: 3 * $unit;
+        width: calc(50vw - #{12 * $unit});
+        text-align: center;
+        margin: 0;
+        font-size: 3 * $unit;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+
+        li {
+            line-height: 3 * $unit - 2 * $linkPadding;
+            margin-bottom: $unit;
+            width: 50vw;
+
+            a {
+                display: block;
+                color: inherit;
+                padding: $linkPadding;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.posts {
+    @extend %section;
+    bottom: 0;
+    left: 0;
+    color: $dark;
+
+    h2 {
+        left: 6 * $unit;
+        transform: rotate(-90deg);
+        transform-origin: top left;
+    }
+    li {
+        background: $dark;
+        color: $light;
+        text-align: right;
+    }
+}
+.works {
+    @extend %section;
+    top: 0;
+    right: 0;
+    color: $light;
+
+    h2 {
+        right: 6 * $unit;
+        transform: rotate(90deg);
+        transform-origin: top right;
+    }
+    li {
+        background: $light;
+        color: $dark;
+        text-align: left;
+    }
+}
