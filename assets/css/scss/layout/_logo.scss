@@ -1,9 +1,10 @@
 .logo {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50vh;
+    left: 50vw;
     overflow: visible !important;
     transform: translate(-50%, -50%);
+    transition: left .4s;
     z-index: 1;
 }
 .logo__layer--dark {
@@ -47,7 +48,7 @@
         height: 8000px;
         y: -2077px;
         width: 4000px;
-        transform: rotate(-28.71deg);
+        transform: rotate($logoAngle);
     }
 }
 @keyframes rectToDot1 {

@@ -11,12 +11,13 @@ var autoprefixer = require('gulp-autoprefixer');
 var cssnano      = require('gulp-cssnano');
 var uglify       = require('gulp-uglify');
 var rename       = require('gulp-rename');
-var iconfont	 = require('gulp-iconfont');
+var iconfont     = require('gulp-iconfont');
 var consolidate	 = require('gulp-consolidate');
 
 // Paths
-var source = './assets/';
-var dest   = source;
+var source = 'assets/';
+var dest   = 'public/';
+var bower  = 'bower_components/';
 
 // Prod
 gulp.task('default', ['icons', 'css', 'js']);
@@ -24,45 +25,47 @@ gulp.task('default', ['icons', 'css', 'js']);
 // Watch (dev)
 gulp.task('watch', function () {
 	gulp.watch(source + 'css/scss/**/*.scss', ['css']);
-	gulp.watch(source + 'js/app.js', ['js']);
+	gulp.watch(source + 'js/main.js', ['js']);
 	gulp.watch(source + 'icons/!*', ['icons']);
 });
 
 // CSS
 gulp.task('css', function() {
-	return gulp.src(source + 'css/scss/**/[^_]*.scss')
+	return gulp.src([
+			source + 'css/scss/main.scss'
+		])
 		.pipe(plumber())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions', '> 1%', 'Explorer 7', 'Android >= 2', 'Safari > 3'],
 		}))
 		.pipe(cssnano())
-		.pipe(rename({
-			extname: '.css'
-		}))
-		.pipe(gulp.dest(dest + '/css/'));
+        .pipe(concat('app.css'))
+        .pipe(gulp.dest(dest));
 });
 
 // JS
 gulp.task('js', function() {
 	return gulp.src([
-			source + 'js/app.js'
+			bower  + 'perfect-scrollbar/js/perfect-scrollbar.js',
+			source + 'js/main.js'
 		])
 		.pipe(plumber())
-		.pipe(concat('dist.js'))
-		/*.pipe(uglify({
+		.pipe(concat('app.js'))
+		.pipe(uglify({
 			mangle: false
-		}))*/
-		.pipe(gulp.dest(dest + '/js/'));
+		}))
+		.pipe(gulp.dest(dest));
 });
 
 // Icons
 var runTimestamp = Math.round(Date.now()/1000);
 gulp.task('icons', function(){
 	return gulp.src(source +'/icons/*.svg')
+		.pipe(plumber())
 		.pipe(iconfont({
 			fontName: 'icons',
-			appendUnicode: true,
+			prependUnicode: true,
 			formats: ['ttf', 'eot', 'woff', 'svg', 'woff2'],
 			timestamp: runTimestamp,
 			normalize: true
@@ -81,6 +84,5 @@ gulp.task('icons', function(){
 				}))
 				.pipe(gulp.dest(source + 'css/scss/base/'));
 		})
-		.pipe(chmod(755))
-		.pipe(gulp.dest(dest +'/fonts/'));
+		.pipe(gulp.dest(dest +'fonts/'));
 });
