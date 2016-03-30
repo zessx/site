@@ -17,14 +17,13 @@ var consolidate	 = require('gulp-consolidate');
 // Paths
 var source = 'assets/';
 var dest   = 'public/';
-var bower  = 'bower_components/';
 
 // Prod
 gulp.task('default', ['icons', 'css', 'js']);
 
 // Watch (dev)
 gulp.task('watch', function () {
-	gulp.watch(source + 'css/scss/**/*.scss', ['css']);
+	gulp.watch(source + 'css/**/*.scss', ['css']);
 	gulp.watch(source + 'js/main.js', ['js']);
 	gulp.watch(source + 'icons/!*', ['icons']);
 });
@@ -32,7 +31,7 @@ gulp.task('watch', function () {
 // CSS
 gulp.task('css', function() {
 	return gulp.src([
-			source + 'css/scss/main.scss'
+			source + 'css/main.scss'
 		])
 		.pipe(plumber())
 		.pipe(sass().on('error', sass.logError))
@@ -47,7 +46,7 @@ gulp.task('css', function() {
 // JS
 gulp.task('js', function() {
 	return gulp.src([
-			bower  + 'perfect-scrollbar/js/perfect-scrollbar.js',
+			source + 'vendor/perfect-scrollbar/js/perfect-scrollbar.js',
 			source + 'js/main.js'
 		])
 		.pipe(plumber())
@@ -82,7 +81,7 @@ gulp.task('icons', function(){
 					prefix:    '_',
 					extname: '.scss'
 				}))
-				.pipe(gulp.dest(source + 'css/scss/base/'));
+				.pipe(gulp.dest(source + 'css/base/'));
 		})
 		.pipe(gulp.dest(dest +'fonts/'));
 });

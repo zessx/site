@@ -1,4 +1,4 @@
-@import "../../../../bower_components/perfect-scrollbar/src/css/main";
+@import "../../vendor/perfect-scrollbar/css/main";
 
 .ps-theme-light {
   @include ps-container(map-merge($ps-theme-default, (
