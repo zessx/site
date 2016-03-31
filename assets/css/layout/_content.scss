@@ -5,7 +5,9 @@
     top: 3 * $unit;
     bottom: 3 * $unit;
     width: calc(50vw - #{$logoWidth});
+    opacity: 0;
     z-index: 2;
+    animation: opacify 1s 5s forwards;
 
     h2 {
         position: absolute;
@@ -26,16 +28,20 @@
             top: 50%;
             left: 50%;
             width: 0;
-            height: 3px;
+            height: 1px;
             background: currentColor;
             transform: translate(-50%, -50%);
-            transition: all .4s;
+            transition: all .2s;
         }
-        &:hover:after {
-            width: calc(100% + #{3 * $unit});
+        &:hover {
+            animation: glitchText 2s infinite;
+
+            &:after {
+                width: calc(100% + #{3 * $unit});
+            }
         }
     }
-    ul {
+    > ul {
         height: calc(100vh - #{6 * $unit});
         list-style: none;
         padding: 3 * $unit;
@@ -53,7 +59,7 @@
             }
             p {
                 margin: 0;
-                padding: 10px 10px 0;
+                padding: 0;
             }
             a {
                 display: block;
@@ -61,6 +67,9 @@
                 margin: 0;
                 padding: $linkPadding;
                 text-decoration: none;
+            }
+            &:hover {
+                animation: glitchText 2s infinite;
             }
         }
     }
@@ -74,6 +83,76 @@
     }
 }
 
+.about {
+    @extend %section;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    color: $light;
+    width: 100%;
+
+    h2 {
+        top: auto;
+        left: 50%;
+        transform: translate(-50%, 100%);
+    }
+    article {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 0 25vw;
+        text-align: center;
+        font-size: 1.5em;
+        background: $dark;
+        animation: glitchBlock 2s infinite;
+
+        strong {
+            text-decoration: underline;
+        }
+        a {
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+
+            li {
+                display: inline-block;
+                margin: $unit;
+                font-size: 2.5em;
+
+                &:hover {
+                    animation: glitchText 2s infinite;
+                }
+            }
+        }
+    }
+    &.active {
+        article {
+            display: flex;
+
+            &:after {
+                content: '+';
+                display: block;
+                position: absolute;
+                top: 6 * $unit;
+                right: 6 * $unit;
+                font-size: 6 * $unit;
+                line-height: 6 * $unit;
+                width: 6 * $unit;
+                cursor: pointer;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
 .posts {
     @extend %section;
     left: 3 * $unit;
@@ -81,25 +160,22 @@
 
     h2 {
         left: 3 * $unit;
-        transform: translate(-50%, -50%) rotate(-90deg);
+        transform: translate(-50%, -50%) rotate(-90deg) translateY(50%);
     }
     ul {
+        padding-right: 0;
         transform: translateX(-100%);
 
         li {
             color: $dark;
             text-align: right;
-
-            &:hover {
-                background: $dark;
-                color: $light;
-            }
         }
     }
     &.active {
         h2 {
             left: calc(50vw - #{$logoWidth - 3 * $unit});
         }
+        ~ .about h2,
         ~ .logo {
             left: calc(50vw + #{$logoWidth});
         }
@@ -112,27 +188,30 @@
 
     h2 {
         right: 3 * $unit;
-        transform: translate(50%, -50%) rotate(90deg);
+        transform: translate(50%, -50%) rotate(90deg) translateY(50%);
     }
     ul {
+        padding-left: 0;
         transform: translateX(100%);
 
         li {
             color: $light;
             text-align: left;
-
-            &:hover {
-                background: $light;
-                color: $dark;
-            }
         }
     }
     &.active {
         h2 {
             right: calc(50vw - #{$logoWidth - 3 * $unit});
         }
+        ~ .about h2,
         ~ .logo {
             left: calc(50vw - #{$logoWidth});
         }
+    }
+}
+
+@keyframes opacify {
+    to {
+        opacity: 1;
     }
 }

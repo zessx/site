@@ -63,23 +63,23 @@ gulp.task('icons', function(){
 	return gulp.src(source +'/icons/*.svg')
 		.pipe(plumber())
 		.pipe(iconfont({
-			fontName: 'icons',
+			fontName:       'icons',
 			prependUnicode: true,
-			formats: ['ttf', 'eot', 'woff', 'svg', 'woff2'],
-			timestamp: runTimestamp,
-			normalize: true
+			formats:        ['ttf', 'eot', 'woff', 'svg', 'woff2'],
+			timestamp:      runTimestamp,
+			normalize:      true
 		}))
 		.on('glyphs', function(glyphs, options) {
 			gulp.src(source +'/icons/icons.template')
 				.pipe(consolidate('lodash', {
 					glyphs:    glyphs,
 					fontName:  'icons',
-					fontPath:  source + 'fonts/',
+					fontPath:  'fonts/',
 					className: 'icon'
 				}))
 				.pipe(rename({
 					prefix:    '_',
-					extname: '.scss'
+					extname:   '.scss'
 				}))
 				.pipe(gulp.dest(source + 'css/base/'));
 		})

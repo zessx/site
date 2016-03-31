@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .logo {
     position: absolute;
     top: 50vh;
@@ -8,26 +10,26 @@
     z-index: 1;
 }
 .logo__layer--dark {
-    animation: opacify 0.7s 0.7s forwards;
+    animation: fillOpacify 0.7s 0.7s forwards;
 }
 .logo__maskrect {
-    animation: showBackground 1.5s 1s forwards;
+    animation: showBackground 3s 2s forwards;
     transform-origin: 100px 105px;
 }
 .logo__dot--1 {
-    animation: rectToDot1 .4s 2.5s forwards;
+    animation: rectToDot1 .4s 5s forwards;
 }
 .logo__dot--2 {
-    animation: rectToDot2 .4s 2.5s forwards;
+    animation: rectToDot2 .4s 5s forwards;
 }
 .logo__dot--3 {
-    animation: rectToDot3 .4s 2.5s forwards;
+    animation: rectToDot3 .4s 5s forwards;
 }
 .logo__dot--4 {
-    animation: rectToDot4 .4s 2.5s forwards;
+    animation: rectToDot4 .4s 5s forwards;
 }
 
-@keyframes opacify {
+@keyframes fillOpacify {
     to {
         fill-opacity: 1;
     }

@@ -8,6 +8,7 @@ html {
     height: 100vh;
 }
 body {
+    @extend %font-light;
     height: 100vh;
     overflow: hidden;
 
@@ -20,7 +21,115 @@ body {
         border: (3 * $unit) solid white;
         top: 0;
         left: 0;
+        background: url(images/noise.png);
         pointer-events: none;
         z-index: 99;
+        animation: noise linear .4s infinite;
+    }
+}
+
+@keyframes noise {
+    from, to {
+        background-position: top center;
+    }
+    50% {
+        background-position: bottom center;
+    }
+}
+
+/* Source: http://codepen.io/bulby97/details/fcvay/ */
+@keyframes glitchText {
+    0%, 4%, 51%, 55%, 73%, 76% {
+        text-shadow: 3px 0 0 red, -3px 0 0 blue;
+    }
+    5%, 10%, 56%, 60%, 67%, 70%, 77%, 80% {
+        text-shadow: -3px 0 0 red, 3px 0 0 blue;
+    }
+    11%, 15%, 43%, 46%, 81%, 85% {
+        text-shadow: 2px 0 0 red, -2px 0 0 lime;
+    }
+    16%, 20%, 47%, 50%, 86%, 90% {
+        text-shadow: -3px 0 0 red, 3px 0 0 lim
+    }
+    21%, 30%, 92%, 95% {
+        text-shadow: 2px 0 0 blue, -2px 0 0 lime;
+    }
+    31%, 40%, 96%, 100% {
+        text-shadow: -3px 0 0 blue, 3px 0 0 lime;
+    }
+    41% {
+        text-shadow: 7px 0 0 blue, -7px 0 0 lime;
+    }
+    42% {
+        text-shadow: 0 0 0 blue, 0 0 0 lime;
+    }
+    61% {
+        text-shadow: 6px 0 0 red, -6px 0 0 lime;
+    }
+    62% {
+        text-shadow: 0 0 0 red, 0 0 0 lime;
+    }
+    63%, 64%, 65%, 66% {
+        text-shadow: 2px 0 0 red, -2px 0 0 blue;
+    }
+    71% {
+        text-shadow: 9px 0 0 red, -9px 0 0 blue;
+    }
+    72% {
+        text-shadow: 0 0 0 red, 0 0 0 blue;
+    }
+    91% {
+        text-shadow: 8px 0 0 lime, -8px 0 0 blue;
+    }
+    92% {
+        text-shadow: 0 0 0 lime, 0 0 0 blue;
+    }
+}
+
+@keyframes glitchBlock {
+    0%, 4%, 51%, 55%, 73%, 76% {
+        box-shadow: 6px 0 0 red, -6px 0 0 blue;
+    }
+    5%, 10%, 56%, 60%, 67%, 70%, 77%, 80% {
+        box-shadow: -6px 0 0 red, 6px 0 0 blue;
+    }
+    11%, 15%, 43%, 46%, 81%, 85% {
+        box-shadow: 4px 0 0 red, -4px 0 0 lime;
+    }
+    16%, 20%, 47%, 50%, 86%, 90% {
+        box-shadow: -6px 0 0 red, 6px 0 0 lim
+    }
+    21%, 30%, 92%, 95% {
+        box-shadow: 4px 0 0 blue, -4px 0 0 lime;
+    }
+    31%, 40%, 96%, 100% {
+        box-shadow: -6px 0 0 blue, 6px 0 0 lime;
+    }
+    41% {
+        box-shadow: 14px 0 0 blue, -14px 0 0 lime;
+    }
+    42% {
+        box-shadow: 0 0 0 blue, 0 0 0 lime;
+    }
+    61% {
+        box-shadow: 12px 0 0 red, -12px 0 0 lime;
+    }
+    62% {
+        box-shadow: 0 0 0 red, 0 0 0 lime;
+    }
+    63%, 64%, 65%, 66% {
+        box-shadow: 4px 0 0 red, -4px 0 0 blue;
+    }
+    71% {
+        box-shadow: 18px 0 0 red, -18px 0 0 blue;
+    }
+    72% {
+        box-shadow: 0 0 0 red, 0 0 0 blue;
+    }
+    91% {
+        box-shadow: 16px 0 0 lime, -16px 0 0 blue;
+    }
+    92% {
+        box-shadow: 0 0 0 lime, 0 0 0 blue;
     }
 }
