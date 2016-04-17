@@ -2,9 +2,11 @@
 @import "base/fonts";
 @import "base/icons";
 @import "base/variables";
-@import "base/bootstrap";
 
+@import "vendor/sass-queries";
 @import "vendor/perfect-scrollbar";
+
+@import "base/bootstrap";
 
 @import "layout/logo";
 @import "layout/content";
