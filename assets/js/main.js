@@ -1,5 +1,5 @@
 var sections = document.querySelectorAll('section'),
-	titles   = document.querySelectorAll('section h2'),
+	switches = document.querySelectorAll('section .switch'),
 	posts    = document.querySelector('.posts > ul'),
 	works    = document.querySelector('.works > ul');
 
@@ -14,7 +14,7 @@ function activeSection(event) {
 		parent.classList.add('active');
 	}
 }
-Array.prototype.forEach.call(titles, function(element){
+Array.prototype.forEach.call(switches, function(element){
 	element.addEventListener('click', activeSection);
 });
 

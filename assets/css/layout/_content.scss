@@ -6,10 +6,12 @@
     bottom: 3 * $unit;
     width: calc(50vw - #{$logoWidth});
     opacity: 0;
+    pointer-events: none;
     z-index: 2;
     animation: opacify 1s 5s forwards;
 
     h2 {
+        @extend %glitchText;
         position: absolute;
         top: 50%;
         text-align: center;
@@ -33,12 +35,8 @@
             transform: translate(-50%, -50%);
             transition: all .2s;
         }
-        &:hover {
-            animation: glitchText 2s infinite;
-
-            &:after {
-                width: calc(100% + #{3 * $unit});
-            }
+        &:hover:after {
+            width: calc(100% + #{3 * $unit});
         }
     }
     > ul {
@@ -49,6 +47,7 @@
         transition: transform .4s;
 
         li {
+            @extend %glitchText;
             line-height: 3 * $unit - 2 * $linkPadding;
             margin-bottom: $unit;
             width: 100%;
@@ -67,9 +66,6 @@
                 margin: 0;
                 padding: $linkPadding;
                 text-decoration: none;
-            }
-            &:hover {
-                animation: glitchText 2s infinite;
             }
         }
     }
@@ -98,12 +94,12 @@
         transform: translate(-50%, 100%);
     }
     article {
-        display: none;
+        display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         position: fixed;
-        top: 0;
+        top: -100vh;
         left: 0;
         width: 100vw;
         height: 100vh;
@@ -111,8 +107,18 @@
         text-align: center;
         font-size: 1.5em;
         background: $dark;
-        animation: glitchBlock 2s infinite;
+        transition: top .4s;
 
+        .close {
+            @extend %glitchText;
+            position: absolute;
+            top: 6 * $unit;
+            right: 6 * $unit;
+            font-size: 6 * $unit;
+            line-height: 6 * $unit;
+            width: 6 * $unit;
+            cursor: pointer;
+        }
         strong {
             text-decoration: underline;
         }
@@ -124,32 +130,16 @@
             margin: 0;
 
             li {
+                @extend %glitchText;
                 display: inline-block;
                 margin: $unit;
                 font-size: 2.5em;
-
-                &:hover {
-                    animation: glitchText 2s infinite;
-                }
             }
         }
     }
     &.active {
         article {
-            display: flex;
-
-            &:after {
-                content: '+';
-                display: block;
-                position: absolute;
-                top: 6 * $unit;
-                right: 6 * $unit;
-                font-size: 6 * $unit;
-                line-height: 6 * $unit;
-                width: 6 * $unit;
-                cursor: pointer;
-                transform: rotate(45deg);
-            }
+            top: 0;
         }
     }
 }
@@ -213,5 +203,6 @@
 @keyframes opacify {
     to {
         opacity: 1;
+        pointer-events: auto;
     }
 }

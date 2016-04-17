@@ -30,14 +30,19 @@ body {
 
 @keyframes noise {
     from, to {
-        background-position: top center;
+        background-position: 0px center;
     }
     50% {
-        background-position: bottom center;
+        background-position: 1000px center;
     }
 }
 
 /* Source: http://codepen.io/bulby97/details/fcvay/ */
+%glitchText {
+    &:hover {
+        animation: glitchText 2s infinite;
+    }
+}
 @keyframes glitchText {
     0%, 4%, 51%, 55%, 73%, 76% {
         text-shadow: 3px 0 0 red, -3px 0 0 blue;
