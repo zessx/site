@@ -8,7 +8,14 @@ function init() {
     document.body.classList.add('display-hint');
   }, 5000);
 
+  const refreshRate = 5;
+  var refreshCount = 0;
+
   document.addEventListener('mousemove', function(event) {
+
+    if (refreshCount++ % refreshRate != 0) {
+      return;
+    }
 
     // Logo
     var ox = logo.getBoundingClientRect().left + logo.getBBox().width / 2,
