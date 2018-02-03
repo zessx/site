@@ -1,229 +1,205 @@
 @charset "UTF-8";
 
-%section {
-    position: absolute;
-    top: 3 * $unit;
-    bottom: 3 * $unit;
-    width: calc(50vw - #{$logoWidth});
-    opacity: 0;
-    pointer-events: none;
-    z-index: 2;
-    animation: opacify 1s 5s forwards;
+body {
+  @extend %font-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  text-transform: uppercase;
+  overflow: hidden;
+  user-select: none;
 
-    h2 {
-        @extend %glitchText;
-        position: absolute;
-        top: 50%;
-        text-align: center;
-        margin: 0;
-        padding: $linkPadding;
-        cursor: pointer;
-        font-size: 3 * $unit;
-        font-weight: normal;
-        text-transform: uppercase;
-        transform-origin: center center;
-        transition: left .4s, right .4s;
+  &.grabbing {
+    cursor: grabbing;
 
-        &:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 1px;
-            background: currentColor;
-            transform: translate(-50%, -50%);
-            transition: all .2s;
-        }
-        &:hover:after {
-            width: calc(100% + #{3 * $unit});
-        }
+    h1,
+    h2,
+    #logo {
+      filter: blur(5px);
     }
-    > ul {
-        height: calc(100vh - #{6 * $unit});
-        list-style: none;
-        padding: 3 * $unit;
-        margin: 0;
-        transition: transform .4s;
-
-        li {
-            @extend %glitchText;
-            line-height: 3 * $unit - 2 * $linkPadding;
-            margin-bottom: $unit;
-            width: 100%;
-            transition: color .4s, background .4s;
-
-            h3 {
-                margin: 0;
-            }
-            p {
-                margin: 0;
-                padding: 0;
-            }
-            a {
-                display: block;
-                color: inherit;
-                margin: 0;
-                padding: $linkPadding;
-                text-decoration: none;
-            }
-        }
+    #links {
+      opacity: 1;
+      pointer-events: initial;
     }
-    &.active {
-        h2:after {
-            width: calc(100% + #{3 * $unit});
-        }
-        ul {
-            transform: translateX(0);
-        }
+    #scroller {
+      opacity: 1;
     }
-
-    @include media($from: tablet) {
-        position: relative;
-        width: 100%;
-        opacity: 1;
+    #background:after {
+      filter: blur(2px);
     }
+  }
 }
 
-.about {
-    @extend %section;
-    position: absolute;
+#background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 1;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: fixed;
     top: 0;
     left: 0;
-    bottom: auto;
-    color: $light;
     width: 100%;
-
-    h2 {
-        top: auto;
-        left: 50%;
-        transform: translate(-50%, 100%);
-    }
-    article {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        position: fixed;
-        top: -100vh;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        padding: (6 * $unit) 25vw;
-        text-align: center;
-        font-size: 1.5em;
-        background: $dark;
-        transition: top .4s;
-
-        .close {
-            @extend %glitchText;
-            position: absolute;
-            top: 6 * $unit;
-            right: 6 * $unit;
-            font-size: 6 * $unit;
-            line-height: 6 * $unit;
-            width: 6 * $unit;
-            cursor: pointer;
-        }
-        strong {
-            text-decoration: underline;
-        }
-        a {
-            color: inherit;
-        }
-        ul {
-            list-style: none;
-            margin: 0;
-
-            li {
-                @extend %glitchText;
-                display: inline-block;
-                margin: $unit;
-                font-size: 2.5em;
-            }
-        }
-
-        @include media($from: desktop) {
-            padding: (6 * $unit) 10vw;
-            font-size: 1.2em;
-
-            .close {
-                top: 3 * $unit;
-                right: 3 * $unit;
-            }
-            ul {
-                li {
-                    font-size: 2em;
-                }
-            }
-        }
-    }
-    &.active {
-        article {
-            top: 0;
-        }
-    }
+    height: 100%;
+    background: transparentize($white, 0.6);
+  }
 }
-.posts {
-    @extend %section;
-    left: 3 * $unit;
+
+main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.5em;
+  color: $dark;
+  z-index: 3;
+
+  h1,
+  h2 {
+    @extend %font-light;
+    opacity: 1;
+    width: 50%;
+    filter: blur(0px);
+    transition: filter 0.5s;
+    transition-timing-function: ease-out;
+  }
+  h1 {
+    order: 1;
+    font-size: 1.2rem;
+    text-align: right;
+  }
+  h2 {
+    order: 3;
+    font-size: 0.8rem;
+    padding-left: 0.5em;
+  }
+
+  @at-root #logo {
+    order: 2;
+    flex-shrink: 0;
+    width: $logoSize;
+    height: $logoSize;
+    border-radius: 50%;
+    margin: 20px;
+    stroke: currentColor;
+    filter: blur(0px);
+    transition: transform 0.5s, filter 0.5s;
+    transition-timing-function: ease-out;
+
+    * {
+      cursor: grab;
+    }
+  }
+}
+
+#links {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  width: auto;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  letter-spacing: 0.5em;
+  transform: translateX(-50%);
+  transition: opacity 0.5s, transform 0.5s;
+  transition-timing-function: ease-out;
+
+  a {
+    display: inline-block;
+    line-height: 1.5em;
+    padding: 0.5em;
     color: $dark;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: letter-spacing 0.5s;
+    transition-timing-function: ease-out;
 
-    h2 {
-        left: 3 * $unit;
-        transform: translate(-50%, -50%) rotate(-90deg) translateY(50%);
+    &:before,
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 0em;
+      height: 1px;
+      margin: 0 0.5em 0.4em;
+      background: currentColor;
+      transition: width 0.4s;
     }
-    ul {
-        padding-right: 0;
-        transform: translateX(-100%);
 
-        li {
-            color: $dark;
-            text-align: right;
-        }
-    }
-    &.active {
-        h2 {
-            left: calc(50vw - #{$logoWidth - 3 * $unit});
-        }
-        ~ .about h2,
-        ~ .logo {
-            left: calc(50vw + #{$logoWidth});
-        }
-    }
-}
-.works {
-    @extend %section;
-    right: 3 * $unit;
-    color: $light;
+    &:hover {
+      letter-spacing: 0.6em;
 
-    h2 {
-        right: 3 * $unit;
-        transform: translate(50%, -50%) rotate(90deg) translateY(50%);
+      &:before,
+      &:after {
+        width: 1em;
+      }
     }
-    ul {
-        padding-left: 0;
-        transform: translateX(100%);
-
-        li {
-            color: $light;
-            text-align: left;
-        }
-    }
-    &.active {
-        h2 {
-            right: calc(50vw - #{$logoWidth - 3 * $unit});
-        }
-        ~ .about h2,
-        ~ .logo {
-            left: calc(50vw - #{$logoWidth});
-        }
-    }
+  }
 }
 
-@keyframes opacify {
-    to {
-        opacity: 1;
-        pointer-events: auto;
-    }
+#links {
+  top: calc(50% - 11em);
+
+  .separator {
+    width: 12em;
+    height: 1px;
+    background: $dark;
+    margin: 1em auto;
+  }
+}
+
+#scroller {
+  position: fixed;
+  opacity: 0;
+  z-index: 2;
+  height: $scrollerSize;
+  width: $scrollerSize;
+  transition: opacity 0.4s;
+  stroke: $dark;
+}
+
+#hint {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  z-index: 4;
+  transform: translate(-50%, 0);
+  font-size: 0.5rem;
+  letter-spacing: 0.5em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+  transition-timing-function: ease-out;
+  animation: animation-hint 3s infinite ease-in-out;
+
+  .display-hint & {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-hint {
+  0% {
+    transform:translate(-50%, 0px);
+  }
+  50% {
+    transform:translate(-50%, -15px);
+  }
+  100% {
+    transform:translate(-50%, 0px);
+  }
 }

@@ -7,7 +7,7 @@ Legals
 - Author : [zessx](https://github.com/zessx)
 - Licence : [MIT](http://opensource.org/licenses/MIT)
 - Contact : [@zessx](https://twitter.com/zessx)
-- Link : [smarchal.com](http://smarchal.com)
+- Link : [smarchal.com](https://smarchal.com)
 
 Licence
 =======

@@ -1,12 +1,10 @@
-@import "base/normalize";
+@import "../../node_modules/normalize.css/normalize";
+
 @import "base/fonts";
-@import "base/icons";
 @import "base/variables";
 
-@import "vendor/sass-queries";
-@import "vendor/perfect-scrollbar";
+@import "../../node_modules/sass-queries/sass-queries";
 
 @import "base/bootstrap";
 
-@import "layout/logo";
 @import "layout/content";
