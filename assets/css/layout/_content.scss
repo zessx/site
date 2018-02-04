@@ -182,24 +182,41 @@ main {
 }
 
 #links {
-  top: calc(50% - 11em);
+  top: 3rem;
+  height: calc(100% - 8rem);
+  width: 150vw;
+  font-size: 0.6rem;
+  overflow: scroll;
 
   .separator {
     width: 12em;
-    height: 1px;
+    height: 0;
     background: $dark;
     margin: 1em auto;
+    padding: 1px 0 0;
+  }
+
+  @include media($from: desktop) {
+    top: calc(50% - 11em);
+    font-size: 1rem;
+    overflow: hidden;
   }
 }
 
 #scroller {
   position: fixed;
+  display: none;
+  pointer-events: none;
   opacity: 0;
   z-index: 2;
   height: $scrollerSize;
   width: $scrollerSize;
   transition: opacity 0.4s;
   stroke: $dark;
+
+  @include media($from: desktop) {
+    display: block;
+  }
 }
 
 #hint {

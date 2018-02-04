@@ -39,22 +39,15 @@ function init() {
     scroller.style.top = cy - scroller.getBBox().height / 2 + 28;
   }
 
-  document.addEventListener('mousemove', move);
-  document.addEventListener('touchmove', move);
+  if (window.innerWidth > 992) {
+    document.addEventListener('mousemove', move);
+  }
 
   function startDrag(event) {
     document.body.classList.add('grabbing');
     clearTimeout(hintTID);
     document.body.classList.remove('display-hint');
   }
-
-  logo.addEventListener('mousedown', function(event) {
-    if (event.button == 0) {
-      startDrag(event);
-    }
-  });
-  logo.addEventListener('touchstart', startDrag);
-  toggler.addEventListener('click', startDrag);
 
   function stopDrag(event) {
     document.body.classList.remove('grabbing');
@@ -63,12 +56,25 @@ function init() {
     }
   }
 
+  logo.addEventListener('mousedown', function(event) {
+    if ((event.target && event.target != toggler) || event.button == 0) {
+      startDrag(event);
+    }
+  });
+
   document.addEventListener('mouseup', function(event) {
-    if (event.button == 0) {
+    if ((event.target && event.target != toggler) || event.button == 0) {
       stopDrag(event);
     }
   });
-  document.addEventListener('touchend', stopDrag);
+
+  toggler.addEventListener('click', function(event) {
+    if (document.body.classList.contains('grabbing')) {
+      stopDrag(event);
+    } else {
+      startDrag(event);
+    }
+  });
 
 }
 window.addEventListener('DOMContentLoaded', init, false);
