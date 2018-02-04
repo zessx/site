@@ -6,8 +6,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
   text-transform: uppercase;
   overflow: hidden;
   user-select: none;
@@ -79,6 +77,7 @@ main {
     opacity: 1;
     width: 90%;
     text-align: center;
+    line-height: 1.5em;
   }
   h1 {
     order: 2;
@@ -104,17 +103,19 @@ main {
     }
   }
 
-  // @include media($until: tablet) {
-  //   #logo {
-  //     transform: none !important;
-  //   }
-  // }
+  @include media($until: tablet) {
+    #logo {
+      transform: none !important;
+    }
+  }
+
   @include media($from: tablet) {
     flex-direction: row;
 
     h1,
     h2 {
       width: 50%;
+      line-height: 1em;
     }
     h1 {
       order: 1;
@@ -203,6 +204,7 @@ main {
 
 #hint {
   position: fixed;
+  display: none;
   left: 50%;
   bottom: 2rem;
   z-index: 4;
@@ -218,6 +220,26 @@ main {
 
   .display-hint & {
     opacity: 1;
+  }
+
+  @include media($from: desktop) {
+    display: block;
+  }
+}
+
+#toggler {
+  position: fixed;
+  display: block;
+  left: 50%;
+  bottom: 2rem;
+  width: 1.2rem;
+  stroke: $dark;
+  z-index: 4;
+  transform: translate(-50%, 0);
+  opacity: 0.5;
+
+  @include media($from: desktop) {
+    display: none;
   }
 }
 
