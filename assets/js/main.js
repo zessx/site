@@ -2,6 +2,7 @@ function init() {
 
   const logo     = document.querySelector('#logo');
   const scroller = document.querySelector('#scroller');
+  const toggler  = document.querySelector('#toggler');
   const links    = document.querySelector('#links');
 
   var hintTID = setTimeout(function() {
@@ -53,6 +54,7 @@ function init() {
     }
   });
   logo.addEventListener('touchstart', startDrag);
+  toggler.addEventListener('click', startDrag);
 
   function stopDrag(event) {
     document.body.classList.remove('grabbing');
