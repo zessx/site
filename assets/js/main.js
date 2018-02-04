@@ -11,8 +11,7 @@ function init() {
   const refreshRate = 5;
   var refreshCount = 0;
 
-  document.addEventListener('mousemove', function(event) {
-
+  function move(event) {
     if (refreshCount++ % refreshRate != 0) {
       return;
     }
@@ -37,21 +36,37 @@ function init() {
     // Scroller
     scroller.style.left = cx - scroller.getBBox().width / 2 - 5;
     scroller.style.top = cy - scroller.getBBox().height / 2 + 28;
+  }
 
-  });
+  document.addEventListener('mousemove', move);
+  document.addEventListener('touchmove', move);
 
-  logo.addEventListener('mousedown', function(event) {
+  function startDrag(event) {
     document.body.classList.add('grabbing');
     clearTimeout(hintTID);
     document.body.classList.remove('display-hint');
+  }
+
+  logo.addEventListener('mousedown', function(event) {
+    if (event.button == 0) {
+      startDrag(event);
+    }
   });
+  logo.addEventListener('touchstart', startDrag);
+
+  function stopDrag(event) {
+    document.body.classList.remove('grabbing');
+    if (event.target && event.target.nodeName == 'A') {
+      window.location = event.target.getAttribute('href');
+    }
+  }
 
   document.addEventListener('mouseup', function(event) {
-    document.body.classList.remove('grabbing');
-      if (event.target && event.target.nodeName == 'A') {
-        window.location = event.target.getAttribute('href');
-      }
+    if (event.button == 0) {
+      stopDrag(event);
+    }
   });
+  document.addEventListener('touchend', stopDrag);
 
 }
 window.addEventListener('DOMContentLoaded', init, false);

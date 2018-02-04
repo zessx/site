@@ -5,3 +5,9 @@ $dark: #0d1a23;
 
 $logoSize: 6em;
 $scrollerSize: 50px;
+
+%jiggy-fix {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  transform: translateZ(0);
+}

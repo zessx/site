@@ -1,1 +1,11 @@
+$sq-breakpoints: (
+    mobile:    320px,
+    tablet:    768px,
+    desktop:   992px,
+    wide:      1200px
+);
+$sq-media: "all";
+$sq-debug: false;
+$sq-mobile-first: true;
+
 @import "../../../node_modules/sass-queries/sass-queries";
