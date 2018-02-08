@@ -1,7 +1,17 @@
 @charset "UTF-8";
 
-$white: #e2e2e2;
-$dark: #0d1a23;
+$white: #d4d7da;
+$lighter: #02c39a;
+$light: #00a896;
+$dark: #028090;
+$darker: #075675;
+
+$gradient: (
+  1: $lighter,
+  2: $light,
+  3: $dark,
+  4: $darker
+);
 
 $logoSize: 6em;
 $scrollerSize: 50px;

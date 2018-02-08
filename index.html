@@ -30,13 +30,14 @@
     <link rel="canonical" href="https://smarchal.com">
     <link rel="me" href="https://twitter.com/zessx">
 
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0d1a23">
-    <meta name="msapplication-TileColor" content="#0d1a23">
-    <meta name="theme-color" content="#0d1a23">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00a896">
+    <meta name="msapplication-TileColor" content="#00a896">
+    <meta name="theme-color" content="#00a896">
 
   </head>
 
@@ -44,12 +45,22 @@
 
     <main>
 
-      <h1>Samuel Marchal</h1>
+      <h1>Samuel<br>Marchal</h1>
       <h2>Web development<br>R&D management</h2>
 
       <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" version="1.1" stroke-width="3" stroke-linecap="round" fill="transparent">
-        <circle cx="50" cy="49" r="47"/>
-        <path d="m35.66,26.26c23.73,23.73 23.73,23.73 23.73,23.73c3.95,3.95 11.86,3.95 15.82,0c3.95,-3.95 3.95,-11.86 0,-15.82c-3.95,-3.95 -11.86,-3.95 -15.82,0c-23.73,23.73 -23.73,23.73 -23.73,23.73c-3.95,3.95 -11.86,3.95 -15.82,0c-3.95,-3.95 -3.95,-11.86 0,-15.82c3.95,-3.95 11.86,-3.95 15.82,0c23.73,23.73 23.73,23.73 23.73,23.73m-23.98,8.16l47.71,-47.71"/>
+        <defs>
+          <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%"/>
+            <stop offset="33%"/>
+            <stop offset="66%"/>
+            <stop offset="100%"/>
+          </linearGradient>
+        </defs>
+        <g stroke="url(#gradient)">
+          <circle cx="50" cy="49" r="47"/>
+          <path d="m35.66,26.26c23.73,23.73 23.73,23.73 23.73,23.73c3.95,3.95 11.86,3.95 15.82,0c3.95,-3.95 3.95,-11.86 0,-15.82c-3.95,-3.95 -11.86,-3.95 -15.82,0c-23.73,23.73 -23.73,23.73 -23.73,23.73c-3.95,3.95 -11.86,3.95 -15.82,0c-3.95,-3.95 -3.95,-11.86 0,-15.82c3.95,-3.95 11.86,-3.95 15.82,0c23.73,23.73 23.73,23.73 23.73,23.73m-23.98,8.16l47.71,-47.71"/>
+        </g>
       </svg>
 
     </main>
@@ -77,20 +88,22 @@
 
     </section>
 
+    <canvas id="background" resize></canvas>
+
+    <!--
     <svg id="scroller" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" version="1.1" stroke-width="3" stroke-linecap="round" fill="transparent">
       <path class="to-up" d="m30,12l20,-10l20,10"/>
       <path class="to-bottom" d="m30,88l20,10l20,-10"/>
     </svg>
 
-    <figure id="background">
-      <img src="/public/images/background.jpg" alt="Moutains covered in snow, by @eberhardgross">
-    </figure>
-
     <span id="hint">Drag the logo to access the menu</span>
 
-    <svg id="toggler" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" version="1.1" stroke-width="3" stroke-linecap="round" fill="transparent">
-      <path d="m5,5h50M5,30h50M5,55h50"/>
-    </svg>
+    <div id="toggler">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" version="1.1" stroke-width="3" stroke-linecap="round" fill="transparent">
+        <path d="m5,5h50M5,30h50M5,55h50"/>
+      </svg>
+    </div>
+    -->
 
     <script src="/public/app.js"></script>
 

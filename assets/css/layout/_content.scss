@@ -2,31 +2,10 @@
 
 body {
   @extend %font-light;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-transform: uppercase;
-  overflow: hidden;
   user-select: none;
-
-  &.grabbing {
-    cursor: grabbing;
-
-    main {
-      filter: blur(5px);
-    }
-    #links {
-      opacity: 1;
-      pointer-events: initial;
-    }
-    #scroller {
-      opacity: 1;
-    }
-    #background:after {
-      filter: blur(2px);
-    }
-  }
+  color: $darker;
+  background: $white;
 
   @include media($from: desktop) {
     font-size: 1.2rem;
@@ -35,41 +14,28 @@ body {
 
 #background {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   margin: 0;
+  opacity: 0.3;
   z-index: 1;
-
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparentize($white, 0.6);
-  }
+  pointer-events: none;
 }
 
 main {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   letter-spacing: 0.5em;
-  color: $dark;
-  z-index: 3;
-  filter: blur(0px);
-  transition: filter 0.5s;
-  transition-timing-function: ease-out;
+  z-index: 2;
 
   h1,
   h2 {
@@ -99,7 +65,7 @@ main {
     transition: transform 0.5s;
 
     * {
-      cursor: grab;
+      cursor: pointer;
     }
   }
 
@@ -115,7 +81,7 @@ main {
     h1,
     h2 {
       width: 50%;
-      line-height: 1em;
+      line-height: 1.2em;
     }
     h1 {
       order: 1;
@@ -132,30 +98,26 @@ main {
 }
 
 #links {
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: fixed;
   z-index: 3;
-  left: 50%;
-  width: auto;
-  opacity: 0;
-  pointer-events: none;
+  padding: calc(100vh + 5em) 0 5em;
+  min-height: 200vh;
+  font-size: 0.6rem;
   text-align: center;
   letter-spacing: 0.5em;
-  transform: translateX(-50%);
-  transition: opacity 0.5s, transform 0.5s;
-  transition-timing-function: ease-out;
 
   a {
     display: inline-block;
     align-self: center;
     line-height: 1.5em;
     padding: 0.5em;
-    color: $dark;
+    color: $light;
     opacity: 0.7;
     white-space: nowrap;
     text-decoration: none;
-    transition: letter-spacing 0.5s, opacity 0.5s;
+    transition: letter-spacing 0.5s, opacity 0.5s, color 0.5s;
     transition-timing-function: ease-out;
 
     &:before,
@@ -170,6 +132,7 @@ main {
     }
 
     &:hover {
+      color: $darker;
       opacity: 1;
       letter-spacing: 0.6em;
 
@@ -179,43 +142,14 @@ main {
       }
     }
   }
-}
-
-#links {
-  top: 3rem;
-  height: calc(100% - 8rem);
-  width: 150vw;
-  font-size: 0.6rem;
-  overflow: scroll;
 
   .separator {
     width: 12em;
     height: 0;
     background: $dark;
+    opacity: 0.7;
     margin: 1em auto;
     padding: 1px 0 0;
-  }
-
-  @include media($from: desktop) {
-    top: calc(50% - 11em);
-    font-size: 1rem;
-    overflow: hidden;
-  }
-}
-
-#scroller {
-  position: fixed;
-  display: none;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 2;
-  height: $scrollerSize;
-  width: $scrollerSize;
-  transition: opacity 0.4s;
-  stroke: $dark;
-
-  @include media($from: desktop) {
-    display: block;
   }
 }
 
@@ -230,33 +164,13 @@ main {
   letter-spacing: 0.5em;
   white-space: nowrap;
   pointer-events: none;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.5s;
   transition-timing-function: ease-out;
   animation: animation-hint 3s infinite ease-in-out;
 
-  .display-hint & {
-    opacity: 1;
-  }
-
-  @include media($from: desktop) {
-    display: block;
-  }
-}
-
-#toggler {
-  position: fixed;
-  display: block;
-  left: 50%;
-  bottom: 2rem;
-  width: 1.2rem;
-  stroke: $dark;
-  z-index: 4;
-  transform: translate(-50%, 0);
-  opacity: 0.5;
-
-  @include media($from: desktop) {
-    display: none;
+  &.hide {
+    opacity: 0;
   }
 }
 
@@ -269,5 +183,16 @@ main {
   }
   100% {
     transform:translate(-50%, 0px);
+  }
+}
+
+#gradient {
+  stop {
+    @each $key, $color in $gradient {
+      color: $color;
+      &:nth-child(#{length($gradient)}n + #{$key}) {
+        stop-color: $color;
+      }
+    }
   }
 }
