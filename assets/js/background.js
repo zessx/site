@@ -41,24 +41,29 @@ function backgroundInit()
 
 
   view.onFrame = function(event) {
-    if (event.count % 5 == 0) {
-      for (var i = 0; i < NB_POINTS; i++) {
-        points[i].y += points[i].speed;
-        if (points[i].y >= window.innerHeight) {
-          points[i].speed -= ACCELERATION;
-        } else if (points[i].y <= 0) {
-          points[i].speed += ACCELERATION;
-        } else {
-          points[i].speed = Math.max(Math.min(points[i].speed + Math.random() * 2 * ACCELERATION - ACCELERATION, MAX_SPEED), -MAX_SPEED);
-        }
-        for (var j = 0; j < NB_PATHS; j++) {
-          paths[j].segments[i].point.y = points[i].y;
-        }
-      }
+    if (event.count == 0) {
       for (var j = 0; j < NB_PATHS; j++) {
         paths[j].smooth();
       }
     }
+    // if (event.count % 5 == 0) {
+    //   for (var i = 0; i < NB_POINTS; i++) {
+    //     points[i].y += points[i].speed;
+    //     if (points[i].y >= window.innerHeight) {
+    //       points[i].speed -= ACCELERATION;
+    //     } else if (points[i].y <= 0) {
+    //       points[i].speed += ACCELERATION;
+    //     } else {
+    //       points[i].speed = Math.max(Math.min(points[i].speed + Math.random() * 2 * ACCELERATION - ACCELERATION, MAX_SPEED), -MAX_SPEED);
+    //     }
+    //     for (var j = 0; j < NB_PATHS; j++) {
+    //       paths[j].segments[i].point.y = points[i].y;
+    //     }
+    //   }
+    //   for (var j = 0; j < NB_PATHS; j++) {
+    //     paths[j].smooth();
+    //   }
+    // }
   }
 }
 
