@@ -5,7 +5,18 @@ body {
   text-transform: uppercase;
   user-select: none;
   color: $darker;
-  background: $white;
+  background-color: $white;
+
+  &:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, $white 0%, $background 60%);
+  }
 
   @include media($from: desktop) {
     font-size: 1.2rem;
@@ -22,6 +33,7 @@ body {
   opacity: 0.3;
   z-index: 1;
   pointer-events: none;
+  transition: opacity 0.3s;
 }
 
 main {
@@ -36,6 +48,7 @@ main {
   align-items: center;
   letter-spacing: 0.5em;
   z-index: 2;
+  transition: filter 0.3s;
 
   h1,
   h2 {
@@ -62,7 +75,7 @@ main {
     border-radius: 50%;
     margin: 20px;
     stroke: currentColor;
-    transition: transform 0.5s;
+    transition: transform 0.3s;
 
     * {
       cursor: pointer;
@@ -111,13 +124,12 @@ main {
   a {
     display: inline-block;
     align-self: center;
-    line-height: 1.5em;
-    padding: 0.5em;
+    line-height: 1.2em;
+    padding: 0.6em 0.5em;
     color: $light;
     opacity: 0.7;
-    white-space: nowrap;
     text-decoration: none;
-    transition: letter-spacing 0.5s, opacity 0.5s, color 0.5s;
+    transition: letter-spacing 0.3s, opacity 0.3s, color 0.3s;
     transition-timing-function: ease-out;
 
     &:before,
@@ -169,7 +181,7 @@ main {
   white-space: nowrap;
   pointer-events: none;
   opacity: 1;
-  transition: opacity 0.5s;
+  transition: opacity 0.3s;
   transition-timing-function: ease-out;
   animation: animation-hint 3s infinite ease-in-out;
 
