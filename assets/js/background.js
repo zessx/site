@@ -4,7 +4,8 @@ var NB_POINTS = 12,
     VARIANCE = 50,
     SAW_FACTOR = 1,
     ACCELERATION = 0.1,
-    MAX_SPEED = 1;
+    MAX_SPEED = 1,
+    ANIMATED = false;
 
 paper.install(window);
 
@@ -46,24 +47,24 @@ function backgroundInit()
         paths[j].smooth();
       }
     }
-    // if (event.count % 5 == 0) {
-    //   for (var i = 0; i < NB_POINTS; i++) {
-    //     points[i].y += points[i].speed;
-    //     if (points[i].y >= window.innerHeight) {
-    //       points[i].speed -= ACCELERATION;
-    //     } else if (points[i].y <= 0) {
-    //       points[i].speed += ACCELERATION;
-    //     } else {
-    //       points[i].speed = Math.max(Math.min(points[i].speed + Math.random() * 2 * ACCELERATION - ACCELERATION, MAX_SPEED), -MAX_SPEED);
-    //     }
-    //     for (var j = 0; j < NB_PATHS; j++) {
-    //       paths[j].segments[i].point.y = points[i].y;
-    //     }
-    //   }
-    //   for (var j = 0; j < NB_PATHS; j++) {
-    //     paths[j].smooth();
-    //   }
-    // }
+    if (ANIMATED && event.count % 5 == 0) {
+      for (var i = 0; i < NB_POINTS; i++) {
+        points[i].y += points[i].speed;
+        if (points[i].y >= window.innerHeight) {
+          points[i].speed -= ACCELERATION;
+        } else if (points[i].y <= 0) {
+          points[i].speed += ACCELERATION;
+        } else {
+          points[i].speed = Math.max(Math.min(points[i].speed + Math.random() * 2 * ACCELERATION - ACCELERATION, MAX_SPEED), -MAX_SPEED);
+        }
+        for (var j = 0; j < NB_PATHS; j++) {
+          paths[j].segments[i].point.y = points[i].y;
+        }
+      }
+      for (var j = 0; j < NB_PATHS; j++) {
+        paths[j].smooth();
+      }
+    }
   }
 }
 
