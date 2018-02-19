@@ -5,18 +5,7 @@ body {
   text-transform: uppercase;
   user-select: none;
   color: $darker;
-  background-color: $white;
-
-  &:after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background: radial-gradient(ellipse at center, $white 0%, $background 60%);
-  }
+  background-color: #f3f3f3;
 
   @include media($from: desktop) {
     font-size: 1.2rem;
