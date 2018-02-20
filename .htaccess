@@ -4,10 +4,10 @@ RewriteEngine On
 RewriteBase /
 
 RewriteCond %{HTTP_HOST} ^www\.smarchal\.com [NC]
-RewriteRule (.*) http://smarchal.com/$1 [QSA,R=301,L]
+RewriteRule (.*) https://smarchal.com/$1 [QSA,R=301,L]
 
 # Fix old url
-RewriteRule ^(monsterflat|24ss|twbscolor|hashicon) http://work.smarchal.com/$1/ [L,R=301]
+RewriteRule ^(monsterflat|24ss|twbscolor|hashicon) https://work.smarchal.com/$1/ [L,R=301]
 
 # Assets
 RewriteCond %{REQUEST_FILENAME} !-f
