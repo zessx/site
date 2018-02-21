@@ -1,17 +1,47 @@
 Options -Indexes +FollowSymLinks
 
-RewriteEngine On
-RewriteBase /
+<IfModule mod_headers.c>
 
-RewriteCond %{HTTP_HOST} ^www\.smarchal\.com [NC]
-RewriteRule (.*) https://smarchal.com/$1 [QSA,R=301,L]
+  # Security
+  # Header set Content-Security-Policy "script-src 'self' 'unsafe_eval'; object-src 'self'"
+  Header always set X-FRAME-OPTIONS "DENY"
+  Header always set X-Content-Type-Options nosniff
+  Header always set X-XSS-Protection "1; mode=block"
+  RequestHeader unset Proxy
+	
+  # Content-type
+  <FilesMatch "index.html">
+    AddCharset UTF-8 .html
+    Header set X-UA-Compatible: IE=edge
+  </FilesMatch>
+  <FilesMatch "\.woff2">
+    ForceType 'application/font-woff2; charset=UTF-8'
+  </FilesMatch>
 
-# Fix old url
-RewriteRule ^(monsterflat|24ss|twbscolor|hashicon) https://work.smarchal.com/$1/ [L,R=301]
+  # Cache
+  <FilesMatch "\.(jpg|jpeg|png|gif|ico|svg)$">
+    Header set Cache-Control "max-age=604800, public"
+  </FilesMatch>
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "max-age=604800"
+  </FilesMatch>
 
-# Assets
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+)\.\d+\.(css|js|png|jpe?g|ico)$ $1.$2 [L]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{HTTP_HOST} ^www\.smarchal\.com [NC]
+  RewriteRule (.*) https://smarchal.com/$1 [QSA,R=301,L]
+
+  # Fix old url
+  RewriteRule ^(monsterflat|24ss|twbscolor|hashicon) https://work.smarchal.com/$1/ [L,R=301]
+
+  # Assets
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.+)\.\d+\.(css|js|png|jpe?g|ico)$ $1.$2 [L]
+</IfModule>
 
 # Errors
 ErrorDocument 404 /
