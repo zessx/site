@@ -16,7 +16,7 @@ const gzip         = require('gulp-gzip');
 // Paths
 const vendor = 'node_modules/';
 const source = 'assets/';
-const dest   = 'public/';
+const dest   = 'web/';
 
 // Prod
 gulp.task('default', ['css', 'js']);
