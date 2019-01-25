@@ -1,5 +1,2 @@
 User-agent: *
-Disallow: /assets/
-Disallow: /.git/
-Disallow: package.json
-Disallow: .gitignore
+Disallow:
