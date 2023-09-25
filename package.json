@@ -1,7 +1,7 @@
 {
   "name": "zessx.github.io",
   "version": "8.0.0",
-  "description": "Website of a web developer from Strasbourg (France)",
+  "description": "Website of a DevOps Engineer from Rennes (France)",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
